@@ -1,158 +1,99 @@
-<\!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Market Intelligence Dashboard</title>
 <style>
+
 * { box-sizing:border-box; margin:0; padding:0; }
 body { background:#0a0a0a; color:#ddd; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:13px; }
-
-/* ── TAB BAR ── */
-.tab-bar {
-  display:flex; align-items:stretch; background:#050505;
-  border-bottom:1px solid #1a1a1a; padding:0 24px; position:sticky; top:0; z-index:100;
-}
-.tab-bar-title { font-size:13px; font-weight:700; color:#fff; display:flex; align-items:center; padding-right:24px; border-right:1px solid #1a1a1a; margin-right:16px; }
-.tab-bar-title span { font-size:10px; color:#444; margin-left:8px; font-weight:400; }
-.tab-btn {
-  padding:14px 24px; font-size:13px; font-weight:600; cursor:pointer;
-  background:none; border:none; color:#555; border-bottom:2px solid transparent;
-  transition:color 0.15s, border-color 0.15s; display:flex; align-items:center; gap:8px;
-}
+.tab-bar { display:flex;align-items:stretch;background:#050505;border-bottom:1px solid #1a1a1a;padding:0 24px;position:sticky;top:0;z-index:100; }
+.tab-bar-title { font-size:13px;font-weight:700;color:#fff;display:flex;align-items:center;padding-right:24px;border-right:1px solid #1a1a1a;margin-right:16px; }
+.tab-bar-title span { font-size:10px;color:#444;margin-left:8px;font-weight:400; }
+.tab-btn { padding:14px 24px;font-size:13px;font-weight:600;cursor:pointer;background:none;border:none;color:#555;border-bottom:2px solid transparent;transition:color 0.15s,border-color 0.15s;display:flex;align-items:center;gap:8px; }
 .tab-btn:hover { color:#aaa; }
-.tab-btn.active { color:#fff; border-bottom-color:#fff; }
-.tab-badge { font-size:9px; background:#1a1a1a; color:#666; padding:2px 6px; border-radius:3px; font-weight:400; }
-
-/* ── CONTENT ── */
-.tab-content { display:none; padding:24px; position:relative; }
+.tab-btn.active { color:#fff;border-bottom-color:#fff; }
+.tab-badge { font-size:9px;background:#1a1a1a;color:#666;padding:2px 6px;border-radius:3px;font-weight:400; }
+.tab-content { display:none;padding:24px;position:relative; }
 .tab-content.active { display:block; }
-
-/* ── SECTION HEADERS ── */
 .section-block { margin-bottom:32px; }
-.section-heading { font-size:13px; font-weight:700; color:#fff; margin-bottom:4px; }
-.section-sub { font-size:11px; color:#444; margin-bottom:14px; }
-
-/* ── DATA TABLES ── */
-table { width:100%; border-collapse:collapse; background:#0f0f0f; margin-bottom:16px; }
-th {
-  padding:6px 10px; font-size:9px; font-weight:600; letter-spacing:0.5px;
-  text-transform:uppercase; color:#444; text-align:right;
-  background:#080808; border-bottom:1px solid #1a1a1a; white-space:nowrap;
-}
+.section-heading { font-size:13px;font-weight:700;color:#fff;margin-bottom:4px; }
+.section-sub { font-size:11px;color:#444;margin-bottom:14px; }
+table { width:100%;border-collapse:collapse;background:#0f0f0f;margin-bottom:16px; }
+th { padding:6px 10px;font-size:9px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:#444;text-align:right;background:#080808;border-bottom:1px solid #1a1a1a;white-space:nowrap; }
 th:first-child, th:nth-child(2) { text-align:left; }
-td { padding:8px 10px; border-bottom:1px solid #131313; text-align:right; white-space:nowrap; }
-td:first-child { text-align:left; font-weight:500; color:#ccc; }
-td.sym { text-align:left; color:#444; font-size:11px; }
-td.price { color:#fff; font-weight:600; }
+td { padding:8px 10px;border-bottom:1px solid #131313;text-align:right;white-space:nowrap; }
+td:first-child { text-align:left;font-weight:500;color:#ccc; }
+td.sym { text-align:left;color:#444;font-size:11px; }
+td.price { color:#fff;font-weight:600; }
 tr:last-child td { border-bottom:none; }
-tr:hover td { background:#141414; cursor:pointer; }
-tr.row-active td { background:#161d28 \!important; }
-tr.row-locked td { background:#0e1a1a \!important; }
-tr.row-locked td:first-child { color:#64b5f6; }
+tr:hover td { background:#141414;cursor:pointer; }
+tr.row-active td { background:#0e1d2a !important; }
+tr.row-active td:first-child { color:#64b5f6; }
 td.sep, th.sep { border-left:1px solid #1e1e1e; }
-.up   { color:#4caf50; }
-.down { color:#ef5350; }
-.neu  { color:#555; }
-.rsi-ob { color:#ef5350; font-weight:600; }
-.rsi-os { color:#4caf50; font-weight:600; }
-.rsi-n  { color:#aaa; }
-.badge { font-size:9px; font-weight:700; padding:2px 6px; border-radius:3px; letter-spacing:0.5px; }
-.badge-sup { background:#0d3320; color:#4caf50; }
-.badge-up  { background:#112a14; color:#81c784; }
-.badge-dn  { background:#2a1010; color:#ef9a9a; }
-.badge-sdn { background:#3a0808; color:#ef5350; }
-.macd-bull { color:#4caf50; }
-.macd-bear { color:#ef5350; }
-.pctb-wrap { display:inline-flex; align-items:center; gap:5px; }
-.pctb-track { width:40px; height:5px; background:#1e1e1e; border-radius:3px; display:inline-block; }
-.pctb-fill { height:100%; border-radius:3px; }
-.ma-dot { display:inline-block; width:7px; height:7px; border-radius:50%; margin:0 1px; }
-.tbl-label {
-  font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
-  padding:7px 12px; border-radius:4px 4px 0 0;
-}
-
-/* ── CONNECTION OVERLAY ── */
-.conn-overlay {
-  position:absolute; top:0; left:0; width:100%;
-  pointer-events:none; z-index:10; overflow:visible;
-}
-
-/* ── CONNECTION HINT ── */
-.conn-hint {
-  text-align:center; padding:18px; margin:8px 0 24px;
-  font-size:11px; color:#2a2a2a; letter-spacing:0.5px;
-  border-top:1px solid #111; border-bottom:1px solid #111;
-}
-.conn-hint.has-active { color:#3a5a3a; }
-
-/* ── MATRIX ── */
-.matrix-grid {
-  display:grid; grid-template-columns:28px 1fr 1fr;
-  grid-template-rows:auto auto auto; gap:0;
-}
-.thesis-grid { display:flex; flex-direction:column; gap:8px; }
-.thesis-card {
-  background:#0d0d0d; border:1px solid #1e1e1e; border-radius:4px;
-  padding:10px 12px; transition:border-color 0.15s, background 0.15s, box-shadow 0.2s;
-}
+.up { color:#4caf50; } .down { color:#ef5350; } .neu { color:#555; }
+.rsi-ob { color:#ef5350;font-weight:600; } .rsi-os { color:#4caf50;font-weight:600; } .rsi-n { color:#aaa; }
+.badge { font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:0.5px; }
+.badge-sup { background:#0d3320;color:#4caf50; } .badge-up { background:#112a14;color:#81c784; }
+.badge-dn { background:#2a1010;color:#ef9a9a; } .badge-sdn { background:#3a0808;color:#ef5350; }
+.macd-bull { color:#4caf50; } .macd-bear { color:#ef5350; }
+.pctb-wrap { display:inline-flex;align-items:center;gap:5px; }
+.pctb-track { width:40px;height:5px;background:#1e1e1e;border-radius:3px;display:inline-block; }
+.pctb-fill { height:100%;border-radius:3px; }
+.ma-dot { display:inline-block;width:7px;height:7px;border-radius:50%;margin:0 1px; }
+.tbl-label { font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:7px 12px;border-radius:4px 4px 0 0; }
+.conn-overlay { position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:10;overflow:visible; }
+.conn-overlay .conn-line { pointer-events:stroke; }
+.conn-hint { text-align:center;padding:14px;margin:4px 0 20px;font-size:10px;color:#252525;letter-spacing:1px;border-top:1px solid #111;border-bottom:1px solid #111; }
+.matrix-grid { display:grid;grid-template-columns:28px 1fr 1fr;grid-template-rows:auto auto auto;gap:0; }
+.thesis-grid { display:flex;flex-direction:column;gap:8px; }
+.thesis-card { background:#0d0d0d;border:1px solid #1e1e1e;border-radius:4px;padding:10px 12px;cursor:pointer;transition:border-color 0.15s,background 0.15s,box-shadow 0.2s; }
 .thesis-card:hover { background:#141414; }
 .thesis-card.bull:hover { border-color:#2e7d32; }
 .thesis-card.bear:hover { border-color:#c62828; }
-.thesis-card.card-lit.bull {
-  border-color:rgba(76,175,80,0.7) \!important;
-  background:#0a1a0a \!important;
-  box-shadow:0 0 14px rgba(76,175,80,0.25);
-}
-.thesis-card.card-lit.bear {
-  border-color:rgba(239,83,80,0.7) \!important;
-  background:#1a0a0a \!important;
-  box-shadow:0 0 14px rgba(239,83,80,0.25);
-}
-.tc-header { display:flex; justify-content:space-between; align-items:flex-start; gap:6px; margin-bottom:5px; }
-.tc-title { font-size:12px; font-weight:600; color:#ddd; line-height:1.3; }
-.tc-conviction { font-size:9px; font-weight:700; letter-spacing:0.8px; padding:2px 6px; border-radius:2px; flex-shrink:0; }
-.cv-high { background:#1a1400; color:#e8a838; }
-.cv-med  { background:#111; color:#555; }
-.tc-desc { font-size:11px; color:#666; line-height:1.5; margin-bottom:7px; }
-.tc-signals { display:flex; flex-wrap:wrap; gap:4px; }
-.tc-tag { font-size:9px; padding:2px 6px; border-radius:2px; font-family:monospace; white-space:nowrap; }
-.tag-stream   { background:#0d1a2e; color:#3a7bd5; }
-.tag-signal   { background:#1a1400; color:#e8a838; }
-.tag-theme    { background:#1a0a0a; color:#e05c5c; }
-.tc-strategy  { font-size:10px; color:#444; margin-top:6px; font-style:italic; }
-.axis-col-label { text-align:center; padding:6px 0; font-size:9px; font-weight:700; letter-spacing:1.5px; color:#333; text-transform:uppercase; border-bottom:1px solid #1a1a1a; }
-.axis-row-label { display:flex; align-items:center; justify-content:center; writing-mode:vertical-rl; transform:rotate(180deg); font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:6px 4px; }
-.quad-cell { padding:12px; margin:1px; }
-.quad-bull-st { background:#060f06; border:1px solid #162416; border-radius:6px 0 0 0; }
-.quad-bull-lt { background:#060f06; border:1px solid #162416; border-radius:0 6px 0 0; }
-.quad-bear-st { background:#0f0606; border:1px solid #241616; border-radius:0 0 0 6px; }
-.quad-bear-lt { background:#0f0606; border:1px solid #241616; border-radius:0 0 6px 0; }
-.quad-label { font-size:9px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:10px; }
-.legend-row { display:flex; gap:20px; margin-top:12px; font-size:10px; color:#444; flex-wrap:wrap; }
-.legend-row span { display:inline-flex; align-items:center; gap:4px; }
-.ldot { width:8px; height:8px; border-radius:1px; display:inline-block; }
+.thesis-card.card-lit.bull { border-color:rgba(76,175,80,0.8) !important;background:#091509 !important;box-shadow:0 0 16px rgba(76,175,80,0.3); }
+.thesis-card.card-lit.bear { border-color:rgba(239,83,80,0.8) !important;background:#190909 !important;box-shadow:0 0 16px rgba(239,83,80,0.3); }
+.tc-header { display:flex;justify-content:space-between;align-items:flex-start;gap:6px;margin-bottom:5px; }
+.tc-title { font-size:12px;font-weight:600;color:#ddd;line-height:1.3; }
+.tc-conviction { font-size:9px;font-weight:700;letter-spacing:0.8px;padding:2px 6px;border-radius:2px;flex-shrink:0; }
+.cv-high { background:#1a1400;color:#e8a838; } .cv-med { background:#111;color:#555; }
+.tc-desc { font-size:11px;color:#666;line-height:1.5;margin-bottom:7px; }
+.tc-signals { display:flex;flex-wrap:wrap;gap:4px; }
+.tc-tag { font-size:9px;padding:2px 6px;border-radius:2px;font-family:monospace;white-space:nowrap; }
+.tag-stream { background:#0d1a2e;color:#3a7bd5; }
+.tag-signal { background:#1a1400;color:#e8a838; }
+.tag-theme { background:#1a0a0a;color:#e05c5c; }
+.tc-strategy { font-size:10px;color:#444;margin-top:6px;font-style:italic; }
+.axis-col-label { text-align:center;padding:6px 0;font-size:9px;font-weight:700;letter-spacing:1.5px;color:#333;text-transform:uppercase;border-bottom:1px solid #1a1a1a; }
+.axis-row-label { display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 4px; }
+.quad-cell { padding:12px;margin:1px; }
+.quad-bull-st { background:#060f06;border:1px solid #162416;border-radius:6px 0 0 0; }
+.quad-bull-lt { background:#060f06;border:1px solid #162416;border-radius:0 6px 0 0; }
+.quad-bear-st { background:#0f0606;border:1px solid #241616;border-radius:0 0 0 6px; }
+.quad-bear-lt { background:#0f0606;border:1px solid #241616;border-radius:0 0 6px 0; }
+.quad-label { font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px; }
+.legend-row { display:flex;gap:20px;margin-top:12px;font-size:10px;color:#444;flex-wrap:wrap; }
+.legend-row span { display:inline-flex;align-items:center;gap:4px; }
+.ldot { width:8px;height:8px;border-radius:1px;display:inline-block; }
+
+
+.card-indicators { display:flex;flex-wrap:wrap;gap:3px;margin:6px 0 4px; }
+.ci-tag { font-size:9px;padding:2px 5px;border-radius:2px;font-weight:600;font-family:monospace;white-space:nowrap; }
+.ci-bull { background:#0a2010;color:#4caf50;border:1px solid rgba(76,175,80,0.3); }
+.ci-bear { background:#200a0a;color:#ef5350;border:1px solid rgba(239,83,80,0.3); }
 </style>
 </head>
 <body>
 
-<\!-- Global SVG defs for glow filter -->
-<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+<svg style="display:none">
   <defs>
-    <filter id="line-glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+    <filter id="line-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <marker id="arrow-bull" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" fill="rgba(76,175,80,0.8)"/>
-    </marker>
-    <marker id="arrow-bear" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" fill="rgba(239,83,80,0.8)"/>
-    </marker>
   </defs>
 </svg>
 
-<\!-- TAB BAR -->
 <div class="tab-bar">
   <div class="tab-bar-title">Market Intelligence <span>Apr 5, 2026</span></div>
   <button class="tab-btn active" onclick="switchTab('us',this)">
@@ -163,80 +104,78 @@ td.sep, th.sep { border-left:1px solid #1e1e1e; }
   </button>
 </div>
 
-<\!-- US TAB -->
 <div id="tab-us" class="tab-content active">
   <svg class="conn-overlay" id="conn-us"></svg>
 
   <div class="section-block">
-    <div class="section-heading">Data Streams & Technical Indicators</div>
-    <div class="section-sub">Price trends · Moving averages · RSI · MACD · Bollinger Bands · ATR · 52-week range · Hover any row to trace its connections to the thesis matrix below</div>
+    <div class="section-heading">Data Streams &amp; Technical Indicators</div>
+    <div class="section-sub">Hover or click any row to trace its pipe connections to the thesis matrix below · Click to lock · Click background to unlock</div>
     <div id="us-tables"></div>
     <div class="legend-row">
-      <span><span class="ldot" style="background:#e8a838"></span>RSI &gt;70 Overbought</span>
-      <span><span class="ldot" style="background:#4caf50"></span>RSI &lt;30 Oversold</span>
-      <span>MA dots: 🟢 above / 🔴 below (20·50·200)</span>
-      <span>BB %B: 0%=lower band · 100%=upper band</span>
-      <span>ATR% = daily vol as % of price</span>
+      <span><span class="ldot" style="background:#e8a838"></span>RSI &gt;70 OB</span>
+      <span><span class="ldot" style="background:#4caf50"></span>RSI &lt;30 OS</span>
+      <span>MA dots: 🟢 above / 🔴 below SMA 20·50·200</span>
+      <span>BB %B: 0%=lower · 100%=upper band</span>
     </div>
   </div>
 
-  <div class="conn-hint" id="hint-us">↓ &nbsp; hover any indicator row above to illuminate its signal paths and connected thesis cards below &nbsp; ↓</div>
+  <div class="conn-hint" id="hint-us">—— pipe connections branch here ——</div>
 
   <div class="section-block">
     <div class="section-heading">Investment Opportunity Matrix — 🇺🇸 United States</div>
-    <div class="section-sub">Thesis-level only · No specific securities · Hover any data row above to see which thesis cards it connects to</div>
+    <div class="section-sub">Hover any thesis card to illuminate its connected data streams above</div>
     <div id="matrix-us"></div>
     <div class="legend-row" style="margin-top:14px">
       <span><span class="ldot" style="background:#e8a838"></span>HIGH conviction</span>
       <span><span class="ldot" style="background:#555"></span>MEDIUM conviction</span>
-      <span><span class="ldot" style="background:#3a7bd5"></span>Data stream tag</span>
-      <span><span class="ldot" style="background:#e8a838"></span>Signal tag</span>
-      <span><span class="ldot" style="background:#e05c5c"></span>Theme tag</span>
+      <span><span class="ldot" style="background:#3a7bd5"></span>Data stream</span>
+      <span><span class="ldot" style="background:#e8a838"></span>Signal</span>
+      <span><span class="ldot" style="background:#e05c5c"></span>Theme</span>
     </div>
   </div>
 </div>
 
-<\!-- INDIA TAB -->
 <div id="tab-in" class="tab-content">
   <svg class="conn-overlay" id="conn-in"></svg>
 
   <div class="section-block">
-    <div class="section-heading">Data Streams & Technical Indicators</div>
-    <div class="section-sub">Price trends · Moving averages · RSI · MACD · Bollinger Bands · ATR · 52-week range · Hover any row to trace its connections to the thesis matrix below</div>
+    <div class="section-heading">Data Streams &amp; Technical Indicators</div>
+    <div class="section-sub">Hover or click any row to trace its pipe connections to the thesis matrix below · Click to lock · Click background to unlock</div>
     <div id="in-tables"></div>
     <div class="legend-row">
-      <span><span class="ldot" style="background:#e8a838"></span>RSI &gt;70 Overbought</span>
-      <span><span class="ldot" style="background:#4caf50"></span>RSI &lt;30 Oversold</span>
-      <span>MA dots: 🟢 above / 🔴 below (20·50·200)</span>
-      <span>BB %B: 0%=lower band · 100%=upper band</span>
-      <span>ATR% = daily vol as % of price</span>
+      <span><span class="ldot" style="background:#e8a838"></span>RSI &gt;70 OB</span>
+      <span><span class="ldot" style="background:#4caf50"></span>RSI &lt;30 OS</span>
+      <span>MA dots: 🟢 above / 🔴 below SMA 20·50·200</span>
+      <span>BB %B: 0%=lower · 100%=upper band</span>
     </div>
   </div>
 
-  <div class="conn-hint" id="hint-in">↓ &nbsp; hover any indicator row above to illuminate its signal paths and connected thesis cards below &nbsp; ↓</div>
+  <div class="conn-hint" id="hint-in">—— pipe connections branch here ——</div>
 
   <div class="section-block">
     <div class="section-heading">Investment Opportunity Matrix — 🇮🇳 India</div>
-    <div class="section-sub">Thesis-level only · No specific securities · Hover any data row above to see which thesis cards it connects to</div>
+    <div class="section-sub">Hover any thesis card to illuminate its connected data streams above</div>
     <div id="matrix-in"></div>
     <div class="legend-row" style="margin-top:14px">
       <span><span class="ldot" style="background:#e8a838"></span>HIGH conviction</span>
       <span><span class="ldot" style="background:#555"></span>MEDIUM conviction</span>
-      <span><span class="ldot" style="background:#3a7bd5"></span>Data stream tag</span>
-      <span><span class="ldot" style="background:#e8a838"></span>Signal tag</span>
-      <span><span class="ldot" style="background:#e05c5c"></span>Theme tag</span>
+      <span><span class="ldot" style="background:#3a7bd5"></span>Data stream</span>
+      <span><span class="ldot" style="background:#e8a838"></span>Signal</span>
+      <span><span class="ldot" style="background:#e05c5c"></span>Theme</span>
     </div>
   </div>
 </div>
 
 <script>
+
 // ─── TAB SWITCHING ────────────────────────────────────────────────
 function switchTab(id, btn) {
-  clearConnections('us'); clearConnections('in');
+  clearActive('us'); clearActive('in');
   document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
   btn.classList.add('active');
+  if (!drawn[id]) { requestAnimationFrame(() => { drawAllLines(id); drawn[id] = true; }); }
 }
 
 // ─── MARKET DATA ──────────────────────────────────────────────────
@@ -244,13 +183,13 @@ const DATA = {"US Indices": [{"name": "S&P 500", "symbol": "^GSPC", "current": 6
 
 const US_SECTIONS = [
   { key:"US Indices",    label:"🇺🇸 US Indices",    color:"#64b5f6", bg:"#0a1520" },
-  { key:"Commodities",   label:"Commodities",        color:"#ffcc80", bg:"#1a1200" },
-  { key:"Bonds & Rates", label:"Bonds & Rates",      color:"#ce93d8", bg:"#1a0a20" },
-  { key:"Key ETFs",      label:"Key ETFs (excl. INDA)", color:"#80cbc4", bg:"#091a1a" },
+  { key:"Commodities",   label:"Commodities",                       color:"#ffcc80", bg:"#1a1200" },
+  { key:"Bonds & Rates", label:"Bonds & Rates",                     color:"#ce93d8", bg:"#1a0a20" },
+  { key:"Key ETFs",      label:"Key ETFs (excl. INDA)",             color:"#80cbc4", bg:"#091a1a" },
 ];
 const IN_SECTIONS = [
   { key:"India Indices", label:"🇮🇳 India Indices",  color:"#81c784", bg:"#0a200f" },
-  { key:"Commodities",   label:"Commodities (India exposure)", color:"#ffcc80", bg:"#1a1200" },
+  { key:"Commodities",   label:"Commodities (India exposure)",       color:"#ffcc80", bg:"#1a1200" },
 ];
 const IN_EXTRA = [{ key:"Key ETFs", label:"INDA — India ETF (US-listed)", color:"#80cbc4", bg:"#091a1a", filter:["INDA (India ETF)"] }];
 
@@ -266,12 +205,12 @@ function vs(v) {
   return `<td class="${cls}" style="font-size:11px">${ar}${Math.abs(v).toFixed(1)}%</td>`;
 }
 function rsiCell(v) {
-  if (\!v) return '<td class="neu">—</td>';
+  if (!v) return '<td class="neu">—</td>';
   const cls=v>=70?'rsi-ob':v<=30?'rsi-os':'rsi-n', tag=v>=70?' OB':v<=30?' OS':'';
   return `<td class="${cls}">${v}${tag}</td>`;
 }
 function macdCell(r) {
-  const t=r.tech; if (\!t||t.macd===undefined) return '<td class="neu">—</td>';
+  const t=r.tech; if (!t||t.macd===undefined) return '<td class="neu">—</td>';
   const bull=t.macd_hist>0, cls=bull?'macd-bull':'macd-bear', ar=bull?'▲':'▼';
   return `<td class="${cls}" style="font-size:11px">${ar} ${t.macd.toFixed(2)}</td>`;
 }
@@ -299,11 +238,11 @@ function renderTable(rows, filter) {
       <th>RSI(14)</th><th>MACD</th><th>BB%B</th><th>ATR%</th><th>52W Hi</th><th>Trend</th><th>MAs</th>
     </tr></thead><tbody>
     ${filtered.map(r => {
-      if (\!r.tech) return `<tr data-sym="${r.symbol}"><td>${r.name}</td><td class="sym">${r.symbol}</td><td colspan="16" class="neu">No data</td></tr>`;
+      if (!r.tech) return `<tr data-sym="${r.symbol}"><td>${r.name}</td><td class="sym">${r.symbol}</td><td colspan="16" class="neu">No data</td></tr>`;
       const t=r.tech;
       return `<tr data-sym="${r.symbol}">
         <td>${r.name}</td><td class="sym">${r.symbol}</td>
-        <td class="price">${r.current\!==null?r.current.toLocaleString():'—'}</td>
+        <td class="price">${r.current!==null?r.current.toLocaleString():'—'}</td>
         ${chg(r.changes['1D'])}${chg(r.changes['1W'])}${chg(r.changes['1M'])}${chg(r.changes['6M'])}${chg(r.changes['1Y'])}
         ${vs(t.vs_sma20)}${vs(t.vs_sma50)}${vs(t.vs_sma200)}
         ${rsiCell(t.rsi)}${macdCell(r)}${pctbCell(t.bb_pct_b)}
@@ -336,22 +275,16 @@ function buildTables(sections, containerId, extraSections) {
 buildTables(US_SECTIONS, 'us-tables');
 buildTables(IN_SECTIONS, 'in-tables', IN_EXTRA);
 
-// ─── SYMBOL → KG NODE MAPPING ─────────────────────────────────────
-// Maps each instrument symbol to the KG node IDs used in thesis.nodes arrays
+// ─── SYMBOL → KG NODE MAPPING ────────────────────────────────────────
 const SYM_NODES = {
-  // US Indices
   '^GSPC':['SPX'], 'QQQ':['QQQ'], '^DJI':['SPX'], '^VIX':['VIX'],
   'IWM':['SPX'], 'DX-Y.NYB':['DXY'],
-  // Commodities
   'CL=F':['WTI'], 'BZ=F':['WTI'],
   'GC=F':['GOLD'], 'SI=F':['SILVER'], 'HG=F':['COPPER'], 'NG=F':['NATGAS'],
-  // Bonds & Rates
   '^TNX':['TNX'], '^TYX':['TNX'], '^IRX':['IRX'], 'TLT':['TNX','IRX'],
-  // Key ETFs
   'XLE':['WTI','THM_ENERGY'], 'XLF':['FEDRATE','THM_DEBTCRK'],
   'XLU':['THM_AI','THM_ENERGY'], 'ICLN':['THM_AI'],
   'GDX':['GOLD','THM_GOLD'], 'INDA':['INDA'],
-  // India Indices
   '^NSEI':['NIFTY'], '^NSEBANK':['BNKN'], '^BSESN':['NIFTY'],
   '^CNXIT':['NIFTY','THM_AI'], '^INDIAVIX':['INDIAVIX'], 'USDINR=X':['USDINR'],
 };
@@ -421,10 +354,10 @@ function buildMatrix(marketKey, containerId) {
   const M = MARKETS[marketKey];
   const container = document.getElementById(containerId);
   const quads = [
-    {key:"stl",data:M.stl,bull:true, labelColor:"#4caf50",labelText:"Tactical Bullish",  cellClass:"quad-bull-st"},
-    {key:"ltl",data:M.ltl,bull:true, labelColor:"#2e7d32",labelText:"Structural Bullish",cellClass:"quad-bull-lt"},
-    {key:"sts",data:M.sts,bull:false,labelColor:"#ef5350",labelText:"Tactical Bearish",  cellClass:"quad-bear-st"},
-    {key:"lts",data:M.lts,bull:false,labelColor:"#b71c1c",labelText:"Structural Bearish",cellClass:"quad-bear-lt"},
+    {key:"stl",data:M.stl,bull:true, cellClass:"quad-bull-st"},
+    {key:"ltl",data:M.ltl,bull:true, cellClass:"quad-bull-lt"},
+    {key:"sts",data:M.sts,bull:false,cellClass:"quad-bear-st"},
+    {key:"lts",data:M.lts,bull:false,cellClass:"quad-bear-lt"},
   ];
   container.innerHTML = `
     <div class="matrix-grid">
@@ -445,10 +378,30 @@ function buildMatrix(marketKey, containerId) {
       const card = document.createElement('div');
       card.id = `thesis-${mkt}-${q.key}-${i}`;
       card.className = `thesis-card ${q.bull?'bull':'bear'}`;
+      // Build connected indicators strip
+      const bull = q.bull;
+      const connSyms = Object.entries(SYM_NODES).filter(([sym, nodes]) =>
+        nodes.some(n => t.nodes.includes(n))
+      ).map(([sym]) => sym);
+      const symNames = {};
+      Object.values(DATA).flat().forEach(r => { symNames[r.symbol] = r.name; });
+      const indicatorHtml = connSyms.length ? `<div class="card-indicators">${
+        connSyms.map(sym => {
+          const r = Object.values(DATA).flat().find(x => x.symbol === sym);
+          if (!r) return '';
+          const chg1d = r.changes && r.changes['1D'];
+          const isPos = chg1d > 0;
+          const cls = isPos ? 'ci-bull' : 'ci-bear';
+          const arrow = isPos ? '\u25b2' : '\u25bc';
+          const pct = chg1d !== null && chg1d !== undefined ? `${arrow}${Math.abs(chg1d).toFixed(1)}%` : '';
+          return `<span class="ci-tag ${cls}" title="${r.name}">${r.name.split(' ')[0]} ${pct}</span>`;
+        }).filter(Boolean).join('')
+      }</div>` : '';
       card.innerHTML = `
         <div class="tc-header"><span class="tc-title">${t.title}</span><span class="tc-conviction ${t.conviction==='HIGH'?'cv-high':'cv-med'}">${t.conviction}</span></div>
         <div class="tc-desc">${t.desc}</div>
         <div class="tc-signals">${tags}</div>
+        ${indicatorHtml}
         <div class="tc-strategy">Options approach: ${t.strategy}</div>`;
       grid.appendChild(card);
     });
@@ -457,152 +410,224 @@ function buildMatrix(marketKey, containerId) {
 buildMatrix('US','matrix-us');
 buildMatrix('IN','matrix-in');
 
-// ─── CONNECTION DRAWING ───────────────────────────────────────────
-const lockedSym = { us: null, in: null };
+// ─── PIPE DRAWING ─────────────────────────────────────────────────
+// State
+const drawn = { us: false, in: false };
+const lockedKey = { us: null, in: null }; // 'sym:^GSPC' or 'card:thesis-us-stl-0'
 
-function getConnectedCardIds(sym, mkt) {
-  const nodes = SYM_NODES[sym] || [];
-  if (\!nodes.length) return [];
-  const marketKey = mkt === 'us' ? 'US' : 'IN';
-  const M = MARKETS[marketKey];
-  const ids = [];
-  ['stl','ltl','sts','lts'].forEach(quad => {
-    M[quad].forEach((thesis, i) => {
-      if (nodes.some(n => thesis.nodes.includes(n))) {
-        ids.push({ id:`thesis-${mkt}-${quad}-${i}`, bull: quad==='stl'||quad==='ltl' });
-      }
-    });
-  });
-  return ids;
+// Build a manhattan pipe path: straight down trunk, horizontal branch, straight down to card
+function pipePath(srcX, srcY, dstX, dstY, jY) {
+  const r = 6; // corner radius
+  const dx = dstX - srcX;
+  if (Math.abs(dx) < 2) {
+    // Straight vertical — no branch needed
+    return `M${srcX},${srcY} L${srcX},${dstY}`;
+  }
+  const sx = dx > 0 ? 1 : -1;
+  return [
+    `M${srcX},${srcY}`,
+    `L${srcX},${jY - r}`,
+    `Q${srcX},${jY} ${srcX + sx*r},${jY}`,
+    `L${dstX - sx*r},${jY}`,
+    `Q${dstX},${jY} ${dstX},${jY + r}`,
+    `L${dstX},${dstY}`
+  ].join(' ');
 }
 
-function showConnections(sym, mkt) {
+function drawAllLines(mkt) {
   const tab = document.getElementById('tab-' + mkt);
   const svgEl = document.getElementById('conn-' + mkt);
   const tabRect = tab.getBoundingClientRect();
+  const marketKey = mkt === 'us' ? 'US' : 'IN';
+  const M = MARKETS[marketKey];
 
-  // Clear previous
+  // Size SVG to full tab
+  const h = tab.offsetHeight, w = tab.offsetWidth;
+  svgEl.setAttribute('height', h);
+  svgEl.setAttribute('width', w);
   svgEl.innerHTML = '';
-  document.querySelectorAll(`#tab-${mkt} .card-lit`).forEach(el => el.classList.remove('card-lit'));
 
-  const rowEl = tab.querySelector(`tr[data-sym="${sym}"]`);
-  if (\!rowEl) return;
+  // Junction Y = center of the hint bar between tables and matrix
+  const hintEl = document.getElementById('hint-' + mkt);
+  const hintRect = hintEl.getBoundingClientRect();
+  const jY = hintRect.top - tabRect.top + hintRect.height / 2;
 
-  // Resize SVG to cover full tab
-  svgEl.setAttribute('height', tab.offsetHeight);
-  svgEl.setAttribute('width', tab.offsetWidth);
+  const rows = tab.querySelectorAll('tr[data-sym]');
+  rows.forEach(row => {
+    const sym = row.dataset.sym;
+    const kgNodes = SYM_NODES[sym] || [];
+    if (!kgNodes.length) return;
 
-  const rowRect = rowEl.getBoundingClientRect();
-  // Source: right end of the name cell, vertically centered
-  const nameCell = rowEl.firstElementChild;
-  const nameCellRect = nameCell.getBoundingClientRect();
-  const srcX = nameCellRect.right - tabRect.left + 4;
-  const srcY = rowRect.top - tabRect.top + rowRect.height / 2;
+    const rowRect = row.getBoundingClientRect();
+    const nameCell = row.firstElementChild;
+    const nameCellRect = nameCell.getBoundingClientRect();
+    const srcX = nameCellRect.right - tabRect.left + 6;
+    const srcY = rowRect.top - tabRect.top + rowRect.height / 2;
 
-  const connected = getConnectedCardIds(sym, mkt);
-  if (\!connected.length) return;
+    ['stl','ltl','sts','lts'].forEach(quad => {
+      M[quad].forEach((thesis, i) => {
+        if (!kgNodes.some(n => thesis.nodes.includes(n))) return;
+        const cardId = `thesis-${mkt}-${quad}-${i}`;
+        const card = document.getElementById(cardId);
+        if (!card) return;
+        const cardRect = card.getBoundingClientRect();
+        const dstX = cardRect.left - tabRect.left + cardRect.width / 2;
+        const dstY = cardRect.top - tabRect.top;
+        const isBull = quad === 'stl' || quad === 'ltl';
+        const color = isBull ? '#4caf50' : '#ef5350';
 
-  connected.forEach(({ id, bull }) => {
-    const card = document.getElementById(id);
-    if (\!card) return;
-    const cardRect = card.getBoundingClientRect();
-    const dstX = cardRect.left - tabRect.left + cardRect.width / 2;
-    const dstY = cardRect.top - tabRect.top;
+        const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+        path.setAttribute('d', pipePath(srcX, srcY, dstX, dstY, jY));
+        path.setAttribute('stroke', color);
+        path.setAttribute('stroke-width', '1');
+        path.setAttribute('fill', 'none');
+        path.setAttribute('opacity', '0.14');
+        path.setAttribute('data-sym', sym);
+        path.setAttribute('data-card', cardId);
+        path.setAttribute('pointer-events', 'stroke');
+        path.classList.add('conn-line');
+        path.style.cursor = 'pointer';
 
-    const color = bull ? '#4caf50' : '#ef5350';
-    const marker = bull ? 'url(#arrow-bull)' : 'url(#arrow-bear)';
+        // Line hover
+        path.addEventListener('mouseenter', () => {
+          if (lockedKey[mkt]) return;
+          activateSym(sym, mkt);
+        });
+        path.addEventListener('mouseleave', () => {
+          if (lockedKey[mkt]) return;
+          resetAll(mkt);
+        });
+        path.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleLock('sym:' + sym, mkt);
+        });
 
-    // Control points for smooth S-curve
-    const dy = dstY - srcY;
-    const cp1x = srcX + Math.min(120, Math.abs(dstX - srcX) * 0.4);
-    const cp1y = srcY + dy * 0.3;
-    const cp2x = dstX;
-    const cp2y = dstY - dy * 0.25;
+        svgEl.appendChild(path);
+      });
+    });
+  });
 
-    const path = document.createElementNS('http://www.w3.org/2000/svg','path');
-    path.setAttribute('d', `M${srcX},${srcY} C${cp1x},${cp1y} ${cp2x},${cp2y} ${dstX},${dstY}`);
-    path.setAttribute('stroke', color);
-    path.setAttribute('stroke-width', '1.5');
-    path.setAttribute('fill', 'none');
-    path.setAttribute('opacity', '0.72');
-    path.setAttribute('filter', 'url(#line-glow)');
-    path.setAttribute('marker-end', marker);
-    svgEl.appendChild(path);
+  // Attach row listeners
+  rows.forEach(row => {
+    const sym = row.dataset.sym;
+    row.addEventListener('mouseenter', () => {
+      if (lockedKey[mkt]) return;
+      activateSym(sym, mkt);
+    });
+    row.addEventListener('mouseleave', () => {
+      if (lockedKey[mkt]) return;
+      resetAll(mkt);
+    });
+    row.addEventListener('click', () => toggleLock('sym:' + sym, mkt));
+  });
 
-    // Source dot
-    const srcDot = document.createElementNS('http://www.w3.org/2000/svg','circle');
-    srcDot.setAttribute('cx', srcX); srcDot.setAttribute('cy', srcY);
-    srcDot.setAttribute('r', '3'); srcDot.setAttribute('fill', color);
-    srcDot.setAttribute('opacity', '0.85');
-    svgEl.appendChild(srcDot);
+  // Attach thesis card listeners
+  const mktKey = mkt === 'us' ? 'US' : 'IN';
+  const M2 = MARKETS[mktKey];
+  ['stl','ltl','sts','lts'].forEach(quad => {
+    M2[quad].forEach((t, i) => {
+      const cardId = `thesis-${mkt}-${quad}-${i}`;
+      const card = document.getElementById(cardId);
+      if (!card) return;
+      card.addEventListener('mouseenter', () => {
+        if (lockedKey[mkt]) return;
+        activateCard(cardId, mkt);
+      });
+      card.addEventListener('mouseleave', () => {
+        if (lockedKey[mkt]) return;
+        resetAll(mkt);
+      });
+      card.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleLock('card:' + cardId, mkt);
+      });
+    });
+  });
 
-    card.classList.add('card-lit');
+  // Click on tab background to unlock
+  document.getElementById('tab-' + mkt).addEventListener('click', () => {
+    if (lockedKey[mkt]) { lockedKey[mkt] = null; resetAll(mkt); }
   });
 }
 
-function clearConnections(mkt) {
+function activateSym(sym, mkt) {
   const svgEl = document.getElementById('conn-' + mkt);
-  if (svgEl) svgEl.innerHTML = '';
-  document.querySelectorAll(`#tab-${mkt} .card-lit`).forEach(el => el.classList.remove('card-lit'));
-  document.querySelectorAll(`#tab-${mkt} tr.row-active`).forEach(el => el.classList.remove('row-active'));
-  document.querySelectorAll(`#tab-${mkt} tr.row-locked`).forEach(el => el.classList.remove('row-locked'));
-  const hint = document.getElementById('hint-' + mkt);
-  if (hint) hint.classList.remove('has-active');
-}
-
-// ─── ROW INTERACTION ──────────────────────────────────────────────
-function attachRowListeners(containerId, mkt) {
-  const container = document.getElementById(containerId);
-  container.querySelectorAll('tr[data-sym]').forEach(tr => {
-    const sym = tr.dataset.sym;
-
-    tr.addEventListener('mouseenter', () => {
-      if (lockedSym[mkt]) return;
-      tr.classList.add('row-active');
-      showConnections(sym, mkt);
-    });
-
-    tr.addEventListener('mouseleave', () => {
-      if (lockedSym[mkt]) return;
-      tr.classList.remove('row-active');
-      clearConnections(mkt);
-    });
-
-    tr.addEventListener('click', () => {
-      if (lockedSym[mkt] === sym) {
-        // Unlock
-        lockedSym[mkt] = null;
-        tr.classList.remove('row-locked','row-active');
-        clearConnections(mkt);
-        const hint = document.getElementById('hint-' + mkt);
-        if (hint) hint.classList.remove('has-active');
-      } else {
-        // Lock this row
-        if (lockedSym[mkt]) {
-          const prev = container.querySelector(`tr[data-sym="${lockedSym[mkt]}"]`);
-          if (prev) prev.classList.remove('row-locked','row-active');
-          // Also check other table containers in same tab
-          document.querySelectorAll(`#tab-${mkt} tr.row-locked`).forEach(el => el.classList.remove('row-locked','row-active'));
-        }
-        lockedSym[mkt] = sym;
-        tr.classList.add('row-locked');
-        showConnections(sym, mkt);
-        const hint = document.getElementById('hint-' + mkt);
-        if (hint) hint.classList.add('has-active');
-      }
-    });
+  const tab = document.getElementById('tab-' + mkt);
+  // Dim all
+  svgEl.querySelectorAll('.conn-line').forEach(p => {
+    p.setAttribute('opacity', '0.04');
+    p.setAttribute('stroke-width', '0.5');
+    p.removeAttribute('filter');
   });
+  // Glow matching lines
+  svgEl.querySelectorAll(`.conn-line[data-sym="${sym}"]`).forEach(p => {
+    p.setAttribute('opacity', '0.9');
+    p.setAttribute('stroke-width', '2.5');
+    p.setAttribute('filter', 'url(#line-glow)');
+    const card = document.getElementById(p.getAttribute('data-card'));
+    if (card) card.classList.add('card-lit');
+  });
+  // Highlight row
+  tab.querySelectorAll(`tr[data-sym="${sym}"]`).forEach(r => r.classList.add('row-active'));
 }
 
-attachRowListeners('us-tables', 'us');
-attachRowListeners('in-tables', 'in');
+function activateCard(cardId, mkt) {
+  const svgEl = document.getElementById('conn-' + mkt);
+  const tab = document.getElementById('tab-' + mkt);
+  // Dim all
+  svgEl.querySelectorAll('.conn-line').forEach(p => {
+    p.setAttribute('opacity', '0.04');
+    p.setAttribute('stroke-width', '0.5');
+    p.removeAttribute('filter');
+  });
+  // Glow matching lines
+  svgEl.querySelectorAll(`.conn-line[data-card="${cardId}"]`).forEach(p => {
+    p.setAttribute('opacity', '0.9');
+    p.setAttribute('stroke-width', '2.5');
+    p.setAttribute('filter', 'url(#line-glow)');
+    // Highlight source rows
+    const sym = p.getAttribute('data-sym');
+    tab.querySelectorAll(`tr[data-sym="${sym}"]`).forEach(r => r.classList.add('row-active'));
+  });
+  // Highlight card
+  const card = document.getElementById(cardId);
+  if (card) card.classList.add('card-lit');
+}
 
-// Handle window resize — redraw if locked
+function resetAll(mkt) {
+  const svgEl = document.getElementById('conn-' + mkt);
+  const tab = document.getElementById('tab-' + mkt);
+  svgEl.querySelectorAll('.conn-line').forEach(p => {
+    p.setAttribute('opacity', '0.14');
+    p.setAttribute('stroke-width', '1');
+    p.removeAttribute('filter');
+  });
+  tab.querySelectorAll('.card-lit').forEach(el => el.classList.remove('card-lit'));
+  tab.querySelectorAll('tr.row-active').forEach(el => el.classList.remove('row-active'));
+}
+
+function toggleLock(key, mkt) {
+  if (lockedKey[mkt] === key) {
+    lockedKey[mkt] = null;
+    resetAll(mkt);
+  } else {
+    lockedKey[mkt] = key;
+    if (key.startsWith('sym:')) activateSym(key.slice(4), mkt);
+    else if (key.startsWith('card:')) activateCard(key.slice(5), mkt);
+  }
+}
+
+// ─── INIT ──────────────────────────────────────────────────────────
+// Draw US lines immediately after layout
+requestAnimationFrame(() => { drawAllLines('us'); drawn['us'] = true; });
+
+// Redraw on resize
 window.addEventListener('resize', () => {
   ['us','in'].forEach(mkt => {
-    if (lockedSym[mkt]) showConnections(lockedSym[mkt], mkt);
+    if (drawn[mkt]) drawAllLines(mkt);
   });
 });
+
 </script>
 </body>
 </html>
