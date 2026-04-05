@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Market Trends</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d0d0d; color: #ddd; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 24px; }
+  h1 { font-size: 20px; color: #fff; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 13px; margin-bottom: 24px; }
+  .timestamp { color: #444; font-size: 11px; float: right; margin-top: 4px; }
+  .section { margin-bottom: 28px; }
+  .section-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    padding: 8px 12px; border-radius: 6px 6px 0 0; margin-bottom: 0;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; background: #111; border-radius: 0 0 6px 6px; overflow: hidden; }
+  th { padding: 8px 12px; font-size: 10px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: #555; text-align: right; background: #0d0d0d; border-bottom: 1px solid #1a1a1a; }
+  th:first-child { text-align: left; }
+  td { padding: 9px 12px; border-bottom: 1px solid #1a1a1a; text-align: right; }
+  td:first-child { text-align: left; color: #ccc; }
+  td.symbol { color: #555; font-size: 11px; }
+  td.current { color: #fff; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #161616; }
+  .up { color: #4caf50; }
+  .down { color: #f44336; }
+  .neutral { color: #888; }
+  .bar { display: inline-block; width: 36px; height: 12px; border-radius: 2px; vertical-align: middle; margin-right: 4px; }
+  .legend { display: flex; gap: 16px; margin-bottom: 16px; font-size: 11px; color: #555; align-items: center; }
+  .legend span { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; }
+  .highlight-row td { background: #151515; }
+  .col-1d { color: #aaa; }
+</style>
+</head>
+<body>
+
+<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px">
+  <div>
+    <h1>Market Trends — Live Data</h1>
+    <p class="subtitle">Percentage change across 1D · 1W · 1M · 6M · 1Y horizons &nbsp;·&nbsp; All data via Yahoo Finance</p>
+  </div>
+  <div style="color:#444;font-size:11px;text-align:right">Last fetched<br>Apr 5, 2026</div>
+</div>
+
+<script>
+function cell(val) {
+  if (val === null || val === undefined) return '<td class="neutral">—</td>';
+  const cls = val > 0 ? 'up' : val < 0 ? 'down' : 'neutral';
+  const arrow = val > 0 ? '▲' : val < 0 ? '▼' : '—';
+  return `<td class="${cls}">${arrow} ${Math.abs(val).toFixed(2)}%</td>`;
+}
+
+function renderSection(title, color, bg, rows) {
+  let html = `<div class="section">
+    <div class="section-title" style="background:${bg};color:${color}">${title}</div>
+    <table>
+      <thead><tr>
+        <th>Instrument</th><th>Symbol</th><th>Current</th>
+        <th>1D</th><th>1W</th><th>1M</th><th>6M</th><th>1Y</th>
+      </tr></thead><tbody>`;
+  rows.forEach(r => {
+    const c = r.changes || {};
+    html += `<tr>
+      <td>${r.name}</td>
+      <td class="symbol">${r.symbol}</td>
+      <td class="current">${r.current !== null ? r.current.toLocaleString() : '—'}</td>
+      ${cell(c['1D'])}${cell(c['1W'])}${cell(c['1M'])}${cell(c['6M'])}${cell(c['1Y'])}
+    </tr>`;
+  });
+  html += '</tbody></table></div>';
+  return html;
+}
+
+const data = {"US Indices": [{"name": "S&P 500", "symbol": "^GSPC", "current": 6582.69, "changes": {"1D": 0.11, "1W": 0.4, "1M": -3.81, "6M": 4.81, "1Y": 21.98}}, {"name": "Nasdaq 100", "symbol": "QQQ", "current": 584.98, "changes": {"1D": 0.11, "1W": 0.17, "1M": -2.59, "6M": 5.71, "1Y": 30.43}}, {"name": "Dow Jones", "symbol": "^DJI", "current": 46504.67, "changes": {"1D": -0.13, "1W": 0.83, "1M": -6.11, "6M": 4.15, "1Y": 14.7}}, {"name": "VIX", "symbol": "^VIX", "current": 23.87, "changes": {"1D": -2.73, "1W": -11.43, "1M": 17.64, "6M": 51.27, "1Y": -20.49}}, {"name": "Russell 2000", "symbol": "IWM", "current": 251.29, "changes": {"1D": 0.69, "1W": 1.01, "1M": -4.3, "6M": 12.68, "1Y": 33.93}}, {"name": "DXY (Dollar)", "symbol": "DX-Y.NYB", "current": 100.19, "changes": {"1D": 0.16, "1W": 0.59, "1M": 2.54, "6M": 2.39, "1Y": -1.85}}], "India Indices": [{"name": "Nifty 50", "symbol": "^NSEI", "current": 22713.1, "changes": {"1D": 0.15, "1W": -1.74, "1M": -11.99, "6M": -10.6, "1Y": -2.65}}, {"name": "Bank Nifty", "symbol": "^NSEBANK", "current": 51548.75, "changes": {"1D": 0.19, "1W": -3.52, "1M": -15.13, "6M": -9.23, "1Y": 0.39}}, {"name": "Sensex", "symbol": "^BSESN", "current": 73319.55, "changes": {"1D": 0.25, "1W": -1.63, "1M": -12.38, "6M": -11.92, "1Y": -4.3}}, {"name": "Nifty IT", "symbol": "^CNXIT", "current": 30441.45, "changes": {"1D": 2.6, "1W": 4.25, "1M": -8.2, "6M": -21.65, "1Y": -16.1}}, {"name": "India VIX", "symbol": "^INDIAVIX", "current": 25.52, "changes": {"1D": 2.04, "1W": 11.88, "1M": 117.56, "6M": 104.98, "1Y": 86.01}}, {"name": "USD/INR", "symbol": "USDINR=X", "current": 92.67, "changes": {"1D": -0.33, "1W": -2.14, "1M": 2.07, "6M": 7.7, "1Y": 8.19}}], "Commodities": [{"name": "WTI Crude Oil", "symbol": "CL=F", "current": 111.54, "changes": {"1D": 11.41, "1W": 20.78, "1M": 78.95, "6M": 67.55, "1Y": 66.6}}, {"name": "Brent Crude", "symbol": "BZ=F", "current": 109.03, "changes": {"1D": 7.78, "1W": 4.34, "1M": 61.72, "6M": 58.84, "1Y": 55.45}}, {"name": "Gold", "symbol": "GC=F", "current": 4651.5, "changes": {"1D": -2.75, "1W": 5.73, "1M": -4.74, "6M": 40.22, "1Y": 50.19}}, {"name": "Silver", "symbol": "SI=F", "current": 72.74, "changes": {"1D": -4.13, "1W": 5.0, "1M": -0.97, "6M": 96.38, "1Y": 128.41}}, {"name": "Copper", "symbol": "HG=F", "current": 5.56, "changes": {"1D": -1.08, "1W": 2.59, "1M": -1.24, "6M": 0.27, "1Y": 15.63}}, {"name": "Natural Gas", "symbol": "NG=F", "current": 2.8, "changes": {"1D": -0.67, "1W": -4.86, "1M": -7.62, "6M": -16.09, "1Y": -32.33}}], "Bonds & Rates": [{"name": "US 10Y Yield", "symbol": "^TNX", "current": 4.31, "changes": {"1D": -0.14, "1W": -1.8, "1M": 6.44, "6M": -0.76, "1Y": 6.36}}, {"name": "US 30Y Yield", "symbol": "^TYX", "current": 4.89, "changes": {"1D": -0.2, "1W": -1.03, "1M": 4.42, "6M": 0.6, "1Y": 9.03}}, {"name": "US 2Y Yield", "symbol": "^IRX", "current": 3.61, "changes": {"1D": 0.06, "1W": -0.36, "1M": 0.39, "6M": -14.93, "1Y": -13.81}}, {"name": "TLT (Long Bond ETF)", "symbol": "TLT", "current": 86.79, "changes": {"1D": 0.61, "1W": 1.31, "1M": -2.72, "6M": 3.14, "1Y": -1.22}}], "Key ETFs": [{"name": "XLE (Energy)", "symbol": "XLE", "current": 59.25, "changes": {"1D": 0.47, "1W": -2.61, "1M": 10.95, "6M": 36.73, "1Y": 41.0}}, {"name": "XLF (Financials)", "symbol": "XLF", "current": 49.53, "changes": {"1D": 0.18, "1W": 0.51, "1M": -4.63, "6M": -4.91, "1Y": 5.46}}, {"name": "XLU (Utilities)", "symbol": "XLU", "current": 46.34, "changes": {"1D": 0.5, "1W": 2.77, "1M": 0.61, "6M": 14.64, "1Y": 20.78}}, {"name": "ICLN (Clean Energy)", "symbol": "ICLN", "current": 18.05, "changes": {"1D": -1.1, "1W": -1.42, "1M": -3.63, "6M": 34.25, "1Y": 57.26}}, {"name": "GDX (Gold Miners)", "symbol": "GDX", "current": 94.59, "changes": {"1D": -1.48, "1W": 13.28, "1M": -5.65, "6M": 83.58, "1Y": 108.39}}, {"name": "INDA (India ETF)", "symbol": "INDA", "current": 46.65, "changes": {"1D": -0.13, "1W": 0.56, "1M": -12.43, "6M": -15.6, "1Y": -8.85}}]};
+
+const sections = [
+  ["🇺🇸 US Indices",   "#64b5f6", "#0a1520", "US Indices"],
+  ["🇮🇳 India Indices", "#64b5f6", "#0a1520", "India Indices"],
+  ["Commodities",       "#81c784", "#0f2010", "Commodities"],
+  ["Bonds & Rates",     "#ffcc80", "#1a1200", "Bonds & Rates"],
+  ["Key ETFs",          "#ce93d8", "#1a0a20", "Key ETFs"],
+];
+
+document.write(sections.map(([title, color, bg, key]) =>
+  renderSection(title, color, bg, data[key])
+).join(''));
+</script>
+
+<div style="margin-top:16px;padding:12px 16px;background:#111;border-radius:6px;border:1px solid #1a1a1a;font-size:11px;color:#555">
+  Data via Yahoo Finance (yfinance) · Prices in USD unless noted · Yields shown as % · Fetched Apr 5, 2026
+</div>
+
+</body>
+</html>
