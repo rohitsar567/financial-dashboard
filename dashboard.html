@@ -4,96 +4,153 @@
 <meta charset="UTF-8">
 <title>Market Intelligence Dashboard</title>
 <style>
-
 * { box-sizing:border-box; margin:0; padding:0; }
 body { background:#0a0a0a; color:#ddd; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:13px; }
-.tab-bar { display:flex;align-items:stretch;background:#050505;border-bottom:1px solid #1a1a1a;padding:0 24px;position:sticky;top:0;z-index:100; }
-.tab-bar-title { font-size:13px;font-weight:700;color:#fff;display:flex;align-items:center;padding-right:24px;border-right:1px solid #1a1a1a;margin-right:16px; }
-.tab-bar-title span { font-size:10px;color:#444;margin-left:8px;font-weight:400; }
-.tab-btn { padding:14px 24px;font-size:13px;font-weight:600;cursor:pointer;background:none;border:none;color:#555;border-bottom:2px solid transparent;transition:color 0.15s,border-color 0.15s;display:flex;align-items:center;gap:8px; }
+
+/* ── TAB BAR ── */
+.tab-bar {
+  display:flex; align-items:stretch; background:#050505;
+  border-bottom:1px solid #1a1a1a; padding:0 24px; position:sticky; top:0; z-index:100;
+}
+.tab-bar-title { font-size:13px; font-weight:700; color:#fff; display:flex; align-items:center; padding-right:24px; border-right:1px solid #1a1a1a; margin-right:16px; }
+.tab-bar-title span { font-size:10px; color:#444; margin-left:8px; font-weight:400; }
+.tab-btn {
+  padding:14px 24px; font-size:13px; font-weight:600; cursor:pointer;
+  background:none; border:none; color:#555; border-bottom:2px solid transparent;
+  transition:color 0.15s, border-color 0.15s; display:flex; align-items:center; gap:8px;
+}
 .tab-btn:hover { color:#aaa; }
-.tab-btn.active { color:#fff;border-bottom-color:#fff; }
-.tab-badge { font-size:9px;background:#1a1a1a;color:#666;padding:2px 6px;border-radius:3px;font-weight:400; }
-.tab-content { display:none;padding:24px;position:relative; }
+.tab-btn.active { color:#fff; border-bottom-color:#fff; }
+.tab-badge { font-size:9px; background:#1a1a1a; color:#666; padding:2px 6px; border-radius:3px; font-weight:400; }
+
+/* ── CONTENT ── */
+.tab-content { display:none; padding:24px; position:relative; }
 .tab-content.active { display:block; }
+
+/* ── SECTION HEADERS ── */
 .section-block { margin-bottom:32px; }
-.section-heading { font-size:13px;font-weight:700;color:#fff;margin-bottom:4px; }
-.section-sub { font-size:11px;color:#444;margin-bottom:14px; }
-table { width:100%;border-collapse:collapse;background:#0f0f0f;margin-bottom:16px; }
-th { padding:6px 10px;font-size:9px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:#444;text-align:right;background:#080808;border-bottom:1px solid #1a1a1a;white-space:nowrap; }
+.section-heading { font-size:13px; font-weight:700; color:#fff; margin-bottom:4px; }
+.section-sub { font-size:11px; color:#444; margin-bottom:14px; }
+
+/* ── DATA TABLES ── */
+table { width:100%; border-collapse:collapse; background:#0f0f0f; margin-bottom:16px; }
+th {
+  padding:6px 10px; font-size:9px; font-weight:600; letter-spacing:0.5px;
+  text-transform:uppercase; color:#444; text-align:right;
+  background:#080808; border-bottom:1px solid #1a1a1a; white-space:nowrap;
+}
 th:first-child, th:nth-child(2) { text-align:left; }
-td { padding:8px 10px;border-bottom:1px solid #131313;text-align:right;white-space:nowrap; }
-td:first-child { text-align:left;font-weight:500;color:#ccc; }
-td.sym { text-align:left;color:#444;font-size:11px; }
-td.price { color:#fff;font-weight:600; }
+td { padding:8px 10px; border-bottom:1px solid #131313; text-align:right; white-space:nowrap; }
+td:first-child { text-align:left; font-weight:500; color:#ccc; }
+td.sym { text-align:left; color:#444; font-size:11px; }
+td.price { color:#fff; font-weight:600; }
 tr:last-child td { border-bottom:none; }
-tr:hover td { background:#141414;cursor:pointer; }
-tr.row-active td { background:#0e1d2a !important; }
-tr.row-active td:first-child { color:#64b5f6; }
+tr:hover td { background:#141414; cursor:pointer; }
+tr.row-active td { background:#161d28 !important; }
+tr.row-locked td { background:#0e1a1a !important; }
+tr.row-locked td:first-child { color:#64b5f6; }
 td.sep, th.sep { border-left:1px solid #1e1e1e; }
-.up { color:#4caf50; } .down { color:#ef5350; } .neu { color:#555; }
-.rsi-ob { color:#ef5350;font-weight:600; } .rsi-os { color:#4caf50;font-weight:600; } .rsi-n { color:#aaa; }
-.badge { font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:0.5px; }
-.badge-sup { background:#0d3320;color:#4caf50; } .badge-up { background:#112a14;color:#81c784; }
-.badge-dn { background:#2a1010;color:#ef9a9a; } .badge-sdn { background:#3a0808;color:#ef5350; }
-.macd-bull { color:#4caf50; } .macd-bear { color:#ef5350; }
-.pctb-wrap { display:inline-flex;align-items:center;gap:5px; }
-.pctb-track { width:40px;height:5px;background:#1e1e1e;border-radius:3px;display:inline-block; }
-.pctb-fill { height:100%;border-radius:3px; }
-.ma-dot { display:inline-block;width:7px;height:7px;border-radius:50%;margin:0 1px; }
-.tbl-label { font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:7px 12px;border-radius:4px 4px 0 0; }
-.conn-overlay { position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:10;overflow:visible; }
-.conn-overlay .conn-line { pointer-events:stroke; }
-.conn-hint { text-align:center;padding:14px;margin:4px 0 20px;font-size:10px;color:#252525;letter-spacing:1px;border-top:1px solid #111;border-bottom:1px solid #111; }
-.matrix-grid { display:grid;grid-template-columns:28px 1fr 1fr;grid-template-rows:auto auto auto;gap:0; }
-.thesis-grid { display:flex;flex-direction:column;gap:8px; }
-.thesis-card { background:#0d0d0d;border:1px solid #1e1e1e;border-radius:4px;padding:10px 12px;cursor:pointer;transition:border-color 0.15s,background 0.15s,box-shadow 0.2s; }
+.up   { color:#4caf50; }
+.down { color:#ef5350; }
+.neu  { color:#555; }
+.rsi-ob { color:#ef5350; font-weight:600; }
+.rsi-os { color:#4caf50; font-weight:600; }
+.rsi-n  { color:#aaa; }
+.badge { font-size:9px; font-weight:700; padding:2px 6px; border-radius:3px; letter-spacing:0.5px; }
+.badge-sup { background:#0d3320; color:#4caf50; }
+.badge-up  { background:#112a14; color:#81c784; }
+.badge-dn  { background:#2a1010; color:#ef9a9a; }
+.badge-sdn { background:#3a0808; color:#ef5350; }
+.macd-bull { color:#4caf50; }
+.macd-bear { color:#ef5350; }
+.pctb-wrap { display:inline-flex; align-items:center; gap:5px; }
+.pctb-track { width:40px; height:5px; background:#1e1e1e; border-radius:3px; display:inline-block; }
+.pctb-fill { height:100%; border-radius:3px; }
+.ma-dot { display:inline-block; width:7px; height:7px; border-radius:50%; margin:0 1px; }
+.tbl-label {
+  font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+  padding:7px 12px; border-radius:4px 4px 0 0;
+}
+
+/* ── CONNECTION HINT ── */
+.conn-hint {
+  text-align:center; padding:18px; margin:8px 0 24px;
+  font-size:11px; color:#2a2a2a; letter-spacing:0.5px;
+  border-top:1px solid #111; border-bottom:1px solid #111;
+}
+.conn-hint.has-active { color:#3a5a3a; }
+
+/* ── MATRIX ── */
+.matrix-grid {
+  display:grid; grid-template-columns:28px 1fr 1fr;
+  grid-template-rows:auto auto auto; gap:0;
+}
+.thesis-grid { display:flex; flex-direction:column; gap:8px; }
+.thesis-card {
+  background:#0d0d0d; border:1px solid #1e1e1e; border-radius:4px;
+  padding:10px 12px; transition:border-color 0.15s, background 0.15s, box-shadow 0.2s;
+}
 .thesis-card:hover { background:#141414; }
 .thesis-card.bull:hover { border-color:#2e7d32; }
 .thesis-card.bear:hover { border-color:#c62828; }
-.thesis-card.card-lit.bull { border-color:rgba(76,175,80,0.8) !important;background:#091509 !important;box-shadow:0 0 16px rgba(76,175,80,0.3); }
-.thesis-card.card-lit.bear { border-color:rgba(239,83,80,0.8) !important;background:#190909 !important;box-shadow:0 0 16px rgba(239,83,80,0.3); }
-.tc-header { display:flex;justify-content:space-between;align-items:flex-start;gap:6px;margin-bottom:5px; }
-.tc-title { font-size:12px;font-weight:600;color:#ddd;line-height:1.3; }
-.tc-conviction { font-size:9px;font-weight:700;letter-spacing:0.8px;padding:2px 6px;border-radius:2px;flex-shrink:0; }
-.cv-high { background:#1a1400;color:#e8a838; } .cv-med { background:#111;color:#555; }
-.tc-desc { font-size:11px;color:#666;line-height:1.5;margin-bottom:7px; }
-.tc-signals { display:flex;flex-wrap:wrap;gap:4px; }
-.tc-tag { font-size:9px;padding:2px 6px;border-radius:2px;font-family:monospace;white-space:nowrap; }
-.tag-stream { background:#0d1a2e;color:#3a7bd5; }
-.tag-signal { background:#1a1400;color:#e8a838; }
-.tag-theme { background:#1a0a0a;color:#e05c5c; }
-.tc-strategy { font-size:10px;color:#444;margin-top:6px;font-style:italic; }
-.axis-col-label { text-align:center;padding:6px 0;font-size:9px;font-weight:700;letter-spacing:1.5px;color:#333;text-transform:uppercase;border-bottom:1px solid #1a1a1a; }
-.axis-row-label { display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 4px; }
-.quad-cell { padding:12px;margin:1px; }
-.quad-bull-st { background:#060f06;border:1px solid #162416;border-radius:6px 0 0 0; }
-.quad-bull-lt { background:#060f06;border:1px solid #162416;border-radius:0 6px 0 0; }
-.quad-bear-st { background:#0f0606;border:1px solid #241616;border-radius:0 0 0 6px; }
-.quad-bear-lt { background:#0f0606;border:1px solid #241616;border-radius:0 0 6px 0; }
-.quad-label { font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px; }
-.legend-row { display:flex;gap:20px;margin-top:12px;font-size:10px;color:#444;flex-wrap:wrap; }
-.legend-row span { display:inline-flex;align-items:center;gap:4px; }
-.ldot { width:8px;height:8px;border-radius:1px;display:inline-block; }
+.thesis-card.card-lit.bull {
+  border-color:rgba(76,175,80,0.7) !important;
+  background:#0a1a0a !important;
+  box-shadow:0 0 14px rgba(76,175,80,0.25);
+}
+.thesis-card.card-lit.bear {
+  border-color:rgba(239,83,80,0.7) !important;
+  background:#1a0a0a !important;
+  box-shadow:0 0 14px rgba(239,83,80,0.25);
+}
+.tc-header { display:flex; justify-content:space-between; align-items:flex-start; gap:6px; margin-bottom:5px; }
+.tc-title { font-size:12px; font-weight:600; color:#ddd; line-height:1.3; }
+.tc-conviction { font-size:9px; font-weight:700; letter-spacing:0.8px; padding:2px 6px; border-radius:2px; flex-shrink:0; }
+.cv-high { background:#1a1400; color:#e8a838; }
+.cv-med  { background:#111; color:#555; }
+.tc-desc { font-size:11px; color:#666; line-height:1.5; margin-bottom:7px; }
+.tc-signals { display:flex; flex-wrap:wrap; gap:4px; }
+.tc-tag { font-size:9px; padding:2px 6px; border-radius:2px; font-family:monospace; white-space:nowrap; }
+.tag-stream   { background:#0d1a2e; color:#3a7bd5; }
+.tag-signal   { background:#1a1400; color:#e8a838; }
+.tag-theme    { background:#1a0a0a; color:#e05c5c; }
+.tc-strategy  { font-size:10px; color:#444; margin-top:6px; font-style:italic; }
+.axis-col-label { text-align:center; padding:6px 0; font-size:9px; font-weight:700; letter-spacing:1.5px; color:#333; text-transform:uppercase; border-bottom:1px solid #1a1a1a; }
+.axis-row-label { display:flex; align-items:center; justify-content:center; writing-mode:vertical-rl; transform:rotate(180deg); font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:6px 4px; }
+.quad-cell { padding:12px; margin:1px; }
+.quad-bull-st { background:#060f06; border:1px solid #162416; border-radius:6px 0 0 0; }
+.quad-bull-lt { background:#060f06; border:1px solid #162416; border-radius:0 6px 0 0; }
+.quad-bear-st { background:#0f0606; border:1px solid #241616; border-radius:0 0 0 6px; }
+.quad-bear-lt { background:#0f0606; border:1px solid #241616; border-radius:0 0 6px 0; }
+.quad-label { font-size:9px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:10px; }
+.legend-row { display:flex; gap:20px; margin-top:12px; font-size:10px; color:#444; flex-wrap:wrap; }
+.legend-row span { display:inline-flex; align-items:center; gap:4px; }
+.ldot { width:8px; height:8px; border-radius:1px; display:inline-block; }
 
+/* ── FOCUS INTERACTION ── */
+tr.row-focused td { background: #161d28 !important; }
+tr.row-dimmed { display: none; }
+.thesis-card.card-focused { border-color: rgba(255,255,255,0.25) !important; background: #141414 !important; }
+.thesis-card.card-dimmed { display: none; }
+.table-block-hidden { display: none; }
+.quad-cell-hidden { visibility: hidden; }
+tr[data-sym] { cursor: pointer; }
+.thesis-card { cursor: pointer; }
 
-.card-indicators { display:flex;flex-wrap:wrap;gap:3px;margin:6px 0 4px; }
-.ci-tag { font-size:9px;padding:2px 5px;border-radius:2px;font-weight:600;font-family:monospace;white-space:nowrap; }
-.ci-bull { background:#0a2010;color:#4caf50;border:1px solid rgba(76,175,80,0.3); }
-.ci-bear { background:#200a0a;color:#ef5350;border:1px solid rgba(239,83,80,0.3); }
+/* ── FOCUS INTERACTION ── */
+tr.row-focused td { background: #161d28 !important; }
+tr.row-dimmed { display: none; }
+.thesis-card.card-focused { border-color: rgba(255,255,255,0.25) !important; background: #141414 !important; }
+.thesis-card.card-dimmed { display: none; }
+.table-block-hidden { display: none; }
+.quad-cell-hidden { visibility: hidden; }
+tr[data-sym] { cursor: pointer; }
+.thesis-card { cursor: pointer; }
 </style>
 </head>
 <body>
 
-<svg style="display:none">
-  <defs>
-    <filter id="line-glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-</svg>
-
+<!-- TAB BAR -->
 <div class="tab-bar">
   <div class="tab-bar-title">Market Intelligence <span>Apr 5, 2026</span></div>
   <button class="tab-btn active" onclick="switchTab('us',this)">
@@ -104,78 +161,76 @@ td.sep, th.sep { border-left:1px solid #1e1e1e; }
   </button>
 </div>
 
+<!-- US TAB -->
 <div id="tab-us" class="tab-content active">
-  <svg class="conn-overlay" id="conn-us"></svg>
-
   <div class="section-block">
-    <div class="section-heading">Data Streams &amp; Technical Indicators</div>
-    <div class="section-sub">Hover or click any row to trace its pipe connections to the thesis matrix below · Click to lock · Click background to unlock</div>
+    <div class="section-heading">Data Streams & Technical Indicators</div>
+    <div class="section-sub">Price trends · Moving averages · RSI · MACD · Bollinger Bands · ATR · 52-week range · Click any row to focus its linked thesis cards — click again to reset</div>
     <div id="us-tables"></div>
     <div class="legend-row">
-      <span><span class="ldot" style="background:#e8a838"></span>RSI &gt;70 OB</span>
-      <span><span class="ldot" style="background:#4caf50"></span>RSI &lt;30 OS</span>
-      <span>MA dots: 🟢 above / 🔴 below SMA 20·50·200</span>
-      <span>BB %B: 0%=lower · 100%=upper band</span>
+      <span><span class="ldot" style="background:#e8a838"></span>RSI &gt;70 Overbought</span>
+      <span><span class="ldot" style="background:#4caf50"></span>RSI &lt;30 Oversold</span>
+      <span>MA dots: 🟢 above / 🔴 below (20·50·200)</span>
+      <span>BB %B: 0%=lower band · 100%=upper band</span>
+      <span>ATR% = daily vol as % of price</span>
     </div>
   </div>
 
-  <div class="conn-hint" id="hint-us">—— pipe connections branch here ——</div>
+  <div class="conn-hint" id="hint-us">↓ &nbsp; click any indicator row or thesis card to focus its linked counterparts — click again to reset &nbsp; ↓</div>
 
   <div class="section-block">
     <div class="section-heading">Investment Opportunity Matrix — 🇺🇸 United States</div>
-    <div class="section-sub">Hover any thesis card to illuminate its connected data streams above</div>
+    <div class="section-sub">Thesis-level only · No specific securities · Click any card to focus its linked indicators — click again to reset</div>
     <div id="matrix-us"></div>
     <div class="legend-row" style="margin-top:14px">
       <span><span class="ldot" style="background:#e8a838"></span>HIGH conviction</span>
       <span><span class="ldot" style="background:#555"></span>MEDIUM conviction</span>
-      <span><span class="ldot" style="background:#3a7bd5"></span>Data stream</span>
-      <span><span class="ldot" style="background:#e8a838"></span>Signal</span>
-      <span><span class="ldot" style="background:#e05c5c"></span>Theme</span>
+      <span><span class="ldot" style="background:#3a7bd5"></span>Data stream tag</span>
+      <span><span class="ldot" style="background:#e8a838"></span>Signal tag</span>
+      <span><span class="ldot" style="background:#e05c5c"></span>Theme tag</span>
     </div>
   </div>
 </div>
 
+<!-- INDIA TAB -->
 <div id="tab-in" class="tab-content">
-  <svg class="conn-overlay" id="conn-in"></svg>
-
   <div class="section-block">
-    <div class="section-heading">Data Streams &amp; Technical Indicators</div>
-    <div class="section-sub">Hover or click any row to trace its pipe connections to the thesis matrix below · Click to lock · Click background to unlock</div>
+    <div class="section-heading">Data Streams & Technical Indicators</div>
+    <div class="section-sub">Price trends · Moving averages · RSI · MACD · Bollinger Bands · ATR · 52-week range · Click any row to focus its linked thesis cards — click again to reset</div>
     <div id="in-tables"></div>
     <div class="legend-row">
-      <span><span class="ldot" style="background:#e8a838"></span>RSI &gt;70 OB</span>
-      <span><span class="ldot" style="background:#4caf50"></span>RSI &lt;30 OS</span>
-      <span>MA dots: 🟢 above / 🔴 below SMA 20·50·200</span>
-      <span>BB %B: 0%=lower · 100%=upper band</span>
+      <span><span class="ldot" style="background:#e8a838"></span>RSI &gt;70 Overbought</span>
+      <span><span class="ldot" style="background:#4caf50"></span>RSI &lt;30 Oversold</span>
+      <span>MA dots: 🟢 above / 🔴 below (20·50·200)</span>
+      <span>BB %B: 0%=lower band · 100%=upper band</span>
+      <span>ATR% = daily vol as % of price</span>
     </div>
   </div>
 
-  <div class="conn-hint" id="hint-in">—— pipe connections branch here ——</div>
+  <div class="conn-hint" id="hint-in">↓ &nbsp; click any indicator row or thesis card to focus its linked counterparts — click again to reset &nbsp; ↓</div>
 
   <div class="section-block">
     <div class="section-heading">Investment Opportunity Matrix — 🇮🇳 India</div>
-    <div class="section-sub">Hover any thesis card to illuminate its connected data streams above</div>
+    <div class="section-sub">Thesis-level only · No specific securities · Click any card to focus its linked indicators — click again to reset</div>
     <div id="matrix-in"></div>
     <div class="legend-row" style="margin-top:14px">
       <span><span class="ldot" style="background:#e8a838"></span>HIGH conviction</span>
       <span><span class="ldot" style="background:#555"></span>MEDIUM conviction</span>
-      <span><span class="ldot" style="background:#3a7bd5"></span>Data stream</span>
-      <span><span class="ldot" style="background:#e8a838"></span>Signal</span>
-      <span><span class="ldot" style="background:#e05c5c"></span>Theme</span>
+      <span><span class="ldot" style="background:#3a7bd5"></span>Data stream tag</span>
+      <span><span class="ldot" style="background:#e8a838"></span>Signal tag</span>
+      <span><span class="ldot" style="background:#e05c5c"></span>Theme tag</span>
     </div>
   </div>
 </div>
 
 <script>
-
 // ─── TAB SWITCHING ────────────────────────────────────────────────
 function switchTab(id, btn) {
-  clearActive('us'); clearActive('in');
+  clearConnections('us'); clearConnections('in');
   document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
   btn.classList.add('active');
-  if (!drawn[id]) { requestAnimationFrame(() => { drawAllLines(id); drawn[id] = true; }); }
 }
 
 // ─── MARKET DATA ──────────────────────────────────────────────────
@@ -183,13 +238,13 @@ const DATA = {"US Indices": [{"name": "S&P 500", "symbol": "^GSPC", "current": 6
 
 const US_SECTIONS = [
   { key:"US Indices",    label:"🇺🇸 US Indices",    color:"#64b5f6", bg:"#0a1520" },
-  { key:"Commodities",   label:"Commodities",                       color:"#ffcc80", bg:"#1a1200" },
-  { key:"Bonds & Rates", label:"Bonds & Rates",                     color:"#ce93d8", bg:"#1a0a20" },
-  { key:"Key ETFs",      label:"Key ETFs (excl. INDA)",             color:"#80cbc4", bg:"#091a1a" },
+  { key:"Commodities",   label:"Commodities",        color:"#ffcc80", bg:"#1a1200" },
+  { key:"Bonds & Rates", label:"Bonds & Rates",      color:"#ce93d8", bg:"#1a0a20" },
+  { key:"Key ETFs",      label:"Key ETFs (excl. INDA)", color:"#80cbc4", bg:"#091a1a" },
 ];
 const IN_SECTIONS = [
   { key:"India Indices", label:"🇮🇳 India Indices",  color:"#81c784", bg:"#0a200f" },
-  { key:"Commodities",   label:"Commodities (India exposure)",       color:"#ffcc80", bg:"#1a1200" },
+  { key:"Commodities",   label:"Commodities (India exposure)", color:"#ffcc80", bg:"#1a1200" },
 ];
 const IN_EXTRA = [{ key:"Key ETFs", label:"INDA — India ETF (US-listed)", color:"#80cbc4", bg:"#091a1a", filter:["INDA (India ETF)"] }];
 
@@ -275,16 +330,22 @@ function buildTables(sections, containerId, extraSections) {
 buildTables(US_SECTIONS, 'us-tables');
 buildTables(IN_SECTIONS, 'in-tables', IN_EXTRA);
 
-// ─── SYMBOL → KG NODE MAPPING ────────────────────────────────────────
+// ─── SYMBOL → KG NODE MAPPING ─────────────────────────────────────
+// Maps each instrument symbol to the KG node IDs used in thesis.nodes arrays
 const SYM_NODES = {
+  // US Indices
   '^GSPC':['SPX'], 'QQQ':['QQQ'], '^DJI':['SPX'], '^VIX':['VIX'],
   'IWM':['SPX'], 'DX-Y.NYB':['DXY'],
+  // Commodities
   'CL=F':['WTI'], 'BZ=F':['WTI'],
   'GC=F':['GOLD'], 'SI=F':['SILVER'], 'HG=F':['COPPER'], 'NG=F':['NATGAS'],
+  // Bonds & Rates
   '^TNX':['TNX'], '^TYX':['TNX'], '^IRX':['IRX'], 'TLT':['TNX','IRX'],
+  // Key ETFs
   'XLE':['WTI','THM_ENERGY'], 'XLF':['FEDRATE','THM_DEBTCRK'],
   'XLU':['THM_AI','THM_ENERGY'], 'ICLN':['THM_AI'],
   'GDX':['GOLD','THM_GOLD'], 'INDA':['INDA'],
+  // India Indices
   '^NSEI':['NIFTY'], '^NSEBANK':['BNKN'], '^BSESN':['NIFTY'],
   '^CNXIT':['NIFTY','THM_AI'], '^INDIAVIX':['INDIAVIX'], 'USDINR=X':['USDINR'],
 };
@@ -354,10 +415,10 @@ function buildMatrix(marketKey, containerId) {
   const M = MARKETS[marketKey];
   const container = document.getElementById(containerId);
   const quads = [
-    {key:"stl",data:M.stl,bull:true, cellClass:"quad-bull-st"},
-    {key:"ltl",data:M.ltl,bull:true, cellClass:"quad-bull-lt"},
-    {key:"sts",data:M.sts,bull:false,cellClass:"quad-bear-st"},
-    {key:"lts",data:M.lts,bull:false,cellClass:"quad-bear-lt"},
+    {key:"stl",data:M.stl,bull:true, labelColor:"#4caf50",labelText:"Tactical Bullish",  cellClass:"quad-bull-st"},
+    {key:"ltl",data:M.ltl,bull:true, labelColor:"#2e7d32",labelText:"Structural Bullish",cellClass:"quad-bull-lt"},
+    {key:"sts",data:M.sts,bull:false,labelColor:"#ef5350",labelText:"Tactical Bearish",  cellClass:"quad-bear-st"},
+    {key:"lts",data:M.lts,bull:false,labelColor:"#b71c1c",labelText:"Structural Bearish",cellClass:"quad-bear-lt"},
   ];
   container.innerHTML = `
     <div class="matrix-grid">
@@ -378,31 +439,12 @@ function buildMatrix(marketKey, containerId) {
       const card = document.createElement('div');
       card.id = `thesis-${mkt}-${q.key}-${i}`;
       card.className = `thesis-card ${q.bull?'bull':'bear'}`;
-      // Build connected indicators strip
-      const bull = q.bull;
-      const connSyms = Object.entries(SYM_NODES).filter(([sym, nodes]) =>
-        nodes.some(n => t.nodes.includes(n))
-      ).map(([sym]) => sym);
-      const symNames = {};
-      Object.values(DATA).flat().forEach(r => { symNames[r.symbol] = r.name; });
-      const indicatorHtml = connSyms.length ? `<div class="card-indicators">${
-        connSyms.map(sym => {
-          const r = Object.values(DATA).flat().find(x => x.symbol === sym);
-          if (!r) return '';
-          const chg1d = r.changes && r.changes['1D'];
-          const isPos = chg1d > 0;
-          const cls = isPos ? 'ci-bull' : 'ci-bear';
-          const arrow = isPos ? '\u25b2' : '\u25bc';
-          const pct = chg1d !== null && chg1d !== undefined ? `${arrow}${Math.abs(chg1d).toFixed(1)}%` : '';
-          return `<span class="ci-tag ${cls}" title="${r.name}">${r.name.split(' ')[0]} ${pct}</span>`;
-        }).filter(Boolean).join('')
-      }</div>` : '';
       card.innerHTML = `
         <div class="tc-header"><span class="tc-title">${t.title}</span><span class="tc-conviction ${t.conviction==='HIGH'?'cv-high':'cv-med'}">${t.conviction}</span></div>
         <div class="tc-desc">${t.desc}</div>
         <div class="tc-signals">${tags}</div>
-        ${indicatorHtml}
         <div class="tc-strategy">Options approach: ${t.strategy}</div>`;
+      card.addEventListener('click', (e) => { e.stopPropagation(); focusCard(card, mkt); });
       grid.appendChild(card);
     });
   });
@@ -410,223 +452,164 @@ function buildMatrix(marketKey, containerId) {
 buildMatrix('US','matrix-us');
 buildMatrix('IN','matrix-in');
 
-// ─── PIPE DRAWING ─────────────────────────────────────────────────
-// State
-const drawn = { us: false, in: false };
-const lockedKey = { us: null, in: null }; // 'sym:^GSPC' or 'card:thesis-us-stl-0'
+// ─── FOCUS STATE ─────────────────────────────────────────────────────────────
+const focusState = { us: null, in: null };
 
-// Build a manhattan pipe path: straight down trunk, horizontal branch, straight down to card
-function pipePath(srcX, srcY, dstX, dstY, jY) {
-  const r = 6; // corner radius
-  const dx = dstX - srcX;
-  if (Math.abs(dx) < 2) {
-    // Straight vertical — no branch needed
-    return `M${srcX},${srcY} L${srcX},${dstY}`;
-  }
-  const sx = dx > 0 ? 1 : -1;
-  return [
-    `M${srcX},${srcY}`,
-    `L${srcX},${jY - r}`,
-    `Q${srcX},${jY} ${srcX + sx*r},${jY}`,
-    `L${dstX - sx*r},${jY}`,
-    `Q${dstX},${jY} ${dstX},${jY + r}`,
-    `L${dstX},${dstY}`
-  ].join(' ');
-}
-
-function drawAllLines(mkt) {
-  const tab = document.getElementById('tab-' + mkt);
-  const svgEl = document.getElementById('conn-' + mkt);
-  const tabRect = tab.getBoundingClientRect();
-  const marketKey = mkt === 'us' ? 'US' : 'IN';
-  const M = MARKETS[marketKey];
-
-  // Size SVG to full tab
-  const h = tab.offsetHeight, w = tab.offsetWidth;
-  svgEl.setAttribute('height', h);
-  svgEl.setAttribute('width', w);
-  svgEl.innerHTML = '';
-
-  // Junction Y = center of the hint bar between tables and matrix
-  const hintEl = document.getElementById('hint-' + mkt);
-  const hintRect = hintEl.getBoundingClientRect();
-  const jY = hintRect.top - tabRect.top + hintRect.height / 2;
-
-  const rows = tab.querySelectorAll('tr[data-sym]');
-  rows.forEach(row => {
-    const sym = row.dataset.sym;
-    const kgNodes = SYM_NODES[sym] || [];
-    if (!kgNodes.length) return;
-
-    const rowRect = row.getBoundingClientRect();
-    const nameCell = row.firstElementChild;
-    const nameCellRect = nameCell.getBoundingClientRect();
-    const srcX = nameCellRect.right - tabRect.left + 6;
-    const srcY = rowRect.top - tabRect.top + rowRect.height / 2;
-
-    ['stl','ltl','sts','lts'].forEach(quad => {
-      M[quad].forEach((thesis, i) => {
-        if (!kgNodes.some(n => thesis.nodes.includes(n))) return;
-        const cardId = `thesis-${mkt}-${quad}-${i}`;
-        const card = document.getElementById(cardId);
-        if (!card) return;
-        const cardRect = card.getBoundingClientRect();
-        const dstX = cardRect.left - tabRect.left + cardRect.width / 2;
-        const dstY = cardRect.top - tabRect.top;
-        const isBull = quad === 'stl' || quad === 'ltl';
-        const color = isBull ? '#4caf50' : '#ef5350';
-
-        const path = document.createElementNS('http://www.w3.org/2000/svg','path');
-        path.setAttribute('d', pipePath(srcX, srcY, dstX, dstY, jY));
-        path.setAttribute('stroke', color);
-        path.setAttribute('stroke-width', '1');
-        path.setAttribute('fill', 'none');
-        path.setAttribute('opacity', '0.14');
-        path.setAttribute('data-sym', sym);
-        path.setAttribute('data-card', cardId);
-        path.setAttribute('pointer-events', 'stroke');
-        path.classList.add('conn-line');
-        path.style.cursor = 'pointer';
-
-        // Line hover
-        path.addEventListener('mouseenter', () => {
-          if (lockedKey[mkt]) return;
-          activateSym(sym, mkt);
-        });
-        path.addEventListener('mouseleave', () => {
-          if (lockedKey[mkt]) return;
-          resetAll(mkt);
-        });
-        path.addEventListener('click', (e) => {
-          e.stopPropagation();
-          toggleLock('sym:' + sym, mkt);
-        });
-
-        svgEl.appendChild(path);
-      });
-    });
-  });
-
-  // Attach row listeners
-  rows.forEach(row => {
-    const sym = row.dataset.sym;
-    row.addEventListener('mouseenter', () => {
-      if (lockedKey[mkt]) return;
-      activateSym(sym, mkt);
-    });
-    row.addEventListener('mouseleave', () => {
-      if (lockedKey[mkt]) return;
-      resetAll(mkt);
-    });
-    row.addEventListener('click', () => toggleLock('sym:' + sym, mkt));
-  });
-
-  // Attach thesis card listeners
-  const mktKey = mkt === 'us' ? 'US' : 'IN';
-  const M2 = MARKETS[mktKey];
+function getLinkedCardIds(sym, mkt) {
+  const nodes = SYM_NODES[sym] || [];
+  if (!nodes.length) return [];
+  const M = MARKETS[mkt === 'us' ? 'US' : 'IN'];
+  const ids = [];
   ['stl','ltl','sts','lts'].forEach(quad => {
-    M2[quad].forEach((t, i) => {
-      const cardId = `thesis-${mkt}-${quad}-${i}`;
-      const card = document.getElementById(cardId);
-      if (!card) return;
-      card.addEventListener('mouseenter', () => {
-        if (lockedKey[mkt]) return;
-        activateCard(cardId, mkt);
-      });
-      card.addEventListener('mouseleave', () => {
-        if (lockedKey[mkt]) return;
-        resetAll(mkt);
-      });
-      card.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleLock('card:' + cardId, mkt);
-      });
+    M[quad].forEach((thesis, i) => {
+      if (nodes.some(n => thesis.nodes.includes(n))) ids.push(`thesis-${mkt}-${quad}-${i}`);
     });
   });
+  return ids;
+}
 
-  // Click on tab background to unlock
-  document.getElementById('tab-' + mkt).addEventListener('click', () => {
-    if (lockedKey[mkt]) { lockedKey[mkt] = null; resetAll(mkt); }
+function getCardNodes(cardId, mkt) {
+  const M = MARKETS[mkt === 'us' ? 'US' : 'IN'];
+  for (const quad of ['stl','ltl','sts','lts']) {
+    for (let i = 0; i < M[quad].length; i++) {
+      if (`thesis-${mkt}-${quad}-${i}` === cardId) return M[quad][i].nodes;
+    }
+  }
+  return [];
+}
+
+function getLinkedSymsForNodes(cardNodes) {
+  const syms = new Set();
+  Object.entries(SYM_NODES).forEach(([sym, nodes]) => {
+    if (nodes.some(n => cardNodes.includes(n))) syms.add(sym);
+  });
+  return syms;
+}
+
+// After hiding/showing rows, hide entire table blocks that have no visible rows
+function syncTableBlocks(mkt) {
+  document.querySelectorAll(`#tab-${mkt} .section-block:first-child [style*="margin-bottom"]`).forEach(block => {
+    const anyRow = block.querySelector('tr[data-sym]:not(.row-dimmed)');
+    block.classList.toggle('table-block-hidden', !anyRow);
+  });
+  // More reliable: scan every labelled table div
+  document.querySelectorAll(`#tab-${mkt} #${mkt === 'us' ? 'us' : 'in'}-tables > div`).forEach(block => {
+    const anyRow = block.querySelector('tr[data-sym]:not(.row-dimmed)');
+    block.classList.toggle('table-block-hidden', !anyRow);
   });
 }
 
-function activateSym(sym, mkt) {
-  const svgEl = document.getElementById('conn-' + mkt);
-  const tab = document.getElementById('tab-' + mkt);
-  // Dim all
-  svgEl.querySelectorAll('.conn-line').forEach(p => {
-    p.setAttribute('opacity', '0.04');
-    p.setAttribute('stroke-width', '0.5');
-    p.removeAttribute('filter');
+// After hiding/showing cards, hide quad cells that have no visible cards
+function syncQuadCells(mkt) {
+  document.querySelectorAll(`#tab-${mkt} .quad-cell`).forEach(cell => {
+    const anyCard = cell.querySelector('.thesis-card:not(.card-dimmed)');
+    cell.classList.toggle('quad-cell-hidden', !anyCard);
   });
-  // Glow matching lines
-  svgEl.querySelectorAll(`.conn-line[data-sym="${sym}"]`).forEach(p => {
-    p.setAttribute('opacity', '0.9');
-    p.setAttribute('stroke-width', '2.5');
-    p.setAttribute('filter', 'url(#line-glow)');
-    const card = document.getElementById(p.getAttribute('data-card'));
-    if (card) card.classList.add('card-lit');
-  });
-  // Highlight row
-  tab.querySelectorAll(`tr[data-sym="${sym}"]`).forEach(r => r.classList.add('row-active'));
 }
 
-function activateCard(cardId, mkt) {
-  const svgEl = document.getElementById('conn-' + mkt);
-  const tab = document.getElementById('tab-' + mkt);
-  // Dim all
-  svgEl.querySelectorAll('.conn-line').forEach(p => {
-    p.setAttribute('opacity', '0.04');
-    p.setAttribute('stroke-width', '0.5');
-    p.removeAttribute('filter');
+function resetFocusVisual(mkt) {
+  document.querySelectorAll(`#tab-${mkt} tr[data-sym]`).forEach(tr => {
+    tr.classList.remove('row-focused', 'row-dimmed');
   });
-  // Glow matching lines
-  svgEl.querySelectorAll(`.conn-line[data-card="${cardId}"]`).forEach(p => {
-    p.setAttribute('opacity', '0.9');
-    p.setAttribute('stroke-width', '2.5');
-    p.setAttribute('filter', 'url(#line-glow)');
-    // Highlight source rows
-    const sym = p.getAttribute('data-sym');
-    tab.querySelectorAll(`tr[data-sym="${sym}"]`).forEach(r => r.classList.add('row-active'));
+  document.querySelectorAll(`#tab-${mkt} .thesis-card`).forEach(card => {
+    card.classList.remove('card-focused', 'card-dimmed');
   });
-  // Highlight card
-  const card = document.getElementById(cardId);
-  if (card) card.classList.add('card-lit');
+  // Restore all table blocks and quad cells
+  document.querySelectorAll(`#tab-${mkt} .table-block-hidden`).forEach(el => el.classList.remove('table-block-hidden'));
+  document.querySelectorAll(`#tab-${mkt} .quad-cell-hidden`).forEach(el => el.classList.remove('quad-cell-hidden'));
 }
 
-function resetAll(mkt) {
-  const svgEl = document.getElementById('conn-' + mkt);
-  const tab = document.getElementById('tab-' + mkt);
-  svgEl.querySelectorAll('.conn-line').forEach(p => {
-    p.setAttribute('opacity', '0.14');
-    p.setAttribute('stroke-width', '1');
-    p.removeAttribute('filter');
-  });
-  tab.querySelectorAll('.card-lit').forEach(el => el.classList.remove('card-lit'));
-  tab.querySelectorAll('tr.row-active').forEach(el => el.classList.remove('row-active'));
+function resetFocus(mkt) {
+  focusState[mkt] = null;
+  resetFocusVisual(mkt);
+  updateHint(mkt, null);
 }
 
-function toggleLock(key, mkt) {
-  if (lockedKey[mkt] === key) {
-    lockedKey[mkt] = null;
-    resetAll(mkt);
+function focusRow(sym, mkt) {
+  const cur = focusState[mkt];
+  if (cur && cur.type === 'row' && cur.key === sym) { resetFocus(mkt); return; }
+
+  resetFocusVisual(mkt);
+  focusState[mkt] = { type: 'row', key: sym };
+
+  // Dim all rows except the clicked one
+  document.querySelectorAll(`#tab-${mkt} tr[data-sym]`).forEach(tr => {
+    if (tr.dataset.sym === sym) tr.classList.add('row-focused');
+    else tr.classList.add('row-dimmed');
+  });
+
+  // Show only linked thesis cards, dim others
+  const linked = new Set(getLinkedCardIds(sym, mkt));
+  document.querySelectorAll(`#tab-${mkt} .thesis-card`).forEach(card => {
+    if (linked.has(card.id)) card.classList.add('card-focused');
+    else card.classList.add('card-dimmed');
+  });
+
+  syncTableBlocks(mkt);
+  syncQuadCells(mkt);
+  updateHint(mkt, 'row');
+}
+
+function focusCard(cardEl, mkt) {
+  const cardId = cardEl.id;
+  const cur = focusState[mkt];
+  if (cur && cur.type === 'card' && cur.key === cardId) { resetFocus(mkt); return; }
+
+  resetFocusVisual(mkt);
+  focusState[mkt] = { type: 'card', key: cardId };
+
+  // Show only this card, dim all others
+  document.querySelectorAll(`#tab-${mkt} .thesis-card`).forEach(card => {
+    if (card.id === cardId) card.classList.add('card-focused');
+    else card.classList.add('card-dimmed');
+  });
+
+  // Show only linked indicator rows, dim others
+  const cardNodes = getCardNodes(cardId, mkt);
+  const linkedSyms = getLinkedSymsForNodes(cardNodes);
+  document.querySelectorAll(`#tab-${mkt} tr[data-sym]`).forEach(tr => {
+    if (linkedSyms.has(tr.dataset.sym)) tr.classList.add('row-focused');
+    else tr.classList.add('row-dimmed');
+  });
+
+  syncTableBlocks(mkt);
+  syncQuadCells(mkt);
+  updateHint(mkt, 'card');
+}
+
+function updateHint(mkt, mode) {
+  const hint = document.getElementById('hint-' + mkt);
+  if (!hint) return;
+  if (mode === 'row') {
+    hint.innerHTML = 'Showing only thesis cards linked to this indicator &nbsp;·&nbsp; <strong>click the same row again to reset</strong>';
+    hint.classList.add('has-active');
+  } else if (mode === 'card') {
+    hint.innerHTML = 'Showing only indicators relevant to this thesis &nbsp;·&nbsp; <strong>click the same card again to reset</strong>';
+    hint.classList.add('has-active');
   } else {
-    lockedKey[mkt] = key;
-    if (key.startsWith('sym:')) activateSym(key.slice(4), mkt);
-    else if (key.startsWith('card:')) activateCard(key.slice(5), mkt);
+    hint.innerHTML = '↓ &nbsp; click any indicator row to see its linked thesis cards &nbsp;·&nbsp; click any thesis card to see its relevant indicators &nbsp; ↓';
+    hint.classList.remove('has-active');
   }
 }
 
-// ─── INIT ──────────────────────────────────────────────────────────
-// Draw US lines immediately after layout
-requestAnimationFrame(() => { drawAllLines('us'); drawn['us'] = true; });
-
-// Redraw on resize
-window.addEventListener('resize', () => {
-  ['us','in'].forEach(mkt => {
-    if (drawn[mkt]) drawAllLines(mkt);
+// ─── ROW CLICK LISTENERS ─────────────────────────────────────────────────────
+function attachRowListeners(containerId, mkt) {
+  const container = document.getElementById(containerId);
+  container.querySelectorAll('tr[data-sym]').forEach(tr => {
+    tr.addEventListener('click', () => focusRow(tr.dataset.sym, mkt));
   });
-});
+}
+attachRowListeners('us-tables', 'us');
+attachRowListeners('in-tables', 'in');
+
+// Tab switch resets focus
+function switchTab(id, btn) {
+  resetFocus('us'); resetFocus('in');
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
 
 </script>
 </body>
