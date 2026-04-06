@@ -147,126 +147,6 @@ tr.row-dimmed { display: none; }
 tr[data-sym] { cursor: pointer; }
 .thesis-card { cursor: pointer; }
 
-/* ── EXPANDED CARD VIEW ── */
-.expanded-overlay {
-  display: none;
-  border: 1px solid #222;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #0d0d0d;
-  margin-top: 4px;
-}
-.expanded-overlay.visible { display: block; }
-.exp-hdr {
-  display: flex; justify-content: space-between; align-items: flex-start;
-  padding: 14px 20px; background: #111; border-bottom: 1px solid #1e1e1e;
-  gap: 12px;
-}
-.exp-hdr-left { flex: 1; min-width: 0; }
-.exp-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
-.exp-desc { font-size: 11px; color: #666; line-height: 1.55; }
-.exp-hdr-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-.exp-close {
-  background: #1a1a1a; border: 1px solid #333; color: #888;
-  border-radius: 4px; cursor: pointer; font-size: 16px; line-height: 1;
-  padding: 4px 8px; transition: color 0.15s, border-color 0.15s;
-}
-.exp-close:hover { color: #fff; border-color: #555; }
-.exp-body { display: grid; grid-template-columns: 1fr 1fr 1fr; min-height: 320px; }
-.exp-col { padding: 18px 20px; border-right: 1px solid #141414; }
-.exp-col:last-child { border-right: none; }
-.exp-col-title {
-  font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-  margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #1a1a1a;
-}
-.exp-col-title.ct-signals { color: #64b5f6; }
-.exp-col-title.ct-research { color: #ffcc80; }
-.exp-col-title.ct-trades { color: #81c784; }
-
-/* Signal impact items */
-.exp-impact { margin-bottom: 13px; padding-bottom: 13px; border-bottom: 1px solid #131313; }
-.exp-impact:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.exp-impact-name { font-size: 10px; font-weight: 700; color: #aaa; margin-bottom: 4px; letter-spacing: 0.3px; }
-.exp-impact-line { font-size: 11px; color: #777; line-height: 1.6; }
-
-/* Research links */
-.exp-link { display: block; margin-bottom: 12px; text-decoration: none; padding-bottom: 12px; border-bottom: 1px solid #131313; }
-.exp-link:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.exp-link:hover .exp-link-src { color: #fff; }
-.exp-link-src { font-size: 11px; font-weight: 600; color: #aaa; margin-bottom: 3px; transition: color 0.15s; display: flex; align-items: center; gap: 5px; }
-.exp-link-arrow { font-size: 10px; color: #ffcc80; }
-.exp-link-desc { font-size: 10px; color: #555; line-height: 1.5; }
-
-/* Trade recommendation cards */
-.exp-trade { margin-bottom: 14px; padding: 12px 14px; background: #111; border: 1px solid #1e1e1e; border-radius: 5px; }
-.exp-trade:last-child { margin-bottom: 0; }
-.exp-trade-num { font-size: 9px; font-weight: 700; color: #81c784; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px; }
-.exp-trade-name { font-size: 12px; font-weight: 700; color: #ddd; margin-bottom: 8px; }
-.exp-trade-row { display: flex; justify-content: space-between; font-size: 10px; margin-bottom: 3px; }
-.exp-trade-label { color: #444; }
-.exp-trade-val { color: #aaa; text-align: right; max-width: 60%; }
-.exp-trade-rationale { margin-top: 7px; font-size: 10px; color: #555; line-height: 1.5; border-top: 1px solid #1a1a1a; padding-top: 6px; }
-.exp-strategy-header { font-size: 10px; color: #555; margin-bottom: 14px; padding: 8px 10px; background: #0a0a0a; border-radius: 4px; line-height: 1.5; }
-
-
-/* ── DATA FRESHNESS BAR ── */
-.freshness-bar {
-  display: flex; align-items: center; gap: 10px;
-  padding: 5px 18px; font-size: 11px; color: #555;
-  border-bottom: 1px solid #1a1a1a;
-  background: #060606;
-}
-.freshness-dot {
-  width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
-  animation: pulse-dot 2.5s infinite;
-}
-.freshness-dot.fresh  { background: #4caf50; box-shadow: 0 0 6px #4caf5080; }
-.freshness-dot.stale  { background: #ffb300; box-shadow: 0 0 6px #ffb30080; }
-.freshness-dot.old    { background: #ef5350; box-shadow: 0 0 6px #ef535080; }
-@keyframes pulse-dot {
-  0%,100% { opacity:1; } 50% { opacity:.35; }
-}
-#freshness-text { color: #555; letter-spacing: 0.02em; }
-#freshness-text strong { color: #888; font-weight: 500; }
-#freshness-text .frs-age { color: #444; margin-left: 6px; }
-
-/* ── THESIS CARD LIFECYCLE BADGES ── */
-.card-meta {
-  display: flex; align-items: center; gap: 6px;
-  margin-top: 7px; padding-top: 6px;
-  border-top: 1px solid #1e1e1e;
-  font-size: 10px; color: #3a3a3a;
-}
-.card-meta .meta-age { color: #3a3a3a; }
-.card-meta .meta-updated { color: #2e2e2e; }
-.badge-new {
-  font-size: 9px; font-weight: 700; letter-spacing: 0.06em;
-  padding: 1px 5px; border-radius: 3px;
-  background: #1a3a1a; color: #66bb6a; border: 1px solid #2e7d32;
-  animation: pulse-new 1.8s infinite;
-}
-@keyframes pulse-new {
-  0%,100% { opacity:1; box-shadow:0 0 0 0 #4caf5040; }
-  50%      { opacity:.85; box-shadow:0 0 0 4px #4caf5000; }
-}
-.badge-retiring {
-  font-size: 9px; font-weight: 700; letter-spacing: 0.06em;
-  padding: 1px 5px; border-radius: 3px;
-  background: #2a1e00; color: #ffb300; border: 1px solid #7a5000;
-}
-.thesis-card.card-retiring {
-  opacity: 0.55;
-  border-color: #3a2800 !important;
-  position: relative;
-}
-.thesis-card.card-retiring::before {
-  content: 'RETIRING';
-  position: absolute; top: 0; right: 0;
-  background: #7a5000; color: #ffb300;
-  font-size: 9px; font-weight: 700; letter-spacing: 0.08em;
-  padding: 2px 6px; border-radius: 0 3px 0 3px;
-}
-
 /* ── EXPANDED OVERLAY — UPDATED LAYOUT ── */
 .expanded-overlay {
   display: none; flex-direction: column;
@@ -1019,11 +899,12 @@ function buildExpandedView(cardEl, mkt) {
         </div>
       </div>
     </div>`;
+  overlay.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function collapseCard(mkt) {
   const overlay = document.getElementById('expanded-' + mkt);
-  if (overlay) { overlay.classList.remove('visible'); overlay.innerHTML = ''; }
+  if (overlay) { overlay.style.display = 'none'; overlay.innerHTML = ''; }
   const matrixEl = document.getElementById('matrix-' + mkt);
   if (matrixEl) matrixEl.style.display = '';
   resetFocus(mkt);
