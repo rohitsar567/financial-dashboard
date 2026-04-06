@@ -529,14 +529,14 @@ function buildTables(sections, containerId, extraSections) {
   let html = '';
   sections.forEach(s => {
     const rows = DATA[s.key] || [];
-    html += `<div style="margin-bottom:16px">
+    html += `<div class="tbl-section" style="margin-bottom:16px">
       <div class="tbl-label" style="background:${s.bg};color:${s.color}">${s.label}</div>
       ${renderTable(rows, s.filter||null)}
     </div>`;
   });
   if (extraSections) extraSections.forEach(s => {
     const rows = DATA[s.key] || [];
-    html += `<div style="margin-bottom:16px">
+    html += `<div class="tbl-section" style="margin-bottom:16px">
       <div class="tbl-label" style="background:${s.bg};color:${s.color}">${s.label}</div>
       ${renderTable(rows, s.filter||null)}
     </div>`;
@@ -778,18 +778,25 @@ function syncTableBlocks(mkt) {
     container.querySelectorAll('tr[data-sym], .tbl-section').forEach(el => el.classList.remove('faded'));
     return;
   }
-  let activeSyms = new Set();
+  // For card focus: card nodes are KG node IDs; rows use Yahoo symbols.
+  // Check each row's symbol via SYM_NODES to see if it maps to a card node.
   if (state.startsWith('card-')) {
-    const nodes = getCardNodes(state.slice(5), mkt);
-    nodes.forEach(n => activeSyms.add(n));
+    const cardNodes = new Set(getCardNodes(state.slice(5), mkt));
+    container.querySelectorAll('tr[data-sym]').forEach(tr => {
+      const rowNodes = SYM_NODES[tr.dataset.sym] || [];
+      const linked = rowNodes.some(n => cardNodes.has(n));
+      tr.classList.toggle('faded', !linked);
+    });
   } else if (state.startsWith('row-')) {
-    activeSyms.add(state.slice(4));
+    // Row focus: only that exact symbol stays visible
+    const sym = state.slice(4);
+    container.querySelectorAll('tr[data-sym]').forEach(tr => {
+      tr.classList.toggle('faded', tr.dataset.sym !== sym);
+    });
   }
-  container.querySelectorAll('tr[data-sym]').forEach(tr => {
-    tr.classList.toggle('faded', !activeSyms.has(tr.dataset.sym));
-  });
+  // Fade entire section if all its rows are faded
   container.querySelectorAll('.tbl-section').forEach(sec => {
-    const anyVisible = [...sec.querySelectorAll('tr[data-sym]')].some(tr => activeSyms.has(tr.dataset.sym));
+    const anyVisible = [...sec.querySelectorAll('tr[data-sym]')].some(tr => !tr.classList.contains('faded'));
     sec.classList.toggle('faded', !anyVisible);
   });
 }
@@ -803,10 +810,13 @@ function syncQuadCells(mkt) {
     return;
   }
   if (state.startsWith('row-')) {
+    // Row focus: card is linked if any of its KG nodes match the symbol's node IDs
     const sym = state.slice(4);
+    const symNodeIds = SYM_NODES[sym] || [sym];
     matrixEl.querySelectorAll('.thesis-card').forEach(card => {
       const nodes = JSON.parse(card.dataset.nodes || '[]');
-      card.classList.toggle('faded', !nodes.includes(sym));
+      const linked = symNodeIds.some(n => nodes.includes(n));
+      card.classList.toggle('faded', !linked);
     });
     matrixEl.querySelectorAll('.matrix-quad').forEach(quad => {
       const anyVisible = [...quad.querySelectorAll('.thesis-card')].some(c => !c.classList.contains('faded'));
