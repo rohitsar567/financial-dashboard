@@ -836,7 +836,11 @@ function focusRow(sym, mkt) {
   const key = 'row-' + sym;
   if (focusState[mkt] === key) { resetFocus(mkt); return; }
   focusState[mkt] = key;
-  collapseCard(mkt);
+  // Close overlay without resetting focusState (collapseCard calls resetFocus which would wipe state)
+  const _ov = document.getElementById('expanded-' + mkt);
+  if (_ov) { _ov.style.display = 'none'; _ov.innerHTML = ''; }
+  const _mx = document.getElementById('matrix-' + mkt);
+  if (_mx) _mx.style.display = '';
   syncTableBlocks(mkt);
   syncQuadCells(mkt);
 }
