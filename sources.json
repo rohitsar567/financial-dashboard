@@ -1,0 +1,36 @@
+{
+  "US": [
+    "J.P. Morgan Global Research (jpmorgan.com/global/research) — Gold standard for US macro and equity research",
+    "Goldman Sachs Global Investment Research (goldmansachs.com/insights) — Influential market strategy and economic forecasts",
+    "Federal Reserve / FRED (fred.stlouisfed.org) — Definitive source for FOMC policy, Beige Book, and 800K+ economic data series",
+    "BlackRock Investment Institute (blackrock.com/institute) — Weekly macro commentaries from world's largest asset manager",
+    "PIMCO Insights (pimco.com/en-us/insights) — Premier US and global fixed-income/bond market research",
+    "Bureau of Labor Statistics (bls.gov) — Official CPI, PPI, and monthly Nonfarm Payrolls data",
+    "Bureau of Economic Analysis (bea.gov) — Official US GDP, PCE (Fed's preferred inflation gauge), and trade balance",
+    "CME FedWatch Tool (cmegroup.com) — Real-time interest rate probabilities and commodity futures data",
+    "CBOE VIX (cboe.com) — Volatility index, options flow data, and market sentiment",
+    "Wall Street Journal (wsj.com) — Premier daily for US business, corporate news, and economic policy",
+    "Bloomberg Markets (bloomberg.com/markets) — Real-time financial news, institutional market data",
+    "Bridgewater Associates (bridgewater.com/research-and-insights) — Ray Dalio's debt cycle and macroeconomic insights",
+    "Oaktree Capital / Howard Marks Memos (oaktreecapital.com/insights) — Market cycle and credit market psychology",
+    "Morgan Stanley Research (morganstanley.com/ideas) — Tech sector analysis and macro outlooks",
+    "US Treasury Yield Curve (treasury.gov) — Official daily Treasury yield rates"
+  ],
+  "IN": [
+    "Reserve Bank of India (rbi.org.in) — Definitive source for monetary policy, financial stability reports, and forex data",
+    "NSE India (nseindia.com) — Live market data, option chains, FII/DII activity, and corporate filings",
+    "NITI Aayog (niti.gov.in) — Government policy think tank; comprehensive economic development indices",
+    "MOSPI (mospi.gov.in) — Official India GDP, CPI, IIP, and unemployment data",
+    "Economic Times (economictimes.indiatimes.com) — India's most widely read financial daily",
+    "Moneycontrol (moneycontrol.com) — Real-time market data, portfolio tracking, and market news",
+    "Business Standard (business-standard.com) — Rigorous economic journalism and banking sector coverage",
+    "CMIE (cmie.com) — High-frequency employment and capex data; premier private economic research",
+    "MCX India (mcxindia.com) — India's leading commodity derivatives exchange for gold, silver, crude",
+    "CCIL (ccilindia.com) — Indian sovereign bond yields, money markets, and fixed income data",
+    "Motilal Oswal (motilaloswal.com) — Deep-dive Wealth Creation Studies and equity research",
+    "Marcellus Investment Managers (marcellus.in) — Consistent Compounders philosophy and deeply researched newsletters",
+    "SBI Ecowrap (sbi.co.in) — Highly respected macro-economic research notes from SBI's economics department",
+    "BSE India (bseindia.com) — Sensex data, historical stock prices, and corporate announcements",
+    "Mint / LiveMint (livemint.com) — High-quality editorial content and WSJ-syndicated coverage"
+  ]
+}
