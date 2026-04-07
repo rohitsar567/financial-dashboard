@@ -1388,6 +1388,18 @@ function fmtDate(iso) {
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 }
 
+
+function artLink(title, srcUrl) {
+  // Article URLs in the data all point to the source's homepage (no specific article URLs).
+  // Generate a Google search for the article title on that source's domain so users
+  // can find the actual article or closely related coverage.
+  try {
+    const domain = new URL(srcUrl).hostname.replace(/^www\./, '');
+    return 'https://www.google.com/search?q=' + encodeURIComponent('"' + title + '" site:' + domain);
+  } catch(e) {
+    return srcUrl || '#';
+  }
+}
 function ageText(isoDate) {
   const now = Date.now();
   const then = new Date(isoDate + 'T00:00:00Z').getTime();
@@ -1739,7 +1751,7 @@ function buildCardHistorySection(thesisTitle, mkt) {
   const entriesHtml = allEntries.map(e => {
     if (e.type === 'live') {
       const arts = (e.articles || []).slice(0,4).map(a =>
-        `<div class="hist-entry-art"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a></div>`
+        `<div class="hist-entry-art"><a href="${artLink(a.title, a.url)}" target="_blank" rel="noopener">${a.title}</a></div>`
       ).join('');
       return `<div class="hist-entry">
         <div class="hist-entry-date live-date">🔴 Live News · ${e.date.slice(0,16).replace('T',' ')} UTC</div>
@@ -1751,7 +1763,7 @@ function buildCardHistorySection(thesisTitle, mkt) {
         sources.forEach(src => (src.articles||[]).slice(0,1).forEach(a => flatArts.push(a)))
       );
       const arts = flatArts.slice(0,5).map(a =>
-        `<div class="hist-entry-art"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a></div>`
+        `<div class="hist-entry-art"><a href="${artLink(a.title, a.url)}" target="_blank" rel="noopener">${a.title}</a></div>`
       ).join('');
       return `<div class="hist-entry">
         <div class="hist-entry-date snap-date">📚 Research Snapshot · ${e.date.slice(0,10)}</div>
@@ -1833,7 +1845,7 @@ function buildResearchPanel(market, quad, idx) {
       const articlesHtml = (src.articles || []).map(a => {
         const artLive = a.is_live ? '<span class="rp-live-badge">LIVE</span>' : '';
         return `<div class="rp-article">
-          <a class="rp-article-title" href="${a.url}" target="_blank" rel="noopener">${a.title}${artLive}</a>
+          <a class="rp-article-title" href="${artLink(a.title, src.url)}" target="_blank" rel="noopener">${a.title}${artLive}</a>
           <div class="rp-article-summary">${a.summary}</div>
         </div>`;
       }).join('');
@@ -1876,7 +1888,7 @@ function buildResearchPanel(market, quad, idx) {
           let artList = '';
           if (e.type === 'live') {
             artList = (e.articles || []).map(a =>
-              `<div class="rp-history-art"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a></div>`
+              `<div class="rp-history-art"><a href="${artLink(a.title, a.url)}" target="_blank" rel="noopener">${a.title}</a></div>`
             ).join('');
           } else {
             // Flatten first 3 articles from each category
@@ -1885,7 +1897,7 @@ function buildResearchPanel(market, quad, idx) {
               sources.forEach(src => (src.articles || []).slice(0,2).forEach(a => flatArts.push(a)));
             });
             artList = flatArts.slice(0,8).map(a =>
-              `<div class="rp-history-art"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a></div>`
+              `<div class="rp-history-art"><a href="${artLink(a.title, a.url)}" target="_blank" rel="noopener">${a.title}</a></div>`
             ).join('');
           }
           return `<div class="rp-history-entry">
@@ -2162,7 +2174,11 @@ function applyTradeOverlays() {
         ? `<span class="${td.pct_from_entry >= 0 ? 'pct-pos' : 'pct-neg'}">${td.pct_from_entry > 0 ? '+' : ''}${td.pct_from_entry.toFixed(1)}%</span>`
         : '<span>—</span>';
       const statusCls = td.status === 'on-track' ? 'live-status-ok' : td.status === 'at-risk' ? 'live-status-warn' : td.status === 'off-track' ? 'live-status-bad' : 'live-status-uk';
-      badge.innerHTML = `<span class="live-price-label">LIVE</span><span class="live-price-val">${td.current_price != null ? td.current_price : '—'}</span>${pct}<span class="${statusCls}">${td.status || '—'}</span>`;
+      const recDate = td.recommended_at ? fmtDate(td.recommended_at) : null;
+      const recRow = recDate
+        ? `<div class="rec-since-row"><span class="rec-since-icon">📅</span>Recommended ${recDate}<span class="rec-since-return-note">return shown since this date</span></div>`
+        : '';
+      badge.innerHTML = recRow + `<span class="live-price-label">LIVE</span><span class="live-price-val">${td.current_price != null ? td.current_price : '—'}</span>${pct}<span class="pct-since-label">since rec</span><span class="${statusCls}">${td.status || '—'}</span>`;
     });
   });
 }
@@ -2299,7 +2315,7 @@ function buildThesisView(mkt, market, quad, idx, t, data, research) {
       if (src.articles && src.articles[0]) topArts.push({src: src.source, art: src.articles[0], url: src.articles[0].url});
     });
     const artItems = topArts.slice(0,3).map(({src, art, url}) =>
-      `<div class="tv-ev-item"><a href="${url}" target="_blank" rel="noopener">${art.title}</a><div style="color:#2a2a2a;font-size:9px;margin-top:2px">${art.summary.slice(0,120)}…</div></div>`
+      `<div class="tv-ev-item"><a href="${artLink(art.title, url)}" target="_blank" rel="noopener">${art.title}</a><div style="color:#2a2a2a;font-size:9px;margin-top:2px">${art.summary.slice(0,120)}…</div></div>`
     ).join('');
     return `<div class="tv-evidence-card">
       <div class="tv-ev-cat">${catShortTV[cat] || cat}</div>
@@ -2495,7 +2511,7 @@ function buildHistCard(title, th) {
   const entriesHtml = allEntries.slice(0,20).map(e => {
     if (e.type === 'live') {
       const arts = (e.articles || []).slice(0,3).map(a =>
-        `<div class="hist-entry-art"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a></div>`
+        `<div class="hist-entry-art"><a href="${artLink(a.title, a.url)}" target="_blank" rel="noopener">${a.title}</a></div>`
       ).join('');
       return `<div class="hist-entry">
         <div class="hist-entry-date live-date">🔴 ${e.date.slice(0,16).replace('T',' ')} UTC</div>
@@ -2552,7 +2568,7 @@ function buildHistCard(title, th) {
     const catRows = Object.entries(latestSnap.categories).map(([cat, srcs]) => {
       const artRows = (srcs||[]).flatMap(src =>
         (src.articles||[]).slice(0,2).map(a =>
-          `<div class="hist-source-art"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a></div>`
+          `<div class="hist-source-art"><a href="${artLink(a.title, src.url || a.url)}" target="_blank" rel="noopener">${a.title}</a></div>`
         )
       ).slice(0,4).join('');
       return artRows ? `<div class="hist-source-cat">${cat}</div>${artRows}` : '';
