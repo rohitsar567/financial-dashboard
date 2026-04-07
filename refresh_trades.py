@@ -23,15 +23,15 @@ import yfinance as yf
 DASHBOARD_DIR = Path('~/opsmatters-dashboard').expanduser()
 TRADES_JSON   = DASHBOARD_DIR / 'trades.json'
 ARCHIVE_JSON  = DASHBOARD_DIR / 'research_archive.json'
-CARDS_JSON    = Path('/tmp/claude/cards_data.json')
+# Look in opsmatters-dashboard first (permanent); fall back to /tmp/claude (session copy)
+CARDS_JSON    = DASHBOARD_DIR / 'cards_data.json'
+if not CARDS_JSON.exists():
+    CARDS_JSON = Path('/tmp/claude/cards_data.json')
 
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s  %(levelname)-8s  %(message)s',
-    handlers=[
-        logging.StreamHandler(sys.stdout),
-        logging.FileHandler(DASHBOARD_DIR / 'trades_refresh.log'),
-    ]
+    handlers=[logging.StreamHandler(sys.stdout)],
 )
 log = logging.getLogger(__name__)
 
@@ -61,8 +61,13 @@ def fetch_price(ticker_raw):
 def parse_entry_price(entry_str):
     """Extract a numeric price from entry strings like 'Buy $115 strike call'."""
     nums = re.findall(r'\$?([\d,]+(?:\.\d+)?)', entry_str or '')
-    if nums:
-        return float(nums[0].replace(',', ''))
+    for n in nums:
+        s = n.replace(',', '')
+        if s:
+            try:
+                return float(s)
+            except ValueError:
+                continue
     return None
 
 def trade_status(current, entry_ref, is_long):

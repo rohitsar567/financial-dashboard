@@ -17,18 +17,18 @@ from pathlib import Path
 DASHBOARD_DIR  = Path('~/opsmatters-dashboard').expanduser()
 DATA_JSON      = DASHBOARD_DIR / 'data.json'
 ARCHIVE_JSON   = DASHBOARD_DIR / 'research_archive.json'
-CARDS_JSON     = Path('/tmp/claude/cards_data.json')
 LOG_FILE       = DASHBOARD_DIR / 'thesis_refresh.log'
+# Look in opsmatters-dashboard first (permanent); fall back to /tmp/claude (session copy)
+CARDS_JSON     = DASHBOARD_DIR / 'cards_data.json'
+if not CARDS_JSON.exists():
+    CARDS_JSON = Path('/tmp/claude/cards_data.json')
 
 TODAY = datetime.now(timezone.utc).strftime('%Y-%m-%d')
 
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s  %(levelname)-8s  %(message)s',
-    handlers=[
-        logging.FileHandler(LOG_FILE),
-        logging.StreamHandler(sys.stdout),
-    ],
+    handlers=[logging.StreamHandler(sys.stdout)],
 )
 log = logging.getLogger(__name__)
 
