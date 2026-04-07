@@ -993,7 +993,8 @@ function switchTab(id, btn) {
 
 // ─── DYNAMIC DATA LOADING ────────────────────────────────────────────────────
 async function loadData() {
-  const resp = await fetch('/data.json?_=' + Date.now());
+  const resp = await fetch('./data.json?_=' + Date.now());
+  if (!resp.ok) throw new Error('data.json fetch failed: ' + resp.status);
   const raw = await resp.json();
   // Strip 'as_of' key from DATA so buildTables only sees section arrays
   const { as_of, ...sections } = raw;
@@ -1005,7 +1006,7 @@ async function init() {
   try {
     await loadData();
   } catch(e) {
-    console.warn('Could not load data.json, using embedded data:', e);
+    console.warn('Could not load data.json:', e);
   }
   buildTables(US_SECTIONS, 'us-tables');
   buildTables(IN_SECTIONS, 'in-tables', IN_EXTRA);
@@ -1024,8 +1025,10 @@ async function refreshData() {
     // Re-attach listeners after DOM rebuild
     attachRowListeners('us-tables', 'us');
     attachRowListeners('in-tables', 'in');
+    // Re-sync focus state so faded rows stay consistent after table rebuild
+    syncTableBlocks('us');
+    syncTableBlocks('in');
     console.log('Data refreshed at', DATA_AS_OF);
-    // Freshness bar auto-updates via its own 60s interval reading DATA_AS_OF
   } catch(e) {
     console.warn('Data refresh failed:', e);
   }
