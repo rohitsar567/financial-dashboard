@@ -587,6 +587,121 @@ tr[data-sym].faded td { opacity: 0.12; }
   transition: background 0.15s, border-color 0.15s;
 }
 .tv-open-btn:hover { background: #0d250d; border-color: #2a5a2a; }
+
+/* ── HISTORY TAB ── */
+.hist-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 18px; }
+.hist-search {
+  background: #0a0a0a; border: 1px solid #1a1a1a; color: #aaa;
+  padding: 6px 12px; border-radius: 3px; font-size: 11px; width: 220px;
+}
+.hist-search:focus { border-color: #333; outline: none; }
+.hist-filter-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.hist-filter-btn {
+  padding: 4px 12px; font-size: 10px; font-weight: 600; letter-spacing: 0.4px;
+  background: #0a0a0a; border: 1px solid #1a1a1a; color: #333;
+  border-radius: 3px; cursor: pointer; transition: all 0.15s;
+}
+.hist-filter-btn:hover { color: #aaa; border-color: #333; }
+.hist-filter-btn.active { background: #141414; color: #ccc; border-color: #333; }
+.hist-stats { font-size: 10px; color: #2a2a2a; margin-left: auto; }
+.hist-grid { display: flex; flex-direction: column; gap: 8px; }
+.hist-card {
+  background: #0a0a0a; border: 1px solid #141414;
+  border-radius: 4px; overflow: hidden;
+}
+.hist-card:hover { border-color: #222; }
+.hist-card[data-retired="true"] { opacity: 0.6; }
+.hist-card-hdr {
+  padding: 12px 14px; cursor: pointer; display: flex; align-items: center; gap: 10px;
+  transition: background 0.15s;
+}
+.hist-card-hdr:hover { background: #0c0c0c; }
+.hist-card-main { flex: 1; min-width: 0; }
+.hist-card-title-row { display: flex; align-items: center; gap: 7px; margin-bottom: 4px; flex-wrap: wrap; }
+.hist-card-title { font-size: 12px; font-weight: 600; color: #bbb; line-height: 1.3; }
+.hist-badge {
+  font-size: 8px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase;
+  padding: 2px 6px; border-radius: 2px;
+}
+.hist-badge-active  { background: #0a1a0a; color: #4caf50; border: 1px solid #1a3a1a; }
+.hist-badge-retired { background: #1a0a00; color: #ffb300; border: 1px solid #3a2000; }
+.hist-badge-mkt { background: #0a0a1a; color: #5a7aaa; border: 1px solid #1a1a3a; }
+.hist-card-meta { font-size: 10px; color: #2a2a2a; margin-bottom: 5px; }
+.hist-card-counts { display: flex; gap: 10px; flex-wrap: wrap; }
+.hist-count-pill {
+  font-size: 9px; color: #1a1a1a; border: 1px solid #141414;
+  background: #080808; border-radius: 2px; padding: 2px 7px;
+}
+.hist-count-pill.has-data { color: #2a5a2a; border-color: #1a3a1a; background: #0a1a0a; }
+.hist-expand-arrow { color: #2a2a2a; font-size: 10px; flex-shrink: 0; }
+.hist-card-hdr:hover .hist-expand-arrow { color: #555; }
+.hist-timeline { padding: 0 14px 14px; }
+.hist-entry { padding: 8px 0; border-bottom: 1px solid #0d0d0d; }
+.hist-entry:last-child { border-bottom: none; padding-bottom: 0; }
+.hist-entry-date {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.hist-entry-date.live-date  { color: #2a5a2a; }
+.hist-entry-date.snap-date  { color: #2a2a5a; }
+.hist-entry-date.trade-date { color: #3a3a1a; }
+.hist-entry-art { margin-bottom: 3px; padding-left: 10px; }
+.hist-entry-art a { color: #3a5a7a; text-decoration: none; font-size: 10px; }
+.hist-entry-art a:hover { color: #6a8aaa; }
+.hist-empty { font-size: 10px; color: #222; padding: 8px 0; text-align: center; }
+/* History section toggles (trades / sources inside a hist-card) */
+.hist-section-toggle {
+  margin-top: 10px; padding: 6px 10px;
+  background: #080808; border: 1px solid #161616; border-radius: 3px;
+  font-size: 9px; font-weight: 700; letter-spacing: 0.6px; color: #2a2a2a;
+  text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between;
+}
+.hist-section-toggle:hover { border-color: #222; color: #444; }
+.hist-section-body { margin-top: 4px; }
+.hist-trade-row {
+  display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap;
+  padding: 4px 0; border-bottom: 1px solid #0c0c0c; font-size: 10px;
+}
+.hist-trade-row:last-child { border-bottom: none; }
+.hist-trade-name { color: #555; flex: 1; min-width: 120px; }
+.hist-trade-ticker { color: #3a5a3a; font-weight: 600; font-size: 9px; }
+.hist-trade-pct.pos { color: #4caf50; font-weight: 700; }
+.hist-trade-pct.neg { color: #ef5350; font-weight: 700; }
+.hist-trade-status-ok   { font-size: 9px; color: #4caf50; }
+.hist-trade-status-warn { font-size: 9px; color: #ffb300; }
+.hist-trade-status-bad  { font-size: 9px; color: #ef5350; }
+.hist-source-cat { font-size: 8px; font-weight: 700; color: #2a2a5a; letter-spacing: 0.5px; text-transform: uppercase; margin-top: 6px; margin-bottom: 2px; }
+.hist-source-art a { color: #2a4a6a; text-decoration: none; font-size: 10px; }
+.hist-source-art a:hover { color: #5a8aaa; }
+/* Live trade price overlay on exp-trade cards */
+.trade-live-badge {
+  margin-top: 5px; padding: 4px 8px; background: #080808;
+  border: 1px solid #1a1a1a; border-radius: 3px;
+  font-size: 10px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+}
+.live-price-label {
+  font-size: 8px; font-weight: 700; letter-spacing: 0.8px;
+  color: #4caf50; background: #0a1a0a; border: 1px solid #1a3a1a;
+  border-radius: 2px; padding: 1px 4px;
+}
+.live-price-val { color: #888; font-weight: 600; }
+.pct-pos { color: #4caf50; font-weight: 700; }
+.pct-neg { color: #ef5350; font-weight: 700; }
+.live-status-ok   { font-size: 9px; font-weight: 700; color: #4caf50; }
+.live-status-warn { font-size: 9px; font-weight: 700; color: #ffb300; }
+.live-status-bad  { font-size: 9px; font-weight: 700; color: #ef5350; }
+.live-status-uk   { font-size: 9px; color: #333; }
+/* In-card article history (collapsible section at bottom of expanded card) */
+.exp-card-history { border-top: 1px solid #111; margin-top: 14px; padding-top: 10px; }
+.exp-card-hist-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer; padding: 6px 0; font-size: 9px; font-weight: 700;
+  letter-spacing: 0.6px; color: #1a1a3a; text-transform: uppercase;
+}
+.exp-card-hist-toggle:hover { color: #3a3a6a; }
+.exp-card-hist-arrow { font-size: 10px; color: #1a1a3a; transition: transform 0.2s; }
+.exp-card-hist-arrow.open { transform: rotate(90deg); }
+.exp-card-hist-body { display: flex; flex-direction: column; gap: 0; }
 </style>
 </head>
 <body>
@@ -605,6 +720,9 @@ tr[data-sym].faded td { opacity: 0.12; }
   </button>
   <button class="tab-btn" onclick="switchTab('in',this)">
     🇮🇳 India <span class="tab-badge">Nifty · Bank Nifty · INR · FII</span>
+  </button>
+  <button class="tab-btn" onclick="switchTab('history',this)" style="margin-left:auto">
+    📚 History <span class="tab-badge">All thesis snapshots</span>
   </button>
 </div>
 
@@ -677,12 +795,35 @@ tr[data-sym].faded td { opacity: 0.12; }
   </div>
 </div>
 
+<!-- HISTORY TAB -->
+<div id="tab-history" class="tab-content">
+  <div class="section-block">
+    <div class="section-heading">Thesis History</div>
+    <div class="section-sub">All investment theses — active &amp; retired — with their full research, news, and trade history</div>
+    <div class="hist-controls">
+      <input class="hist-search" type="text" placeholder="Search thesis..." oninput="filterHistory(this.value)" id="hist-search-input">
+      <div class="hist-filter-row">
+        <button class="hist-filter-btn active" onclick="setHistFilter('all',this)">All</button>
+        <button class="hist-filter-btn" onclick="setHistFilter('us',this)">US</button>
+        <button class="hist-filter-btn" onclick="setHistFilter('in',this)">India</button>
+        <button class="hist-filter-btn" onclick="setHistFilter('active',this)">Active</button>
+        <button class="hist-filter-btn" onclick="setHistFilter('retired',this)">Retired</button>
+      </div>
+      <div id="hist-stats" class="hist-stats"></div>
+    </div>
+    <div id="history-grid" class="hist-grid"></div>
+  </div>
+</div>
+
 <script>
 // ─── MARKET DATA ──────────────────────────────────────────────────
 let DATA = {}; // loaded dynamically from data.json
 let DATA_AS_OF = null; // set dynamically from data.json
 let RESEARCH_DEEP = null; // loaded dynamically from research_deep.json
 let RESEARCH_ARCHIVE = null; // loaded dynamically from research_archive.json
+let TRADES = null;           // loaded dynamically from trades.json (daily refresh)
+let historyFilter = 'all';
+let historySearch = '';
 
 const THESIS_META = {
   // US — Tactical Bullish
@@ -1243,8 +1384,73 @@ function buildExpandedView(cardEl, mkt) {
           ${tradeCols}
         </div>
       </div>
+      ${buildCardHistorySection(t.title, mkt)}
     </div>`;
+  applyTradeOverlays();
   overlay.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function buildCardHistorySection(thesisTitle, mkt) {
+  if (!RESEARCH_ARCHIVE || !RESEARCH_ARCHIVE.theses) return '';
+  const th = RESEARCH_ARCHIVE.theses[thesisTitle];
+  if (!th) return '';
+
+  const newsHist  = (th.news_history   || []).slice(-8).reverse();
+  const snapHist  = (th.history        || []).slice(-3).reverse();
+  const allEntries = [
+    ...newsHist.map(e => ({ date: e.fetched_at, articles: e.articles, type: 'live' })),
+    ...snapHist.map(e => ({ date: e.as_of, cats: e.categories, type: 'snapshot' })),
+  ].sort((a,b) => b.date.localeCompare(a.date)).slice(0, 12);
+
+  if (!allEntries.length) return '';
+
+  const histId = 'card-hist-' + mkt + '-' + Date.now();
+  const entriesHtml = allEntries.map(e => {
+    if (e.type === 'live') {
+      const arts = (e.articles || []).slice(0,4).map(a =>
+        `<div class="hist-entry-art"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a></div>`
+      ).join('');
+      return `<div class="hist-entry">
+        <div class="hist-entry-date live-date">🔴 Live News · ${e.date.slice(0,16).replace('T',' ')} UTC</div>
+        ${arts}
+      </div>`;
+    } else {
+      const flatArts = [];
+      Object.values(e.cats || {}).forEach(sources =>
+        sources.forEach(src => (src.articles||[]).slice(0,1).forEach(a => flatArts.push(a)))
+      );
+      const arts = flatArts.slice(0,5).map(a =>
+        `<div class="hist-entry-art"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a></div>`
+      ).join('');
+      return `<div class="hist-entry">
+        <div class="hist-entry-date snap-date">📚 Research Snapshot · ${e.date.slice(0,10)}</div>
+        ${arts}
+      </div>`;
+    }
+  }).join('');
+
+  return `<div class="exp-card-history">
+    <div class="exp-card-hist-toggle" onclick="toggleCardHistory('${histId}', this)">
+      <span class="exp-card-hist-label">Article History <span style="color:#1a1a3a;font-weight:400;font-size:9px;margin-left:6px">${allEntries.length} updates</span></span>
+      <span class="exp-card-hist-arrow">&#9658;</span>
+    </div>
+    <div class="exp-card-hist-body" id="${histId}" style="display:none">
+      ${entriesHtml}
+    </div>
+  </div>`;
+}
+
+function toggleCardHistory(histId, toggleEl) {
+  const body = document.getElementById(histId);
+  const arrow = toggleEl.querySelector('.exp-card-hist-arrow');
+  if (!body) return;
+  if (body.style.display === 'none') {
+    body.style.display = 'flex';
+    if (arrow) arrow.classList.add('open');
+  } else {
+    body.style.display = 'none';
+    if (arrow) arrow.classList.remove('open');
+  }
 }
 
 function collapseCard(mkt) {
@@ -1556,6 +1762,7 @@ function switchTab(id, btn) {
   document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
   btn.classList.add('active');
+  if (id === 'history') buildHistoryTab();
 }
 
 // ─── DYNAMIC DATA LOADING ────────────────────────────────────────────────────
@@ -1589,8 +1796,48 @@ async function loadResearch() {
     console.warn('Could not load research_deep.json:', e);
   }
 }
+async function loadTrades() {
+  try {
+    const resp = await fetch('./trades.json?_=' + Date.now());
+    if (!resp.ok) return; // trades.json may not exist yet
+    TRADES = await resp.json();
+    applyTradeOverlays();
+  } catch(e) { /* non-fatal */ }
+}
+
+function applyTradeOverlays() {
+  if (!TRADES || !TRADES.theses) return;
+  document.querySelectorAll('.expanded-overlay').forEach(overlay => {
+    if (overlay.style.display === 'none') return;
+    overlay.querySelectorAll('.exp-trade').forEach(tradeEl => {
+      const tradeName = tradeEl.dataset.tradeName;
+      // Find thesis title from parent expanded header
+      const titleEl = overlay.querySelector('.exp-title');
+      const title = titleEl ? titleEl.textContent.trim() : null;
+      if (!title) return;
+      const thesisTrades = TRADES.theses[title] && TRADES.theses[title].trades;
+      if (!thesisTrades) return;
+      const td = thesisTrades[tradeName];
+      if (!td) return;
+      let badge = tradeEl.querySelector('.trade-live-badge');
+      if (!badge) {
+        badge = document.createElement('div');
+        badge.className = 'trade-live-badge';
+        const rationale = tradeEl.querySelector('.exp-trade-rationale');
+        if (rationale) rationale.before(badge);
+        else tradeEl.appendChild(badge);
+      }
+      const pct = td.pct_from_entry != null
+        ? `<span class="${td.pct_from_entry >= 0 ? 'pct-pos' : 'pct-neg'}">${td.pct_from_entry > 0 ? '+' : ''}${td.pct_from_entry.toFixed(1)}%</span>`
+        : '<span>—</span>';
+      const statusCls = td.status === 'on-track' ? 'live-status-ok' : td.status === 'at-risk' ? 'live-status-warn' : td.status === 'off-track' ? 'live-status-bad' : 'live-status-uk';
+      badge.innerHTML = `<span class="live-price-label">LIVE</span><span class="live-price-val">${td.current_price != null ? td.current_price : '—'}</span>${pct}<span class="${statusCls}">${td.status || '—'}</span>`;
+    });
+  });
+}
+
 async function init() {
-  await Promise.all([loadData(), loadResearch(), loadResearchArchive()]);
+  await Promise.all([loadData(), loadResearch(), loadResearchArchive(), loadTrades()]);
   buildTables(US_SECTIONS, 'us-tables');
   buildTables(IN_SECTIONS, 'in-tables', IN_EXTRA);
   buildMatrix('US', 'matrix-us');
@@ -1833,9 +2080,233 @@ function buildThesisView(mkt, market, quad, idx, t, data, research) {
   `;
 }
 
+// ─── HISTORY TAB ─────────────────────────────────────────────────────────────
+function buildHistoryTab() {
+  const grid    = document.getElementById('history-grid');
+  const statsEl = document.getElementById('hist-stats');
+  if (!grid) return;
+
+  if (!RESEARCH_ARCHIVE || !RESEARCH_ARCHIVE.theses) {
+    grid.innerHTML = '<div class="hist-empty" style="padding:40px;text-align:center;color:#222">Loading thesis history… check back after the first data refresh.</div>';
+    return;
+  }
+
+  const all = Object.entries(RESEARCH_ARCHIVE.theses);
+  renderHistoryGrid(all);
+}
+
+function renderHistoryGrid(all) {
+  const grid    = document.getElementById('history-grid');
+  const statsEl = document.getElementById('hist-stats');
+  if (!grid) return;
+
+  // Filter
+  let filtered = all.filter(([title, th]) => {
+    if (historyFilter === 'us' && th.mkt !== 'US') return false;
+    if (historyFilter === 'in' && th.mkt !== 'IN') return false;
+    if (historyFilter === 'active' && th.retired) return false;
+    if (historyFilter === 'retired' && !th.retired) return false;
+    if (historySearch) {
+      const q = historySearch.toLowerCase();
+      if (!title.toLowerCase().includes(q)) return false;
+    }
+    return true;
+  });
+
+  if (statsEl) {
+    const activeCount = all.filter(([,th]) => !th.retired).length;
+    const retiredCount = all.filter(([,th]) => th.retired).length;
+    statsEl.textContent = `${filtered.length} shown · ${activeCount} active · ${retiredCount} retired`;
+  }
+
+  if (!filtered.length) {
+    grid.innerHTML = '<div class="hist-empty" style="padding:20px;text-align:center;color:#222">No theses match this filter.</div>';
+    return;
+  }
+
+  // Group by mkt+quad
+  const groups = {};
+  filtered.forEach(([title, th]) => {
+    const key = `${th.mkt}__${th.quad}`;
+    if (!groups[key]) groups[key] = { mkt: th.mkt, quad: th.quad, theses: [] };
+    groups[key].theses.push([title, th]);
+  });
+
+  const QUAD_LABELS = { stl: 'Tactical Bullish', ltl: 'Structural Bullish', sts: 'Tactical Bearish', lts: 'Structural Bearish' };
+  const ORDER = ['US__stl','US__ltl','US__sts','US__lts','IN__stl','IN__ltl','IN__sts','IN__lts'];
+
+  const html = ORDER.filter(k => groups[k]).map(key => {
+    const g = groups[key];
+    const label = `${g.mkt === 'US' ? '🇺🇸' : '🇮🇳'} ${QUAD_LABELS[g.quad] || g.quad.toUpperCase()}`;
+    const cardsHtml = g.theses.map(([title, th]) => buildHistCard(title, th)).join('');
+    return `<div style="margin-bottom:20px">
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.6px;color:#1a1a3a;text-transform:uppercase;padding:6px 0;margin-bottom:6px;border-bottom:1px solid #111">${label}</div>
+      ${cardsHtml}
+    </div>`;
+  }).join('');
+
+  grid.innerHTML = html;
+}
+
+function buildHistCard(title, th) {
+  const newsCount  = (th.news_history   || []).length;
+  const snapCount  = (th.history        || []).length;
+  const tradesHist = th.trades_history || [];
+  const tradesCount = tradesHist.length;
+  const isRetired  = !!th.retired;
+  const timelineId = 'hist-tl-' + encodeURIComponent(title).replace(/%/g,'_').slice(0,40) + '_' + Math.random().toString(36).slice(2,6);
+
+  const allEntries = [
+    ...(th.news_history || []).map(e => ({ date: e.fetched_at, articles: e.articles, type: 'live' })),
+    ...(th.history      || []).map(e => ({ date: e.as_of, snap: e, type: 'snapshot' })),
+  ].sort((a,b) => b.date.localeCompare(a.date));
+
+  const entriesHtml = allEntries.slice(0,20).map(e => {
+    if (e.type === 'live') {
+      const arts = (e.articles || []).slice(0,3).map(a =>
+        `<div class="hist-entry-art"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a></div>`
+      ).join('');
+      return `<div class="hist-entry">
+        <div class="hist-entry-date live-date">🔴 ${e.date.slice(0,16).replace('T',' ')} UTC</div>
+        ${arts}
+      </div>`;
+    } else {
+      const snap = e.snap || {};
+      // Show narrative change if present (from weekly thesis refresh)
+      const narrative = snap.narrative_change && snap.narrative_change !== 'No material change'
+        ? `<div style="font-size:10px;color:#2a2a4a;padding-left:10px;margin-bottom:4px;font-style:italic">${snap.narrative_change}</div>` : '';
+      // Show top articles from categories
+      const flatArts = [];
+      Object.values(snap.categories || {}).forEach(srcs =>
+        srcs.forEach(src => (src.articles||[]).slice(0,1).forEach(a => flatArts.push(a)))
+      );
+      const arts = flatArts.slice(0,4).map(a =>
+        `<div class="hist-entry-art"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a></div>`
+      ).join('');
+      const convLabel = snap.conviction ? ` · ${snap.conviction}` : '';
+      return `<div class="hist-entry">
+        <div class="hist-entry-date snap-date">📚 ${e.date.slice(0,10)}${convLabel}</div>
+        ${narrative}${arts}
+      </div>`;
+    }
+  }).join('') || '<div class="hist-empty">No timeline entries yet — updates hourly.</div>';
+
+  // ── Trades section: most recent snapshot ──
+  const tradesSnap = tradesHist.length ? tradesHist[tradesHist.length - 1] : null;
+  let tradesHtml = '';
+  if (tradesSnap && tradesSnap.trades && Object.keys(tradesSnap.trades).length) {
+    const tSid = 'ht-trades-' + timelineId;
+    const rows = Object.entries(tradesSnap.trades).map(([name, td]) => {
+      const pct = td.pct_from_entry != null
+        ? `<span class="hist-trade-pct ${td.pct_from_entry >= 0 ? 'pos' : 'neg'}">${td.pct_from_entry > 0 ? '+' : ''}${td.pct_from_entry.toFixed(1)}%</span>`
+        : '<span class="hist-trade-pct">—</span>';
+      const sCls = td.status === 'on-track' ? 'hist-trade-status-ok' : td.status === 'at-risk' ? 'hist-trade-status-warn' : td.status === 'off-track' ? 'hist-trade-status-bad' : '';
+      const price = td.current_price != null ? `<span style="color:#444">${td.current_price}</span>` : '';
+      return `<div class="hist-trade-row"><span class="hist-trade-name">${name}</span><span class="hist-trade-ticker">${td.ticker||''}</span>${price} ${pct} <span class="${sCls}">${td.status||''}</span></div>`;
+    }).join('');
+    tradesHtml = `
+      <div class="hist-section-toggle" onclick="toggleHistSection('${tSid}',this)">
+        <span>Trades · ${Object.keys(tradesSnap.trades).length} positions <span style="font-weight:400;color:#1a3a1a;margin-left:6px">as of ${tradesSnap.as_of?tradesSnap.as_of.slice(0,10):'—'}</span></span>
+        <span>&#9658;</span>
+      </div>
+      <div class="hist-section-body" id="${tSid}" style="display:none">${rows}</div>`;
+  }
+
+  // ── Sources section: latest weekly snapshot categories ──
+  const weeklySnaps = th.history || [];
+  const latestSnap  = weeklySnaps.length ? weeklySnaps[weeklySnaps.length-1] : null;
+  let sourcesHtml = '';
+  if (latestSnap && latestSnap.categories) {
+    const sSid = 'ht-sources-' + timelineId;
+    const catRows = Object.entries(latestSnap.categories).map(([cat, srcs]) => {
+      const artRows = (srcs||[]).flatMap(src =>
+        (src.articles||[]).slice(0,2).map(a =>
+          `<div class="hist-source-art"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a></div>`
+        )
+      ).slice(0,4).join('');
+      return artRows ? `<div class="hist-source-cat">${cat}</div>${artRows}` : '';
+    }).filter(Boolean).join('');
+    if (catRows) {
+      sourcesHtml = `
+        <div class="hist-section-toggle" onclick="toggleHistSection('${sSid}',this)">
+          <span>Sources · ${Object.keys(latestSnap.categories).length} categories</span>
+          <span>&#9658;</span>
+        </div>
+        <div class="hist-section-body" id="${sSid}" style="display:none">${catRows}</div>`;
+    }
+  }
+
+  const firstSeen  = th.first_seen  ? th.first_seen.slice(0,10)  : '—';
+  const lastActive = th.last_active ? th.last_active.slice(0,10) : '—';
+  const retiredDate = th.retired ? th.retired.slice(0,10) : null;
+
+  return `<div class="hist-card" data-retired="${isRetired}" data-title="${title}">
+    <div class="hist-card-hdr" onclick="toggleHistCard('${timelineId}', this)">
+      <div class="hist-card-main">
+        <div class="hist-card-title-row">
+          <span class="hist-card-title">${title}</span>
+          <span class="hist-badge hist-badge-mkt">${th.mkt}</span>
+          <span class="hist-badge ${isRetired?'hist-badge-retired':'hist-badge-active'}">${isRetired?'RETIRED':'ACTIVE'}</span>
+        </div>
+        <div class="hist-card-meta">
+          ${th.quad.toUpperCase()} · First seen ${firstSeen} · Last active ${lastActive}${retiredDate?' · Retired '+retiredDate:''}
+        </div>
+        <div class="hist-card-counts">
+          <span class="hist-count-pill ${newsCount>0?'has-data':''}">🔴 ${newsCount} news</span>
+          <span class="hist-count-pill ${snapCount>0?'has-data':''}">📚 ${snapCount} snapshot${snapCount!==1?'s':''}</span>
+          ${tradesCount>0?`<span class="hist-count-pill has-data">📈 ${tradesCount} trade update${tradesCount!==1?'s':''}</span>`:''}
+        </div>
+      </div>
+      <span class="hist-expand-arrow">&#9658;</span>
+    </div>
+    <div class="hist-timeline" id="${timelineId}" style="display:none">
+      ${tradesHtml}${sourcesHtml}
+      <div style="margin-top:${tradesHtml||sourcesHtml?'12px':'0'};padding-top:${tradesHtml||sourcesHtml?'10px':'0'};border-top:${tradesHtml||sourcesHtml?'1px solid #101010':'none'}">
+        ${entriesHtml}
+      </div>
+    </div>
+  </div>`;
+}
+
+function toggleHistCard(timelineId, hdrEl) {
+  const tl = document.getElementById(timelineId);
+  const arrow = hdrEl.querySelector('.hist-expand-arrow');
+  if (!tl) return;
+  const isOpen = tl.style.display !== 'none';
+  tl.style.display = isOpen ? 'none' : 'block';
+  if (arrow) arrow.innerHTML = isOpen ? '&#9658;' : '&#9660;';
+}
+
+function toggleHistSection(sectionId, toggleEl) {
+  const body = document.getElementById(sectionId);
+  if (!body) return;
+  const arrow = toggleEl.querySelector('span:last-child');
+  const isOpen = body.style.display !== 'none';
+  body.style.display = isOpen ? 'none' : 'block';
+  if (arrow) arrow.innerHTML = isOpen ? '&#9658;' : '&#9660;';
+}
+
+function filterHistory(query) {
+  historySearch = query;
+  if (RESEARCH_ARCHIVE) renderHistoryGrid(Object.entries(RESEARCH_ARCHIVE.theses));
+}
+
+function setHistFilter(filter, btn) {
+  historyFilter = filter;
+  document.querySelectorAll('.hist-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const search = document.getElementById('hist-search-input');
+  historySearch = search ? search.value : '';
+  if (RESEARCH_ARCHIVE) renderHistoryGrid(Object.entries(RESEARCH_ARCHIVE.theses));
+}
+
 document.addEventListener('DOMContentLoaded', init);
-// Auto-refresh market data every 15 minutes
-setInterval(refreshData, 15 * 60 * 1000);
+// Market data: every 60 seconds
+setInterval(refreshData, 60 * 1000);
+// Research & news archive: every hour
+setInterval(async () => { await loadResearch(); await loadResearchArchive(); }, 60 * 60 * 1000);
+// Trades live prices: every 60 seconds
+setInterval(loadTrades, 60 * 1000);
 
 
 </script>
