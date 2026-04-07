@@ -1,36 +1,183 @@
 {
-  "US": [
-    "J.P. Morgan Global Research (jpmorgan.com/global/research) — Gold standard for US macro and equity research",
-    "Goldman Sachs Global Investment Research (goldmansachs.com/insights) — Influential market strategy and economic forecasts",
-    "Federal Reserve / FRED (fred.stlouisfed.org) — Definitive source for FOMC policy, Beige Book, and 800K+ economic data series",
-    "BlackRock Investment Institute (blackrock.com/institute) — Weekly macro commentaries from world's largest asset manager",
-    "PIMCO Insights (pimco.com/en-us/insights) — Premier US and global fixed-income/bond market research",
-    "Bureau of Labor Statistics (bls.gov) — Official CPI, PPI, and monthly Nonfarm Payrolls data",
-    "Bureau of Economic Analysis (bea.gov) — Official US GDP, PCE (Fed's preferred inflation gauge), and trade balance",
-    "CME FedWatch Tool (cmegroup.com) — Real-time interest rate probabilities and commodity futures data",
-    "CBOE VIX (cboe.com) — Volatility index, options flow data, and market sentiment",
-    "Wall Street Journal (wsj.com) — Premier daily for US business, corporate news, and economic policy",
-    "Bloomberg Markets (bloomberg.com/markets) — Real-time financial news, institutional market data",
-    "Bridgewater Associates (bridgewater.com/research-and-insights) — Ray Dalio's debt cycle and macroeconomic insights",
-    "Oaktree Capital / Howard Marks Memos (oaktreecapital.com/insights) — Market cycle and credit market psychology",
-    "Morgan Stanley Research (morganstanley.com/ideas) — Tech sector analysis and macro outlooks",
-    "US Treasury Yield Curve (treasury.gov) — Official daily Treasury yield rates"
+  "categories": [
+    "Equity Research & Brokerages",
+    "Tier 1 Consulting",
+    "Central Banks & Development",
+    "Financial News",
+    "Asset Managers & Hedge Funds",
+    "Podcasts, Blogs & Newsletters",
+    "Indices & Data Sources"
   ],
-  "IN": [
-    "Reserve Bank of India (rbi.org.in) — Definitive source for monetary policy, financial stability reports, and forex data",
-    "NSE India (nseindia.com) — Live market data, option chains, FII/DII activity, and corporate filings",
-    "NITI Aayog (niti.gov.in) — Government policy think tank; comprehensive economic development indices",
-    "MOSPI (mospi.gov.in) — Official India GDP, CPI, IIP, and unemployment data",
-    "Economic Times (economictimes.indiatimes.com) — India's most widely read financial daily",
-    "Moneycontrol (moneycontrol.com) — Real-time market data, portfolio tracking, and market news",
-    "Business Standard (business-standard.com) — Rigorous economic journalism and banking sector coverage",
-    "CMIE (cmie.com) — High-frequency employment and capex data; premier private economic research",
-    "MCX India (mcxindia.com) — India's leading commodity derivatives exchange for gold, silver, crude",
-    "CCIL (ccilindia.com) — Indian sovereign bond yields, money markets, and fixed income data",
-    "Motilal Oswal (motilaloswal.com) — Deep-dive Wealth Creation Studies and equity research",
-    "Marcellus Investment Managers (marcellus.in) — Consistent Compounders philosophy and deeply researched newsletters",
-    "SBI Ecowrap (sbi.co.in) — Highly respected macro-economic research notes from SBI's economics department",
-    "BSE India (bseindia.com) — Sensex data, historical stock prices, and corporate announcements",
-    "Mint / LiveMint (livemint.com) — High-quality editorial content and WSJ-syndicated coverage"
-  ]
+  "US": {
+    "Equity Research & Brokerages": [
+      {"name": "J.P. Morgan Global Research", "url": "https://www.jpmorgan.com/global/research", "desc": "Sets the gold standard for global macro and US equity research"},
+      {"name": "Goldman Sachs Global Investment Research", "url": "https://www.goldmansachs.com/insights/", "desc": "Highly influential reports on market strategy and economic forecasts"},
+      {"name": "Morgan Stanley Research", "url": "https://www.morganstanley.com/ideas", "desc": "Excellent wealth management insights, tech sector analysis, and macro outlooks"},
+      {"name": "Bank of America Global Research", "url": "https://www.bofaml.com/", "desc": "Known for the 'Flow Show' report and deep institutional equity research"},
+      {"name": "Morningstar", "url": "https://www.morningstar.com/", "desc": "The leading provider of independent equity, mutual fund, and ETF research"},
+      {"name": "Charles Schwab Insights", "url": "https://www.schwab.com/resource-center/insights", "desc": "Excellent market commentary accessible to retail and institutional investors"},
+      {"name": "Fidelity Viewpoints", "url": "https://www.fidelity.com/viewpoints", "desc": "Detailed sector analysis and business cycle updates"},
+      {"name": "Citi Research", "url": "https://www.citivelocity.com/", "desc": "Strong fixed income, commodities, and global equity strategies"},
+      {"name": "UBS Investment Research", "url": "https://www.ubs.com/global/en/investment-bank/research.html", "desc": "Top-tier analysis on global wealth, tech, and US economic trends"},
+      {"name": "Wells Fargo Investment Institute", "url": "https://www.wellsfargo.com/investment-institute/", "desc": "Solid macro, real estate, and fixed-income research"}
+    ],
+    "Tier 1 Consulting": [
+      {"name": "McKinsey & Company", "url": "https://www.mckinsey.com/", "desc": "Publishes the McKinsey Global Institute reports, a benchmark for US business trends"},
+      {"name": "Boston Consulting Group (BCG)", "url": "https://www.bcg.com/", "desc": "Leading insights on corporate strategy, AI integration, and US consumer trends"},
+      {"name": "Bain & Company", "url": "https://www.bain.com/", "desc": "The authoritative source for US Private Equity and M&A market reports"},
+      {"name": "Deloitte US", "url": "https://www2.deloitte.com/us/en.html", "desc": "Comprehensive research on US CFO sentiment, tax policy, and supply chains"},
+      {"name": "PwC US", "url": "https://www.pwc.com/us/en.html", "desc": "Strong coverage of US corporate governance, digital transformation, and risk"},
+      {"name": "EY US", "url": "https://www.ey.com/en_us", "desc": "Detailed analysis of US labor markets, IPO trends, and regulatory shifts"},
+      {"name": "KPMG US", "url": "https://www.kpmg.com/us/en/home.html", "desc": "Insightful reports on venture capital (Venture Pulse) and US tech trends"},
+      {"name": "Oliver Wyman", "url": "https://www.oliverwyman.com/", "desc": "Top-tier research on Wall Street, banking regulations, and healthcare economics"},
+      {"name": "L.E.K. Consulting", "url": "https://www.lek.com/", "desc": "Strong data on US consumer products, biopharma, and media"},
+      {"name": "Kearney", "url": "https://www.kearney.com/", "desc": "Excellent for understanding US manufacturing and supply chain resilience"}
+    ],
+    "Central Banks & Development": [
+      {"name": "Federal Reserve Board of Governors", "url": "https://www.federalreserve.gov/", "desc": "The ultimate source for FOMC statements, Beige Book, and monetary policy"},
+      {"name": "St. Louis Fed (FRED)", "url": "https://fred.stlouisfed.org/", "desc": "The premier database and research hub for US economic indicators"},
+      {"name": "New York Fed (Liberty Street Economics)", "url": "https://libertystreeteconomics.newyorkfed.org/", "desc": "Accessible blog and reports on inflation, consumer debt, and macro models"},
+      {"name": "Bureau of Economic Analysis (BEA)", "url": "https://www.bea.gov/", "desc": "Official US government source for GDP, PCE, and corporate profits"},
+      {"name": "Bureau of Labor Statistics (BLS)", "url": "https://www.bls.gov/", "desc": "The definitive source for US CPI, PPI, and the monthly Jobs Report"},
+      {"name": "World Bank (US Data)", "url": "https://www.worldbank.org/", "desc": "Global context for US economic performance and trade data"},
+      {"name": "International Monetary Fund (IMF)", "url": "https://www.imf.org/", "desc": "World Economic Outlook reports with deep analysis of the US economy's global impact"},
+      {"name": "Bank for International Settlements (BIS)", "url": "https://www.bis.org/", "desc": "The central bank of central banks; research on US dollar liquidity and global finance"},
+      {"name": "Inter-American Development Bank (IDB)", "url": "https://www.iadb.org/", "desc": "US trade and economic relationships with the broader Americas"},
+      {"name": "OECD (US Section)", "url": "https://www.oecd.org/unitedstates/", "desc": "Comparative data on US health, education, and economic policies vs developed nations"}
+    ],
+    "Financial News": [
+      {"name": "The Wall Street Journal", "url": "https://www.wsj.com/", "desc": "The premier daily newspaper for US business, corporate news, and economic policy"},
+      {"name": "Bloomberg Markets", "url": "https://www.bloomberg.com/markets", "desc": "Top-tier real-time financial news, institutional market data, and terminal-grade reporting"},
+      {"name": "Financial Times (US Edition)", "url": "https://www.ft.com/", "desc": "Highly analytical global perspective on Wall Street and US macro"},
+      {"name": "CNBC", "url": "https://www.cnbc.com/", "desc": "The leading broadcast network for live US market coverage and breaking news"},
+      {"name": "Reuters Markets", "url": "https://www.reuters.com/markets/us", "desc": "Fast, objective wire-service reporting on equities, bonds, and commodities"},
+      {"name": "Barron's", "url": "https://www.barrons.com/", "desc": "Deep-dive stock analysis, market trends, and investment strategies"},
+      {"name": "MarketWatch", "url": "https://www.marketwatch.com/", "desc": "Accessible real-time market news, opinion, and personal finance"},
+      {"name": "Yahoo Finance", "url": "https://finance.yahoo.com/", "desc": "Excellent free charting, portfolio tracking, and aggregated news"},
+      {"name": "The Economist", "url": "https://www.economist.com/", "desc": "World-class weekly analysis of US political economy and broad market trends"},
+      {"name": "Forbes Markets", "url": "https://www.forbes.com/markets/", "desc": "Billionaire tracking, venture capital news, and broad market commentary"}
+    ],
+    "Asset Managers & Hedge Funds": [
+      {"name": "BlackRock Investment Institute", "url": "https://www.blackrock.com/us/individual/insights/blackrock-investment-institute", "desc": "World's largest asset manager; publishes phenomenal weekly macro commentaries"},
+      {"name": "Vanguard Research", "url": "https://investor.vanguard.com/corporate-portal/", "desc": "Long-term views on index investing, market returns, and retirement economics"},
+      {"name": "Fidelity Investments Research", "url": "https://www.fidelity.com/", "desc": "Outstanding sector rotation models and asset allocation research"},
+      {"name": "Bridgewater Associates", "url": "https://www.bridgewater.com/research-and-insights", "desc": "Ray Dalio's firm; profound insights on debt cycles and macroeconomic shifts"},
+      {"name": "Oaktree Capital (Howard Marks)", "url": "https://www.oaktreecapital.com/insights", "desc": "Famed for Howard Marks' memos on risk, credit markets, and market psychology"},
+      {"name": "AQR Capital Management", "url": "https://www.aqr.com/Insights", "desc": "Top-tier quantitative and factor-based investing research"},
+      {"name": "PIMCO Insights", "url": "https://www.pimco.com/en-us/insights", "desc": "The premier source for US and global fixed-income and bond market research"},
+      {"name": "State Street Global Advisors", "url": "https://www.ssga.com/", "desc": "Insights from creators of the SPY ETF; great data on institutional flows"},
+      {"name": "Wellington Management", "url": "https://www.wellington.com/en/insights", "desc": "Deep fundamental research across all major US asset classes"},
+      {"name": "Citadel", "url": "https://www.citadel.com/", "desc": "Highly influential occasional public views on market structure and macro"}
+    ],
+    "Podcasts, Blogs & Newsletters": [
+      {"name": "Matt Levine's Money Stuff (Bloomberg)", "url": "https://www.bloomberg.com/account/newsletters/money-stuff", "desc": "The most brilliant daily newsletter on Wall Street mechanics and corporate finance"},
+      {"name": "Odd Lots Podcast (Bloomberg)", "url": "https://www.bloomberg.com/oddlots", "desc": "Deep dives into complex or trending macroeconomic topics"},
+      {"name": "Invest Like the Best (Podcast)", "url": "https://www.joincolossus.com/episodes", "desc": "Top-tier interviews with legendary investors and CEOs"},
+      {"name": "Macro Musings (Podcast)", "url": "https://macromusings.libsyn.com/", "desc": "Deeply intellectual discussions on Fed policy and macroeconomics"},
+      {"name": "The Motley Fool", "url": "https://www.fool.com/", "desc": "Retail stock-picking, company earnings analysis, and accessible education"},
+      {"name": "Seeking Alpha", "url": "https://seekingalpha.com/", "desc": "Crowdsourced fundamental analysis, earnings call transcripts, and dividend data"},
+      {"name": "Collaborative Fund Blog (Morgan Housel)", "url": "https://collabfund.com/blog/", "desc": "Behavioral finance insights from the author of Psychology of Money"},
+      {"name": "A Wealth of Common Sense (Ben Carlson)", "url": "https://awealthofcommonsense.com/", "desc": "Data-driven, level-headed market analysis"},
+      {"name": "Animal Spirits Podcast", "url": "https://awealthofcommonsense.com/animal-spirits/", "desc": "Highly popular weekly wrap-up of markets, macro, and personal finance"},
+      {"name": "Howard Marks Memos", "url": "https://www.oaktreecapital.com/insights/howard-marks-memos", "desc": "Required reading on Wall Street for assessing market cycles and risk"}
+    ],
+    "Indices & Data Sources": [
+      {"name": "FRED (Federal Reserve Economic Data)", "url": "https://fred.stlouisfed.org/", "desc": "Over 800,000 data time series including CPI, GDP, unemployment, and yield curves"},
+      {"name": "S&P Dow Jones Indices", "url": "https://www.spglobal.com/spdji/en/", "desc": "Official source for S&P 500, Dow Jones, and VIX methodology and data"},
+      {"name": "Bureau of Labor Statistics (BLS)", "url": "https://www.bls.gov/", "desc": "Primary data source for US Inflation (CPI/PPI) and Employment (Nonfarm payrolls)"},
+      {"name": "Bureau of Economic Analysis (BEA)", "url": "https://www.bea.gov/", "desc": "Primary data source for US GDP, PCE (Fed's preferred inflation gauge), and trade balance"},
+      {"name": "CME Group", "url": "https://www.cmegroup.com/", "desc": "Essential for the CME FedWatch Tool (rate probabilities) and commodity futures data"},
+      {"name": "CBOE (Chicago Board Options Exchange)", "url": "https://www.cboe.com/", "desc": "Home of the VIX (Volatility Index) and comprehensive options data"},
+      {"name": "US Department of the Treasury", "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates", "desc": "The official source for daily Treasury Yield Curve rates"},
+      {"name": "Bloomberg Markets Data", "url": "https://www.bloomberg.com/markets", "desc": "Best dashboard for a quick overview of global indices, commodities, and US rates"},
+      {"name": "Trading Economics (US)", "url": "https://tradingeconomics.com/united-states/indicators", "desc": "Visual, easy-to-use calendar and historical chart aggregator for US macro data"},
+      {"name": "Yahoo Finance Markets", "url": "https://finance.yahoo.com/markets/", "desc": "Excellent free tool for tracking real-time stock quotes, indices, and crypto"}
+    ]
+  },
+  "IN": {
+    "Equity Research & Brokerages": [
+      {"name": "ICICI Direct Research", "url": "https://www.icicidirect.com/research", "desc": "Top-tier retail and institutional market reports and sector updates"},
+      {"name": "HDFC Securities Research", "url": "https://www.hdfcsec.com/research", "desc": "Extensive coverage of large-cap and mid-cap Indian equities"},
+      {"name": "Kotak Securities Research", "url": "https://www.kotaksecurities.com/", "desc": "Well-regarded fundamental analysis and institutional equities research"},
+      {"name": "Motilal Oswal Research", "url": "https://www.motilaloswal.com/", "desc": "Known for their deep-dive Wealth Creation Studies and stock research"},
+      {"name": "Prabhudas Lilladher", "url": "https://www.plindia.com/", "desc": "One of India's oldest brokerages with strong macro and micro research desks"},
+      {"name": "Nuvama Wealth (Edelweiss)", "url": "https://www.nuvamawealth.com/", "desc": "Excellent institutional reports and alternative investment insights"},
+      {"name": "JM Financial Research", "url": "https://www.jmfl.com/", "desc": "High-quality institutional equity research and corporate finance reports"},
+      {"name": "Axis Securities Research", "url": "https://simplehai.axisdirect.in/", "desc": "Strong coverage on banking, auto, and consumer sectors"},
+      {"name": "SBI Securities Research", "url": "https://www.sbisecurities.in/", "desc": "Backed by India's largest bank, offering solid retail equity research"},
+      {"name": "Sharekhan (BNP Paribas)", "url": "https://www.sharekhan.com/", "desc": "Accessible technical and fundamental analysis for the Indian retail market"}
+    ],
+    "Tier 1 Consulting": [
+      {"name": "McKinsey & Company India", "url": "https://www.mckinsey.com/in", "desc": "Deep insights into Indian economic digitization, sustainability, and manufacturing"},
+      {"name": "BCG India", "url": "https://www.bcg.com/en-in", "desc": "Excellent reports on the Indian consumer market and banking sector"},
+      {"name": "Bain & Company India", "url": "https://www.bain.com/offices/india", "desc": "Publishes the highly regarded annual India Private Equity Report"},
+      {"name": "Deloitte India", "url": "https://www2.deloitte.com/in/en.html", "desc": "Extensive coverage of Indian regulatory changes, taxation, and economic forecasts"},
+      {"name": "PwC India", "url": "https://www.pwc.in/", "desc": "Strong thought leadership on Indian infrastructure, ESG, and corporate governance"},
+      {"name": "EY India", "url": "https://www.ey.com/en_in", "desc": "Reliable macroeconomic analysis on FDI and tax policies"},
+      {"name": "KPMG India", "url": "https://home.kpmg/in/en/home.html", "desc": "Focuses on the Indian tech sector, banking, and government initiatives"},
+      {"name": "Oliver Wyman India", "url": "https://www.oliverwyman.com/in.html", "desc": "Specialized insights into Indian financial services and risk management"},
+      {"name": "Kearney India", "url": "https://www.kearney.com/in", "desc": "Great resources on Indian supply chain, logistics, and retail"},
+      {"name": "Arthur D. Little India", "url": "https://www.adlittle.com/en", "desc": "Focuses on telecommunications, energy, and emerging tech in India"}
+    ],
+    "Central Banks & Development": [
+      {"name": "Reserve Bank of India (RBI)", "url": "https://www.rbi.org.in/", "desc": "The definitive source for monetary policy, financial stability reports, and forex data"},
+      {"name": "NITI Aayog", "url": "https://www.niti.gov.in/", "desc": "The Indian government's premier policy think tank; comprehensive economic development indices"},
+      {"name": "World Bank India", "url": "https://www.worldbank.org/en/country/india", "desc": "In-depth reports on Indian poverty reduction, infrastructure, and climate financing"},
+      {"name": "Asian Development Bank (ADB) India", "url": "https://www.adb.org/countries/india/main", "desc": "Regular economic forecasts and development project data for India"},
+      {"name": "IMF India", "url": "https://www.imf.org/en/Countries/IND", "desc": "Article IV consultations and global macroeconomic context for the Indian economy"},
+      {"name": "NABARD", "url": "https://www.nabard.org/", "desc": "The top source for rural economy, agriculture credit, and microfinance data"},
+      {"name": "SIDBI", "url": "https://www.sidbi.in/", "desc": "Essential publications regarding India's vast MSME sector"},
+      {"name": "Export-Import Bank of India (EXIM)", "url": "https://www.eximbankindia.in/", "desc": "Leading research on Indian international trade, exports, and global market access"},
+      {"name": "National Housing Bank (NHB)", "url": "https://nhb.org.in/", "desc": "Tracks India's real estate economy and publishes the RESIDEX housing price index"},
+      {"name": "SBI Ecowrap", "url": "https://sbi.co.in/web/sbi-in-the-news/ecowrap", "desc": "Highly respected macro-economic research notes from SBI's economic research department"}
+    ],
+    "Financial News": [
+      {"name": "The Economic Times", "url": "https://economictimes.indiatimes.com/", "desc": "India's most widely read financial daily"},
+      {"name": "Moneycontrol", "url": "https://www.moneycontrol.com/", "desc": "Excellent real-time market data, portfolio tracking, and market news"},
+      {"name": "Mint / LiveMint", "url": "https://www.livemint.com/", "desc": "High-quality editorial content, opinion pieces, and WSJ-syndicated coverage"},
+      {"name": "Business Standard", "url": "https://www.business-standard.com/", "desc": "Rigorous economic journalism and banking sector coverage"},
+      {"name": "Financial Express", "url": "https://www.financialexpress.com/", "desc": "Strong coverage of government policy, agriculture, and corporate earnings"},
+      {"name": "The Hindu Business Line", "url": "https://www.thehindubusinessline.com/", "desc": "Excellent coverage of commodities, agri-business, and Southern Indian corporate news"},
+      {"name": "NDTV Profit", "url": "https://www.ndtvprofit.com/", "desc": "Up-to-date corporate developments, earnings, and video interviews"},
+      {"name": "CNBC-TV18", "url": "https://www.cnbctv18.com/", "desc": "The digital arm of India's leading financial broadcast network"},
+      {"name": "Reuters India", "url": "https://www.reuters.com/world/india", "desc": "Objective, fast breaking news on Indian markets and macroeconomics"},
+      {"name": "ET Now", "url": "https://www.timesnow.in/et-now", "desc": "Live market updates, technical analysis, and stock recommendations"}
+    ],
+    "Asset Managers & Hedge Funds": [
+      {"name": "SBI Mutual Fund", "url": "https://www.sbimf.com/", "desc": "India's largest AMC; excellent macro views and debt market outlooks"},
+      {"name": "HDFC AMC", "url": "https://www.hdfcfund.com/", "desc": "Consistent high-quality equity market outlooks and thematic reports"},
+      {"name": "ICICI Prudential AMC", "url": "https://www.icicipruamc.com/", "desc": "Great resources on asset allocation and systematic investing"},
+      {"name": "Kotak Mutual Fund", "url": "https://www.kotakmf.com/", "desc": "Strong insights into mid-cap/small-cap trends and debt markets"},
+      {"name": "Nippon India Mutual Fund", "url": "https://www.nipponindiamf.com/", "desc": "Offers deep-dive fact sheets and ETF tracking insights"},
+      {"name": "Marcellus Investment Managers", "url": "https://marcellus.in/", "desc": "Famous for Consistent Compounders philosophy and deeply researched newsletters"},
+      {"name": "PPFAS (Parag Parikh) Mutual Fund", "url": "https://amc.ppfas.com/", "desc": "Value investing stalwarts; known for transparent, educational investor letters"},
+      {"name": "WhiteOak Capital Management", "url": "https://whiteoakindia.com/", "desc": "Institutional-grade presentations on Indian equity market valuations and earnings"},
+      {"name": "Capitalmind Wealth", "url": "https://www.capitalmind.in/", "desc": "Data-driven quantitative and macroeconomic analysis for PMS clients"},
+      {"name": "DSP Mutual Fund", "url": "https://www.dspim.com/", "desc": "Highly visual, data-rich macro reports and fixed-income summaries"}
+    ],
+    "Podcasts, Blogs & Newsletters": [
+      {"name": "Finshots (Newsletter)", "url": "https://finshots.in/", "desc": "Daily 3-minute newsletter simplifying Indian financial news and corporate developments"},
+      {"name": "The Ken (Publication)", "url": "https://the-ken.com/", "desc": "Deeply reported, long-form journalism on Indian startups, healthcare, and finance"},
+      {"name": "Zerodha Varsity (Blog)", "url": "https://zerodha.com/varsity/", "desc": "The best free, comprehensive educational resource for Indian stock market mechanics"},
+      {"name": "SOIC - School of Intrinsic Compounding", "url": "https://soic.in/", "desc": "Deep-dive fundamental analysis and sectoral studies on Indian equities"},
+      {"name": "The Morning Context (Newsletter)", "url": "https://themorningcontext.com/", "desc": "Excellent investigative journalism covering Indian internet, business, and chaos"},
+      {"name": "Safal Niveshak (Blog)", "url": "https://www.safalniveshak.com/", "desc": "Highly respected blog focusing on value investing and behavioral finance in India"},
+      {"name": "Fundoo Professor (Blog)", "url": "https://fundooprofessor.wordpress.com/", "desc": "Insights from Prof. Sanjay Bakshi on behavioral economics and value investing"},
+      {"name": "Paisa Vaisa (Podcast)", "url": "https://shows.ivmpodcasts.com/show/paisa-vaisa", "desc": "India's leading podcast on personal finance, startups, and macro trends"},
+      {"name": "Capitalmind Podcast", "url": "https://www.capitalmind.in/podcast/", "desc": "Discusses Indian monetary policy, market trends, and quantitative investing"},
+      {"name": "ET Markets Podcast", "url": "https://economictimes.indiatimes.com/podcast/etmarkets-podcast", "desc": "Daily market wrap-ups and expert interviews"}
+    ],
+    "Indices & Data Sources": [
+      {"name": "NSE India (National Stock Exchange)", "url": "https://www.nseindia.com/", "desc": "Live market data, option chains, FII/DII activity, and corporate filings"},
+      {"name": "BSE India (Bombay Stock Exchange)", "url": "https://www.bseindia.com/", "desc": "Sensex data, historical stock prices, and corporate announcements"},
+      {"name": "MOSPI (Govt of India)", "url": "https://www.mospi.gov.in/", "desc": "Official source for India's GDP, CPI, IIP, and unemployment data"},
+      {"name": "CMIE (Centre for Monitoring Indian Economy)", "url": "https://www.cmie.com/", "desc": "Premier private economic research firm; best for high-frequency employment and capex data"},
+      {"name": "RBI DBIE (Database on Indian Economy)", "url": "https://dbie.rbi.org.in/", "desc": "The central bank's raw data portal for banking, forex, and monetary statistics"},
+      {"name": "CCIL (Clearing Corporation of India)", "url": "https://www.ccilindia.com/", "desc": "The ultimate source for Indian sovereign bond yields, money markets, and fixed income data"},
+      {"name": "MCX India", "url": "https://www.mcxindia.com/", "desc": "India's leading commodity derivatives exchange for gold, silver, crude, and base metals"},
+      {"name": "AMFI (Association of Mutual Funds in India)", "url": "https://www.amfiindia.com/", "desc": "Official mutual fund flow data, AUM statistics, and SIP trends"},
+      {"name": "Trading Economics (India)", "url": "https://tradingeconomics.com/india/indicators", "desc": "Excellent dashboard for viewing historical Indian macroeconomic indicators"},
+      {"name": "Investing.com India", "url": "https://in.investing.com/", "desc": "Great aggregator for live charts, Nifty futures, and technical indicators"}
+    ]
+  }
 }
