@@ -409,9 +409,193 @@ tr[data-sym].faded td { opacity: 0.12; }
   background: #0a1a0a; color: #4caf50; border-radius: 2px;
   padding: 0 4px; margin-left: 4px; vertical-align: middle;
 }
+
+/* ── LIVE NEWS & ARCHIVE ── */
+.rp-live-badge {
+  display: inline-block; font-size: 8px; font-weight: 700; letter-spacing: 0.8px;
+  padding: 1px 5px; border-radius: 2px; text-transform: uppercase;
+  background: #0a200a; color: #4caf50; border: 1px solid #1a4a1a;
+  margin-left: 6px; vertical-align: middle;
+  animation: pulse-live 2s ease-in-out infinite;
+}
+@keyframes pulse-live {
+  0%,100% { box-shadow: 0 0 0 0 rgba(76,175,80,0); }
+  50%      { box-shadow: 0 0 5px 1px rgba(76,175,80,0.3); }
+}
+.rp-source-card.live-source { border-color: #1a3a1a; }
+.rp-source-card.live-source .rp-source-name { color: #6ab06a; }
+.rp-panel-meta {
+  display: flex; align-items: center; gap: 8px; padding: 7px 14px;
+  background: #060606; border-bottom: 1px solid #111;
+  font-size: 10px; color: #333; flex-shrink: 0;
+}
+.rp-panel-meta .news-ts { color: #2a5a2a; }
+.rp-panel-meta .archive-ts { color: #2a2a4a; }
+/* History tab */
+.rp-history-list { padding: 12px 14px; }
+.rp-history-entry {
+  margin-bottom: 16px; padding-bottom: 16px;
+  border-bottom: 1px solid #111;
+}
+.rp-history-entry:last-child { border-bottom: none; }
+.rp-history-date {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
+  color: #3a3a5a; margin-bottom: 6px;
+}
+.rp-history-art {
+  font-size: 10px; color: #3a3a3a; margin-bottom: 3px; padding-left: 10px;
+  border-left: 1px solid #1a1a1a;
+}
+.rp-history-art a { color: #4a5a7a; text-decoration: none; }
+.rp-history-art a:hover { color: #7a9abA; }
+.rp-tab.tab-history { border-left: 1px solid #1a1a1a; margin-left: auto; color: #2a2a5a !important; }
+.rp-tab.tab-history.active { color: #6a6a9a !important; border-bottom-color: #4a4a8a !important; }
+
+/* ── THESIS VIEW MODAL ── */
+#thesis-view-modal {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.92); overflow-y: auto;
+}
+.tv-container {
+  max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px;
+}
+.tv-close-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 20px;
+}
+.tv-close-btn {
+  background: #1a1a1a; border: 1px solid #2a2a2a; color: #777;
+  padding: 6px 16px; border-radius: 4px; cursor: pointer; font-size: 12px;
+  transition: background 0.15s;
+}
+.tv-close-btn:hover { background: #222; color: #ccc; }
+.tv-back-label { font-size: 10px; color: #333; letter-spacing: 1px; text-transform: uppercase; }
+
+/* Header */
+.tv-hdr {
+  display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start;
+  padding: 20px; background: #080808; border: 1px solid #1e1e1e; border-radius: 6px;
+  margin-bottom: 16px;
+}
+.tv-hdr-title { font-size: 20px; font-weight: 700; color: #e8e8e8; margin-bottom: 6px; }
+.tv-hdr-desc { font-size: 13px; color: #555; line-height: 1.6; max-width: 700px; }
+.tv-hdr-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.tv-conviction-meter {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.tv-conviction-label { font-size: 9px; color: #444; letter-spacing: 1px; text-transform: uppercase; }
+.tv-conviction-bar {
+  width: 120px; height: 8px; background: #111; border-radius: 4px; overflow: hidden;
+}
+.tv-conviction-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+.cv-fill-high { background: linear-gradient(90deg, #e8a838, #ffcc00); }
+.cv-fill-med  { background: linear-gradient(90deg, #3a5a8a, #5a7aaa); }
+
+/* Section labels */
+.tv-section {
+  margin-bottom: 16px;
+}
+.tv-section-label {
+  font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  color: #333; padding: 0 0 8px; margin-bottom: 10px; border-bottom: 1px solid #111;
+}
+
+/* Signal grid */
+.tv-signals-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px;
+}
+.tv-signal-card {
+  background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 4px;
+  padding: 10px 12px;
+}
+.tv-signal-name { font-size: 10px; color: #444; margin-bottom: 4px; }
+.tv-signal-value { font-size: 14px; font-weight: 700; color: #aaa; margin-bottom: 4px; }
+.tv-signal-bar { width: 100%; height: 4px; background: #111; border-radius: 2px; margin-bottom: 4px; }
+.tv-signal-fill { height: 100%; border-radius: 2px; }
+.tv-signal-verdict { font-size: 9px; letter-spacing: 0.5px; }
+.sv-bull { color: #4caf50; }
+.sv-bear { color: #ef5350; }
+.sv-neu  { color: #666; }
+
+/* Narrative */
+.tv-narrative {
+  font-size: 12px; color: #666; line-height: 1.8; padding: 14px 16px;
+  background: #080808; border: 1px solid #141414; border-radius: 4px;
+  border-left: 3px solid #1e3a1e;
+}
+.tv-narrative strong { color: #999; }
+
+/* Evidence pillars */
+.tv-evidence-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px;
+}
+.tv-evidence-card {
+  background: #080808; border: 1px solid #141414; border-radius: 4px;
+  padding: 10px 12px;
+}
+.tv-ev-cat { font-size: 9px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #2a4a6a; margin-bottom: 6px; }
+.tv-ev-item {
+  font-size: 10.5px; color: #555; margin-bottom: 5px; padding-bottom: 5px;
+  border-bottom: 1px solid #0e0e0e; line-height: 1.4;
+}
+.tv-ev-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.tv-ev-item a { color: #3a5a7a; text-decoration: none; }
+.tv-ev-item a:hover { color: #6a8aaa; }
+
+/* Trade logic chain */
+.tv-trade-chain {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+}
+.tv-trade-col { background: #080808; border: 1px solid #141414; border-radius: 4px; padding: 10px 12px; }
+.tv-trade-col-label {
+  font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
+  color: #2a4a6a; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #0e0e0e;
+}
+.tv-trade-item {
+  margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #0e0e0e;
+}
+.tv-trade-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.tv-trade-name { font-size: 10.5px; font-weight: 600; color: #777; margin-bottom: 3px; }
+.tv-trade-ticker {
+  display: inline-block; font-size: 9px; font-family: monospace;
+  background: #0a1a0a; color: #3a6a3a; border: 1px solid #1a3a1a;
+  padding: 1px 5px; border-radius: 2px; margin-bottom: 4px;
+}
+.tv-trade-rationale { font-size: 10px; color: #3a3a3a; line-height: 1.5; }
+.tv-trade-thesis-link {
+  font-size: 9px; color: #2a4a2a; margin-top: 4px;
+  padding: 3px 6px; background: #0a1a0a; border-radius: 2px;
+  display: inline-block;
+}
+
+/* Risk register */
+.tv-risk-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px;
+}
+.tv-risk-card {
+  background: #0f0808; border: 1px solid #241414; border-radius: 4px;
+  padding: 10px 12px;
+}
+.tv-risk-label { font-size: 9px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #6b2929; margin-bottom: 4px; }
+.tv-risk-desc { font-size: 10.5px; color: #4a3a3a; line-height: 1.5; }
+
+/* Thesis view button */
+.tv-open-btn {
+  display: flex; align-items: center; gap: 6px;
+  background: #0a1a0a; border: 1px solid #1a3a1a; color: #4caf50;
+  padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: 600;
+  transition: background 0.15s, border-color 0.15s;
+}
+.tv-open-btn:hover { background: #0d250d; border-color: #2a5a2a; }
 </style>
 </head>
 <body>
+
+<!-- THESIS VIEW MODAL -->
+<div id="thesis-view-modal">
+  <div class="tv-container" id="tv-container"></div>
+</div>
+
 
 <!-- TAB BAR -->
 <div class="tab-bar">
@@ -498,6 +682,7 @@ tr[data-sym].faded td { opacity: 0.12; }
 let DATA = {}; // loaded dynamically from data.json
 let DATA_AS_OF = null; // set dynamically from data.json
 let RESEARCH_DEEP = null; // loaded dynamically from research_deep.json
+let RESEARCH_ARCHIVE = null; // loaded dynamically from research_archive.json
 
 const THESIS_META = {
   // US — Tactical Bullish
@@ -1033,6 +1218,7 @@ function buildExpandedView(cardEl, mkt) {
       </div>
       <div class="exp-hdr-right">
         <span class="tc-conviction ${conviction}">${t.conviction}</span>
+        <button class="tv-open-btn" onclick="openThesisView('${mkt}', '${quad}', ${idx})">◈ THESIS VIEW</button>
         <button class="exp-close" onclick="collapseCard('${mkt}')">✕</button>
       </div>
     </div>
@@ -1100,20 +1286,23 @@ function buildResearchPanel(market, quad, idx) {
 
   const tabsHtml = RESEARCH_CATS.map((cat, i) =>
     `<button class="rp-tab${i===0?' active':''}" onclick="switchRpTab(this,'rpc-${uid}-${i}')">${CAT_SHORT[cat] || cat}</button>`
-  ).join('');
+  ).join('') + `<button class="rp-tab tab-history" onclick="switchRpTab(this,'rpc-${uid}-hist')">HISTORY</button>`;
 
   const panelsHtml = RESEARCH_CATS.map((cat, i) => {
     const sources = cardResearch[cat] || [];
     const sourcesHtml = sources.map(src => {
-      const articlesHtml = (src.articles || []).map(a =>
-        `<div class="rp-article">
-          <a class="rp-article-title" href="${a.url}" target="_blank" rel="noopener">${a.title}</a>
+      const isLive = src.live === true;
+      const liveBadge = isLive ? '<span class="rp-live-badge">LIVE</span>' : '';
+      const articlesHtml = (src.articles || []).map(a => {
+        const artLive = a.is_live ? '<span class="rp-live-badge">LIVE</span>' : '';
+        return `<div class="rp-article">
+          <a class="rp-article-title" href="${a.url}" target="_blank" rel="noopener">${a.title}${artLive}</a>
           <div class="rp-article-summary">${a.summary}</div>
-        </div>`
-      ).join('');
-      return `<div class="rp-source-card">
+        </div>`;
+      }).join('');
+      return `<div class="rp-source-card${isLive?' live-source':''}">
         <div class="rp-source-hdr">
-          <a class="rp-source-name" href="${src.url}" target="_blank" rel="noopener">${src.source}</a>
+          <a class="rp-source-name" href="${src.url}" target="_blank" rel="noopener">${src.source}${liveBadge}</a>
           <div class="rp-source-desc">${src.desc}</div>
         </div>
         <div class="rp-articles">${articlesHtml}</div>
@@ -1124,7 +1313,72 @@ function buildResearchPanel(market, quad, idx) {
     </div>`;
   }).join('');
 
-  return `<div class="rp-tabs">${tabsHtml}</div><div class="rp-panels">${panelsHtml}</div>`;
+  // History tab — all past article snapshots from research_archive.json
+  let historyHtml = '';
+  if (RESEARCH_ARCHIVE && RESEARCH_ARCHIVE.theses) {
+    // Find thesis title
+    const allTitles = Object.keys(RESEARCH_ARCHIVE.theses);
+    const thesisTitle = allTitles.find(t => {
+      const th = RESEARCH_ARCHIVE.theses[t];
+      return th.mkt === market && th.quad === quad && th.idx === idx;
+    });
+    if (thesisTitle) {
+      const th = RESEARCH_ARCHIVE.theses[thesisTitle];
+      // Combine news_history + regular history into a timeline
+      const newsEntries = (th.news_history || []).slice(-24).reverse().map(e => ({
+        date: e.fetched_at, articles: e.articles, type: 'live'
+      }));
+      const snapshotEntries = (th.history || []).slice(-4).reverse().map(e => ({
+        date: e.as_of, categories: e.categories, type: 'snapshot'
+      }));
+      const allEntries = [...newsEntries, ...snapshotEntries]
+        .sort((a, b) => b.date.localeCompare(a.date));
+
+      if (allEntries.length) {
+        historyHtml = allEntries.map(e => {
+          let artList = '';
+          if (e.type === 'live') {
+            artList = (e.articles || []).map(a =>
+              `<div class="rp-history-art"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a></div>`
+            ).join('');
+          } else {
+            // Flatten first 3 articles from each category
+            const flatArts = [];
+            Object.values(e.categories || {}).forEach(sources => {
+              sources.forEach(src => (src.articles || []).slice(0,2).forEach(a => flatArts.push(a)));
+            });
+            artList = flatArts.slice(0,8).map(a =>
+              `<div class="rp-history-art"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a></div>`
+            ).join('');
+          }
+          return `<div class="rp-history-entry">
+            <div class="rp-history-date">${e.type === 'live' ? '🔴 LIVE ' : '📚 Snapshot '}${e.date.slice(0,16).replace('T',' ')} UTC</div>
+            ${artList}
+          </div>`;
+        }).join('');
+      } else {
+        historyHtml = '<div style="color:#333;font-size:10px;padding:12px">No historical snapshots yet.</div>';
+      }
+    } else {
+      historyHtml = '<div style="color:#333;font-size:10px;padding:12px">No archive entry found for this thesis.</div>';
+    }
+  } else {
+    historyHtml = '<div style="color:#333;font-size:10px;padding:12px">Archive not loaded.</div>';
+  }
+
+  // Metadata row
+  const newsTs = (RESEARCH_DEEP && RESEARCH_DEEP.news_as_of)
+    ? `<span class="news-ts">🔴 Live news: ${RESEARCH_DEEP.news_as_of.slice(0,16).replace('T',' ')} UTC</span>` : '';
+  const resTs = (RESEARCH_DEEP && RESEARCH_DEEP.as_of)
+    ? `<span class="archive-ts">📚 Research: ${RESEARCH_DEEP.as_of.slice(0,10)}</span>` : '';
+  const metaRow = (newsTs || resTs)
+    ? `<div class="rp-panel-meta">${newsTs}${resTs}</div>` : '';
+
+  return metaRow +
+    `<div class="rp-tabs">${tabsHtml}</div>` +
+    `<div class="rp-panels">${panelsHtml}` +
+    `<div class="rp-tab-content" id="rpc-${uid}-hist"><div class="rp-history-list">${historyHtml}</div></div>` +
+    `</div>`;
 }
 
 function toggleResearchPanel(mkt, quad, idx) {
@@ -1157,29 +1411,10 @@ function switchRpTab(tabEl, panelId) {
 
 
 // ─── TRADE → RESEARCH HIGHLIGHT ──────────────────────────────────────────────
-const GENERIC_TRADE_WORDS = new Set([
-  'long','short','call','put','spread','bull','bear','buy','sell','etf',
-  'options','futures','index','fund','bond','note','rate','equity','equities',
-  'currency','currencies','commodities','commodity','via','the','and','for',
-  'using','with','vs','on','of'
-]);
-
-function tradeSearchTerms(name, ticker) {
-  // Clean ticker: strip suffix like =F, ^, =X, /USD etc.
-  const cleanTicker = (ticker || '').replace(/[=^\/\-].*$/, '').replace(/[^A-Za-z0-9]/g, '').toLowerCase();
-  // Extract meaningful words from trade name
-  const nameWords = (name || '').toLowerCase()
-    .replace(/[—\-\/&]+/g, ' ')
-    .split(/\s+/)
-    .filter(w => w.length > 2 && !GENERIC_TRADE_WORDS.has(w));
-  const terms = [...new Set([cleanTicker, ...nameWords].filter(Boolean))];
-  return terms;
-}
-
-function articleMatchScore(article, terms) {
-  if (!terms.length) return 0;
-  const text = ((article.title || '') + ' ' + (article.summary || '')).toLowerCase();
-  return terms.filter(t => text.includes(t)).length;
+// Exact match via linked_trades (set at generation time, 100% reliable)
+function articleMatchesTrade(article, tradeName) {
+  const linked = article.linked_trades || article.linkedTrades || [];
+  return linked.includes(tradeName);
 }
 
 let activeTradeEl = null; // currently selected trade element
@@ -1215,9 +1450,7 @@ function focusTrade(tradeEl, mkt, quad, idx) {
   // Clear previous highlight
   clearTradeHighlight(mkt);
 
-  const tradeName   = tradeEl.dataset.tradeName   || '';
-  const tradeTicker = tradeEl.dataset.tradeTicker || '';
-  const terms = tradeSearchTerms(tradeName, tradeTicker);
+  const tradeName = tradeEl.dataset.tradeName || '';
 
   // Mark trade as selected
   activeTradeEl = tradeEl;
@@ -1231,7 +1464,6 @@ function focusTrade(tradeEl, mkt, quad, idx) {
   const panel = document.getElementById('research-panel-' + mkt);
   const toggle = document.getElementById('rp-toggle-' + mkt);
   if (panel && (panel.style.display === 'none' || !panel.style.display)) {
-    // Open it
     if (!panel.dataset.rendered) {
       const market = mkt === 'us' ? 'US' : 'IN';
       panel.innerHTML = buildResearchPanel(market, quad, idx);
@@ -1243,22 +1475,40 @@ function focusTrade(tradeEl, mkt, quad, idx) {
 
   if (!panel) return;
 
-  // Scan all tab-content panels for article matches
+  // Get article data from RESEARCH_DEEP for exact linked_trades lookup
+  const market = mkt === 'us' ? 'US' : 'IN';
+  const cardResearch = (RESEARCH_DEEP && RESEARCH_DEEP[market] && RESEARCH_DEEP[market][quad] && RESEARCH_DEEP[market][quad][idx])
+    ? RESEARCH_DEEP[market][quad][idx].categories || {}
+    : {};
+
+  // Build a map from article DOM element index → linked_trades
+  // Articles are rendered in order: cat → source → article[0..4]
+  const artDataFlat = [];
+  const RESEARCH_CATS_ORDER = [
+    'Equity Research & Brokerages','Tier 1 Consulting','Central Banks & Development',
+    'Financial News','Asset Managers & Hedge Funds','Podcasts, Blogs & Newsletters','Indices & Data Sources'
+  ];
+  RESEARCH_CATS_ORDER.forEach(cat => {
+    (cardResearch[cat] || []).forEach(src => {
+      (src.articles || []).forEach(art => artDataFlat.push(art));
+    });
+  });
+
+  // Scan all tab-content panels for article matches using exact linked_trades
   const tabContents = panel.querySelectorAll('.rp-tab-content');
   const tabs = panel.querySelectorAll('.rp-tab');
   let bestTabIdx = -1, bestTabCount = 0;
+  let artFlatIdx = 0;
 
   tabContents.forEach((tabContent, ti) => {
     const articles = tabContent.querySelectorAll('.rp-article');
     let matchCount = 0;
 
     articles.forEach(artEl => {
-      const titleEl = artEl.querySelector('.rp-article-title');
-      const summaryEl = artEl.querySelector('.rp-article-summary');
-      const text = ((titleEl ? titleEl.textContent : '') + ' ' + (summaryEl ? summaryEl.textContent : '')).toLowerCase();
-      const score = terms.filter(t => text.includes(t)).length;
+      const artData = artDataFlat[artFlatIdx++];
+      const isMatch = artData ? articleMatchesTrade(artData, tradeName) : false;
 
-      if (score > 0) {
+      if (isMatch) {
         artEl.classList.add('art-match');
         matchCount++;
       } else {
@@ -1320,6 +1570,16 @@ async function loadData() {
 }
 
 
+
+async function loadResearchArchive() {
+  try {
+    const resp = await fetch('./research_archive.json?_=' + Date.now());
+    if (!resp.ok) throw new Error('research_archive.json fetch failed: ' + resp.status);
+    RESEARCH_ARCHIVE = await resp.json();
+  } catch(e) {
+    console.warn('Could not load research_archive.json:', e);
+  }
+}
 async function loadResearch() {
   try {
     const resp = await fetch('./research_deep.json?_=' + Date.now());
@@ -1330,7 +1590,7 @@ async function loadResearch() {
   }
 }
 async function init() {
-  await Promise.all([loadData(), loadResearch()]);
+  await Promise.all([loadData(), loadResearch(), loadResearchArchive()]);
   buildTables(US_SECTIONS, 'us-tables');
   buildTables(IN_SECTIONS, 'in-tables', IN_EXTRA);
   buildMatrix('US', 'matrix-us');
@@ -1355,6 +1615,222 @@ async function refreshData() {
   } catch(e) {
     console.warn('Data refresh failed:', e);
   }
+}
+
+// ─── THESIS VIEW ─────────────────────────────────────────────────────────────
+function closeThesisView() {
+  document.getElementById('thesis-view-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function openThesisView(mkt, quad, idx) {
+  const market = mkt === 'us' ? 'US' : 'IN';
+  const t = MARKETS[market][quad][idx];
+  const data = EXPANDED[market] && EXPANDED[market][quad] && EXPANDED[market][quad][idx];
+  const research = (RESEARCH_DEEP && RESEARCH_DEEP[market] && RESEARCH_DEEP[market][quad])
+    ? RESEARCH_DEEP[market][quad][idx] : null;
+
+  const container = document.getElementById('tv-container');
+  container.innerHTML = buildThesisView(mkt, market, quad, idx, t, data, research);
+
+  document.getElementById('thesis-view-modal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  document.getElementById('thesis-view-modal').scrollTop = 0;
+}
+
+function buildThesisView(mkt, market, quad, idx, t, data, research) {
+  if (!t) return '<div style="padding:40px;color:#555;text-align:center">No thesis data</div>';
+
+  const isBull = quad === 'stl' || quad === 'ltl';
+  const accentColor = isBull ? '#4caf50' : '#ef5350';
+  const conviction = t.conviction === 'HIGH' ? 'HIGH' : 'MEDIUM';
+  const cvFill = conviction === 'HIGH' ? 90 : 55;
+  const cvClass = conviction === 'HIGH' ? 'cv-fill-high' : 'cv-fill-med';
+
+  // ── Signal cards from DATA ────────────────────────────────────────────────
+  // Map thesis nodes to instrument data
+  const nodeToSym = {};
+  Object.entries(SYM_NODES).forEach(([sym, nodes]) => nodes.forEach(n => { nodeToSym[n] = sym; }));
+  const cardNodes = t.nodes || [];
+  const signalCards = [];
+  const seenSyms = new Set();
+
+  cardNodes.forEach(node => {
+    const sym = nodeToSym[node];
+    if (!sym || seenSyms.has(sym)) return;
+    seenSyms.add(sym);
+    // Find this instrument in DATA
+    let instr = null;
+    Object.values(DATA).forEach(section => {
+      if (Array.isArray(section)) {
+        const found = section.find(r => r.symbol === sym);
+        if (found) instr = found;
+      }
+    });
+    if (!instr || !instr.tech) return;
+    const tch = instr.tech;
+    const cur = instr.current;
+    const rsi = tch.rsi;
+    const rsiPct = Math.max(0, Math.min(100, rsi || 50));
+    const rsiColor = rsi >= 70 ? '#ef5350' : rsi <= 30 ? '#4caf50' : '#555';
+    const macd = tch.macd_hist > 0 ? 'Bullish' : 'Bearish';
+    const macdColor = tch.macd_hist > 0 ? '#4caf50' : '#ef5350';
+    const trend = tch.trend || '—';
+    const trendColor = trend.includes('Up') ? '#4caf50' : trend.includes('Down') ? '#ef5350' : '#666';
+    const bbPct = tch.bb_pct_b;
+    const bbColor = bbPct > 80 ? '#ef5350' : bbPct < 20 ? '#4caf50' : '#555';
+    signalCards.push(`
+      <div class="tv-signal-card">
+        <div class="tv-signal-name">${instr.name} <span style="color:#333;font-size:9px">${sym}</span></div>
+        <div class="tv-signal-value" style="color:${accentColor}">${cur !== null ? cur.toLocaleString() : '—'}</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;font-size:9px;color:#444;margin-bottom:4px">
+          <span>RSI <span style="color:${rsiColor};font-weight:700">${rsi || '—'}</span></span>
+          <span>MACD <span style="color:${macdColor};font-weight:700">${macd}</span></span>
+          <span>BB%B <span style="color:${bbColor};font-weight:700">${bbPct !== null ? bbPct + '%' : '—'}</span></span>
+        </div>
+        <div class="tv-signal-bar"><div class="tv-signal-fill" style="width:${rsiPct}%;background:${rsiColor}"></div></div>
+        <div class="tv-signal-verdict" style="color:${trendColor}">${trend}</div>
+      </div>`);
+  });
+
+  // ── Narrative: explain how indicators → thesis ────────────────────────────
+  const impactsHtml = (data && data.impacts || []).map(imp =>
+    `<strong>${imp.name}:</strong> ${imp.line}`
+  ).join('<br><br>');
+
+  const quadLabel = {stl:'Short-Term Bullish',ltl:'Long-Term Bullish',sts:'Short-Term Bearish',lts:'Long-Term Bearish'}[quad] || quad;
+
+  // ── Evidence from research categories ────────────────────────────────────
+  const RESEARCH_CATS_TV = [
+    'Equity Research & Brokerages','Tier 1 Consulting','Central Banks & Development',
+    'Financial News','Asset Managers & Hedge Funds','Podcasts, Blogs & Newsletters','Indices & Data Sources'
+  ];
+  const catShortTV = {
+    'Equity Research & Brokerages':'Equity Research','Tier 1 Consulting':'Consulting',
+    'Central Banks & Development':'Central Banks','Financial News':'Financial News',
+    'Asset Managers & Hedge Funds':'Asset Managers','Podcasts, Blogs & Newsletters':'Blogs & Pods',
+    'Indices & Data Sources':'Data & Indices'
+  };
+
+  const evidenceCards = RESEARCH_CATS_TV.map(cat => {
+    const sources = (research && research.categories && research.categories[cat]) || [];
+    if (!sources.length) return '';
+    // Pick top 2 articles (article[0] = thesis article = best summary)
+    const topArts = [];
+    sources.forEach(src => {
+      if (src.articles && src.articles[0]) topArts.push({src: src.source, art: src.articles[0], url: src.articles[0].url});
+    });
+    const artItems = topArts.slice(0,3).map(({src, art, url}) =>
+      `<div class="tv-ev-item"><a href="${url}" target="_blank" rel="noopener">${art.title}</a><div style="color:#2a2a2a;font-size:9px;margin-top:2px">${art.summary.slice(0,120)}…</div></div>`
+    ).join('');
+    return `<div class="tv-evidence-card">
+      <div class="tv-ev-cat">${catShortTV[cat] || cat}</div>
+      ${artItems || '<div class="tv-ev-item" style="color:#2a2a2a">No articles</div>'}
+    </div>`;
+  }).filter(Boolean).join('');
+
+  // ── Trade logic: each trade + rationale + supporting evidence ────────────
+  const catIcons = { commodities:'⛏ Commodities', fixed_income:'🏛 Fixed Income', currencies:'💱 Currencies', equities:'📈 Equities' };
+  const tradeCols = ['commodities','fixed_income','currencies','equities'].map(cat => {
+    const trades = (data && data.trades && data.trades[cat]) || [];
+    if (!trades.length) return `<div class="tv-trade-col"><div class="tv-trade-col-label">${catIcons[cat] || cat}</div><div style="color:#333;font-size:10px">No trades</div></div>`;
+    const tradeItems = trades.map(tr => `
+      <div class="tv-trade-item">
+        <div class="tv-trade-name">${tr.name}</div>
+        <span class="tv-trade-ticker">${tr.ticker}</span>
+        <div class="tv-trade-rationale">${tr.rationale}</div>
+        <div class="tv-trade-thesis-link">↑ Supports: ${t.title.slice(0,40)}</div>
+      </div>`).join('');
+    return `<div class="tv-trade-col"><div class="tv-trade-col-label">${catIcons[cat] || cat}</div>${tradeItems}</div>`;
+  }).join('');
+
+  // ── Risk register (from signal tags) ─────────────────────────────────────
+  const RISKS = {
+    stl: [
+      { label: 'Reversal Risk', desc: 'Short-term momentum trades can reverse sharply on macro surprise or policy shift.' },
+      { label: 'Premium Decay', desc: 'Option premium erodes if the thesis takes longer than the expiry window to play out.' },
+      { label: 'Event Risk', desc: 'Geopolitical or earnings events can gap price past stop levels before hedges activate.' },
+    ],
+    ltl: [
+      { label: 'Regime Change', desc: 'A structural shift in central bank policy or technology could undermine multi-year thesis.' },
+      { label: 'Position Sizing', desc: 'Long-duration positions require disciplined sizing; drawdowns can be deep before thesis plays out.' },
+      { label: 'Liquidity Risk', desc: 'Long-dated options may have wide bid-ask spreads, increasing effective cost of carry.' },
+    ],
+    sts: [
+      { label: 'Short Squeeze', desc: 'Bearish positions can be squeezed violently by policy intervention or short-covering rallies.' },
+      { label: 'Timing Risk', desc: 'Markets can stay irrational longer than the expiry window; near-dated puts expire worthless if timed wrong.' },
+      { label: 'Gap Risk', desc: 'Positive surprise news can gap price up overnight, bypassing put strike protection.' },
+    ],
+    lts: [
+      { label: 'Policy Intervention', desc: 'Government or central bank intervention can reverse structural bear trends.' },
+      { label: 'Correlation Breakdown', desc: 'Historical correlations (e.g., yields vs equities) can break down in regime shifts.' },
+      { label: 'Roll Cost', desc: 'Rolling long-dated puts monthly has a cumulative cost that erodes returns in prolonged sideways markets.' },
+    ],
+  };
+  const risks = RISKS[quad] || RISKS.stl;
+  const riskCards = risks.map(r =>
+    `<div class="tv-risk-card"><div class="tv-risk-label">⚠ ${r.label}</div><div class="tv-risk-desc">${r.desc}</div></div>`
+  ).join('');
+
+  // ── Assemble ─────────────────────────────────────────────────────────────
+  return `
+    <div class="tv-close-bar">
+      <span class="tv-back-label">◈ Thesis View</span>
+      <button class="tv-close-btn" onclick="closeThesisView()">✕ Close</button>
+    </div>
+
+    <div class="tv-hdr">
+      <div>
+        <div class="tv-hdr-title">${t.title}</div>
+        <div class="tv-hdr-desc">${t.desc}</div>
+        <div style="margin-top:10px;font-size:11px;color:#3a5a3a;font-style:italic">${t.strategy}</div>
+        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+          ${(t.nodes||[]).map(n => `<span class="node-chip">${n}</span>`).join('')}
+        </div>
+      </div>
+      <div class="tv-hdr-meta">
+        <div class="tv-conviction-meter">
+          <div class="tv-conviction-label">Conviction</div>
+          <div class="tv-conviction-bar"><div class="tv-conviction-fill ${cvClass}" style="width:${cvFill}%"></div></div>
+          <div style="font-size:11px;font-weight:700;color:${conviction==='HIGH'?'#e8a838':'#666'}">${conviction}</div>
+        </div>
+        <div style="font-size:9px;color:#333;text-align:right;margin-top:8px">${quadLabel}</div>
+        <div style="font-size:9px;color:#2a2a2a;text-align:right">${market} · ${quad.toUpperCase()}</div>
+      </div>
+    </div>
+
+    <div class="tv-section">
+      <div class="tv-section-label">Market Signals — What the Data Is Telling Us</div>
+      ${signalCards.length
+        ? `<div class="tv-signals-grid">${signalCards.join('')}</div>`
+        : '<div style="color:#333;font-size:11px">No live instrument data linked to this thesis.</div>'}
+    </div>
+
+    <div class="tv-section">
+      <div class="tv-section-label">Investment Thesis Narrative</div>
+      <div class="tv-narrative">
+        <strong>Thesis:</strong> ${t.desc}<br><br>
+        ${impactsHtml || '<em style="color:#2a2a2a">Expand to see signal analysis.</em>'}
+      </div>
+    </div>
+
+    <div class="tv-section">
+      <div class="tv-section-label">Supporting Evidence — Across 7 Research Categories</div>
+      ${evidenceCards
+        ? `<div class="tv-evidence-grid">${evidenceCards}</div>`
+        : '<div style="color:#333;font-size:11px">Load research panel to see evidence.</div>'}
+    </div>
+
+    <div class="tv-section">
+      <div class="tv-section-label">Trade Logic Chain — Why Each Trade Was Selected</div>
+      <div class="tv-trade-chain">${tradeCols}</div>
+    </div>
+
+    <div class="tv-section">
+      <div class="tv-section-label">Risk Register — What Could Go Wrong</div>
+      <div class="tv-risk-grid">${riskCards}</div>
+    </div>
+  `;
 }
 
 document.addEventListener('DOMContentLoaded', init);

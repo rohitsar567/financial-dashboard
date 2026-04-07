@@ -385,6 +385,24 @@ def main():
         encoding='utf-8',
     )
 
+    # ── Auto-push to GitHub Pages ─────────────────────────────────────────────
+    try:
+        import subprocess as sp
+        ts = start.strftime('%Y-%m-%d %H:%M UTC')
+        sp.run(['git', 'add', 'data.json'], cwd=DASHBOARD_DIR, check=True, capture_output=True)
+        result = sp.run(['git', 'diff', '--cached', '--quiet'], cwd=DASHBOARD_DIR, capture_output=True)
+        if result.returncode != 0:  # there are staged changes
+            sp.run(
+                ['git', 'commit', '-m', f'data: auto-refresh market data {ts}'],
+                cwd=DASHBOARD_DIR, check=True, capture_output=True
+            )
+            sp.run(['git', 'push'], cwd=DASHBOARD_DIR, check=True, capture_output=True)
+            log.info('Pushed data.json to GitHub Pages')
+        else:
+            log.info('data.json unchanged — skipped git push')
+    except Exception as git_err:
+        log.warning('Git push failed (non-fatal): %s', git_err)
+
 
 if __name__ == '__main__':
     main()
