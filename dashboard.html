@@ -1008,6 +1008,9 @@ tr.row-locked td:first-child { color:#1565c0; }
 }
 
 @media (max-width: 480px) {
+  .tv-da-grid { grid-template-columns:1fr; }
+  .da-grid { grid-template-columns:1fr; }
+
   .tab-btn { padding:10px 10px; font-size:11px; }
   .exp-trades-grid { grid-template-columns:1fr; }
   .exp-cat-col { border-right:none !important; border-bottom:1px solid #dce3ec; }
@@ -1153,6 +1156,7 @@ let DATA_AS_OF = null; // set dynamically from data.json
 let RESEARCH_DEEP = null; // loaded dynamically from research_deep.json
 let RESEARCH_ARCHIVE = null; // loaded dynamically from research_archive.json
 let TRADES = null;           // loaded dynamically from trades.json (daily refresh)
+let DEVILS_ADVOCATE = null;  // loaded dynamically from devils_advocate.json
 let historyFilter = 'all';
 let historySearch = '';
 
@@ -1727,10 +1731,41 @@ function buildExpandedView(cardEl, mkt) {
           ${tradeCols}
         </div>
       </div>
+      ${buildDASection(t.title, mkt)}
       ${buildCardHistorySection(t.title, mkt)}
     </div>`;
   applyTradeOverlays();
   overlay.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+
+function buildDASection(thesisTitle, mkt) {
+  if (!DEVILS_ADVOCATE || !DEVILS_ADVOCATE.theses) return '';
+  const da = DEVILS_ADVOCATE.theses[thesisTitle];
+  if (!da) return '';
+  const uid = 'da-' + mkt + '-' + encodeURIComponent(thesisTitle).slice(0,20).replace(/%/g,'_');
+  const riskCls = da.risk_score === 'HIGH' ? 'da-risk-high' : da.risk_score === 'LOW' ? 'da-risk-low' : 'da-risk-medium';
+  const riskIcon = da.risk_score === 'HIGH' ? '⚠' : da.risk_score === 'LOW' ? '✓' : '◉';
+  const failItems = (da.failure_conditions || []).map(f => `<div class="da-item">${f}</div>`).join('');
+  const sigItems  = (da.counter_signals    || []).map(s => `<div class="da-item">${s}</div>`).join('');
+  return `<div class="exp-da-section">
+    <div class="exp-da-toggle" id="da-toggle-${uid}" onclick="toggleDA('${uid}',this)">
+      <span>⚔ DEVIL'S ADVOCATE — What Could Kill This Trade</span>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="da-risk-score ${riskCls}">${riskIcon} ${da.risk_score} RISK</span>
+        <span class="da-arrow">&#9658;</span>
+      </div>
+    </div>
+    <div class="exp-da-body" id="${uid}">
+      <div class="da-bear-case"><strong>Bear Case</strong>${da.bear_case}</div>
+      <div class="da-grid">
+        <div><div class="da-block-label">Failure Conditions</div>${failItems}</div>
+        <div><div class="da-block-label">Counter-Signals to Watch</div>${sigItems}</div>
+      </div>
+      ${da.pain_trade ? `<div class="da-pain-box"><div class="da-pain-label">☠ Pain Trade</div><div class="da-pain-text">${da.pain_trade}</div></div>` : ''}
+      ${da.overlooked_risk ? `<div class="da-item" style="border-color:#c06060"><strong style="color:#c02020;font-size:9px;display:block;margin-bottom:2px">OVERLOOKED RISK</strong>${da.overlooked_risk}</div>` : ''}
+    </div>
+  </div>`;
 }
 
 function buildCardHistorySection(thesisTitle, mkt) {
@@ -1781,6 +1816,20 @@ function buildCardHistorySection(thesisTitle, mkt) {
       ${entriesHtml}
     </div>
   </div>`;
+}
+
+
+function toggleDA(uid, toggleEl) {
+  const body = document.getElementById(uid);
+  if (!body) return;
+  const arrow = toggleEl.querySelector('.da-arrow');
+  if (body.style.display === 'none' || !body.style.display) {
+    body.style.display = 'block';
+    toggleEl.classList.add('open');
+  } else {
+    body.style.display = 'none';
+    toggleEl.classList.remove('open');
+  }
 }
 
 function toggleCardHistory(histId, toggleEl) {
@@ -2139,6 +2188,13 @@ async function loadResearch() {
     console.warn('Could not load research_deep.json:', e);
   }
 }
+
+async function loadDevilsAdvocate() {
+  try {
+    const resp = await fetch('./devils_advocate.json?_=' + Date.now());
+    if (resp.ok) DEVILS_ADVOCATE = await resp.json();
+  } catch(e) { console.warn('devils_advocate.json not available:', e); }
+}
 async function loadTrades() {
   try {
     const resp = await fetch('./trades.json?_=' + Date.now());
@@ -2184,7 +2240,7 @@ function applyTradeOverlays() {
 }
 
 async function init() {
-  await Promise.all([loadData(), loadResearch(), loadResearchArchive(), loadTrades()]);
+  await Promise.all([loadData(), loadResearch(), loadResearchArchive(), loadTrades(), loadDevilsAdvocate()]);
   buildTables(US_SECTIONS, 'us-tables');
   buildTables(IN_SECTIONS, 'in-tables', IN_EXTRA);
   buildMatrix('US', 'matrix-us');
@@ -2424,6 +2480,34 @@ function buildThesisView(mkt, market, quad, idx, t, data, research) {
       <div class="tv-section-label">Risk Register — What Could Go Wrong</div>
       <div class="tv-risk-grid">${riskCards}</div>
     </div>
+
+    <div class="tv-section">
+      <div class="tv-section-label">Devil's Advocate — What Could Kill This Trade</div>
+      ${(() => {
+        const da = DEVILS_ADVOCATE && DEVILS_ADVOCATE.theses && DEVILS_ADVOCATE.theses[t.title];
+        if (!da) return '<div style="color:#8a919e;font-size:11px">No devil\'s advocate data available.</div>';
+        const riskCls = da.risk_score === 'HIGH' ? 'da-risk-high' : da.risk_score === 'LOW' ? 'da-risk-low' : 'da-risk-medium';
+        const riskIcon = da.risk_score === 'HIGH' ? '⚠' : da.risk_score === 'LOW' ? '✓' : '◉';
+        const failItems = (da.failure_conditions || []).map(f => `<div class="tv-da-item">${f}</div>`).join('');
+        const sigItems  = (da.counter_signals    || []).map(s => `<div class="tv-da-item">${s}</div>`).join('');
+        return `<div class="tv-da-section">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+            <div class="tv-da-bear" style="flex:1;margin:0">${da.bear_case}</div>
+            <span class="da-risk-score ${riskCls}" style="flex-shrink:0">${riskIcon} ${da.risk_score} RISK</span>
+          </div>
+          <div class="tv-da-grid">
+            <div class="tv-da-block"><div class="tv-da-block-label">Failure Conditions</div>${failItems}</div>
+            <div class="tv-da-block"><div class="tv-da-block-label">Counter-Signals</div>${sigItems}</div>
+            <div class="tv-da-block">
+              <div class="tv-da-block-label">Overlooked Risk</div>
+              <div class="tv-da-item">${da.overlooked_risk || '—'}</div>
+            </div>
+          </div>
+          ${da.pain_trade ? `<div class="tv-da-pain"><div class="tv-da-block-label">☠ Pain Trade</div><div style="font-size:11px;color:#5a2020;line-height:1.6">${da.pain_trade}</div></div>` : ''}
+        </div>`;
+      })()}
+    </div>
+
   `;
 }
 
@@ -2651,7 +2735,7 @@ document.addEventListener('DOMContentLoaded', init);
 // Market data: every 60 seconds
 setInterval(refreshData, 60 * 1000);
 // Research & news archive: every hour
-setInterval(async () => { await loadResearch(); await loadResearchArchive(); }, 60 * 60 * 1000);
+setInterval(async () => { await loadResearch(); await loadResearchArchive(); await loadDevilsAdvocate(); }, 60 * 60 * 1000);
 // Trades live prices: every 60 seconds
 setInterval(loadTrades, 60 * 1000);
 
