@@ -588,6 +588,93 @@ tr[data-sym].faded td { opacity: 0.12; }
 }
 .tv-open-btn:hover { background: #0d250d; border-color: #2a5a2a; }
 
+/* ── DEVIL'S ADVOCATE BUTTON ── */
+.da-open-btn {
+  display: flex; align-items: center; gap: 6px;
+  background: #1a0505; border: 1px solid #3a1010; color: #ef5350;
+  padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: 600;
+  transition: background 0.15s, border-color 0.15s;
+}
+.da-open-btn:hover { background: #250808; border-color: #5a1818; }
+
+/* ── DEVIL'S ADVOCATE MODAL ── */
+#da-modal {
+  display: none; position: fixed; inset: 0; z-index: 10000;
+  background: rgba(0,0,0,0.94); overflow-y: auto;
+}
+.da-container {
+  max-width: 900px; margin: 0 auto; padding: 24px 20px 60px;
+}
+.da-close-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 20px;
+}
+.da-back-label { font-size: 10px; color: #3a1010; letter-spacing: 1px; text-transform: uppercase; }
+.da-close-btn {
+  background: #1a0505; border: 1px solid #3a1010; color: #777;
+  padding: 6px 16px; border-radius: 4px; cursor: pointer; font-size: 12px;
+  transition: background 0.15s;
+}
+.da-close-btn:hover { background: #250808; color: #ccc; }
+/* DA header */
+.da-hdr {
+  padding: 20px; background: #0d0404; border: 1px solid #2a0a0a; border-radius: 6px;
+  margin-bottom: 16px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start;
+}
+.da-hdr-skull { font-size: 28px; line-height: 1; }
+.da-hdr-title { font-size: 20px; font-weight: 700; color: #ef5350; margin-bottom: 4px; }
+.da-hdr-subtitle { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #5a1a1a; margin-bottom: 8px; }
+.da-hdr-thesis-title { font-size: 13px; color: #444; }
+/* Risk score badge */
+.da-risk-badge {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 12px 18px; border-radius: 6px; border: 1px solid; text-align: center;
+}
+.da-risk-badge.risk-high { background: #1a0505; border-color: #3a0a0a; color: #ef5350; }
+.da-risk-badge.risk-med  { background: #1a0f00; border-color: #3a2000; color: #ffb300; }
+.da-risk-badge.risk-low  { background: #0a100a; border-color: #1a2a1a; color: #4caf50; }
+.da-risk-label { font-size: 8px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; opacity: 0.7; }
+.da-risk-value { font-size: 18px; font-weight: 700; }
+.da-risk-sub { font-size: 8px; opacity: 0.6; }
+/* DA sections */
+.da-section { margin-bottom: 14px; background: #0a0303; border: 1px solid #1e0a0a; border-radius: 5px; padding: 16px 18px; }
+.da-section-label {
+  font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: #5a1a1a; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+}
+.da-section-label::after { content: ''; flex: 1; height: 1px; background: #1e0808; }
+/* Bear case */
+.da-bear-case { font-size: 13px; color: #888; line-height: 1.7; }
+/* Failure conditions / counter-signals */
+.da-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.da-list-item {
+  display: flex; gap: 10px; align-items: flex-start;
+  font-size: 12px; color: #666; line-height: 1.5; padding: 8px 10px;
+  background: #080202; border-radius: 3px; border-left: 2px solid #2a0808;
+}
+.da-list-num {
+  font-size: 9px; font-weight: 700; color: #3a1010; flex-shrink: 0;
+  width: 18px; text-align: center; padding-top: 1px;
+}
+/* Pain trade */
+.da-pain-trade {
+  font-size: 12px; color: #8a3a3a; line-height: 1.6; padding: 10px 12px;
+  background: #0d0303; border: 1px dashed #2a0808; border-radius: 4px;
+}
+/* Overlooked risk */
+.da-overlooked {
+  font-size: 12px; color: #7a6a2a; line-height: 1.6; padding: 10px 12px;
+  background: #0d0c03; border: 1px solid #2a2008; border-radius: 4px;
+}
+.da-overlooked-label {
+  font-size: 8px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
+  color: #5a4a1a; margin-bottom: 5px;
+}
+/* Not available placeholder */
+.da-loading {
+  padding: 60px; text-align: center; color: #3a1010; font-size: 13px;
+}
+
 /* ── HISTORY TAB ── */
 .hist-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 18px; }
 .hist-search {
@@ -702,6 +789,321 @@ tr[data-sym].faded td { opacity: 0.12; }
 .exp-card-hist-arrow { font-size: 10px; color: #1a1a3a; transition: transform 0.2s; }
 .exp-card-hist-arrow.open { transform: rotate(90deg); }
 .exp-card-hist-body { display: flex; flex-direction: column; gap: 0; }
+
+/* Theme toggle button */
+.theme-toggle-btn {
+  margin-left: auto; padding: 5px 14px; font-size: 10px; font-weight: 600;
+  background: #111; border: 1px solid #2a2a2a; color: #666;
+  border-radius: 3px; cursor: pointer; letter-spacing: 0.4px;
+  transition: all 0.15s; align-self: center;
+}
+.theme-toggle-btn:hover { color: #aaa; border-color: #444; }
+
+/* ═══════════════════════════════════════════════════════════════
+   LIGHT MODE  (body.light overrides all dark-mode declarations)
+   ═══════════════════════════════════════════════════════════════ */
+body.light {
+  background: #f4f4f4;
+  color: #1a1a1a;
+}
+
+/* Tab bar */
+body.light .tab-bar { background: #ffffff; border-bottom-color: #ddd; }
+body.light .tab-bar-title { color: #111; }
+body.light .tab-bar-title span { color: #888; }
+body.light .tab-btn { color: #888; }
+body.light .tab-btn:hover { color: #333; }
+body.light .tab-btn.active { color: #111; border-bottom-color: #111; }
+body.light .tab-badge { background: #eee; color: #888; }
+body.light .theme-toggle-btn { background: #eee; border-color: #ccc; color: #555; }
+body.light .theme-toggle-btn:hover { background: #e0e0e0; color: #222; }
+
+/* Freshness bar */
+body.light .freshness-bar { background: #fafafa; border-bottom-color: #e8e8e8; color: #888; }
+
+/* Section headings */
+body.light .section-heading { color: #111; }
+body.light .section-sub { color: #888; }
+body.light .conn-hint { color: #bbb; border-color: #e8e8e8; }
+body.light .conn-hint.has-active { color: #4a7a4a; }
+
+/* Data tables */
+body.light table { background: #ffffff; }
+body.light th {
+  background: #f0f0f0; color: #888; border-bottom-color: #e0e0e0;
+}
+body.light td { border-bottom-color: #f0f0f0; }
+body.light td:first-child { color: #333; }
+body.light td.sym { color: #999; }
+body.light td.price { color: #111; }
+body.light tr:hover td { background: #f5f5f5; }
+body.light tr.row-active td { background: #e8f0fb !important; }
+body.light tr.row-locked td { background: #e8f5f5 !important; }
+body.light tr.row-locked td:first-child { color: #1565c0; }
+body.light td.sep, body.light th.sep { border-left-color: #e8e8e8; }
+body.light .rsi-n { color: #888; }
+body.light .neu { color: #aaa; }
+body.light .pctb-track { background: #e0e0e0; }
+body.light .tbl-label { color: #555; }
+body.light .legend-row { color: #999; }
+
+/* Matrix */
+body.light .matrix-grid { background: #fff; border-color: #e0e0e0; }
+body.light .matrix-quad { background: #fafafa; border-color: #e4e4e4; }
+body.light .matrix-quad:hover { border-color: #ccc; }
+body.light .quad-hdr { background: #f5f5f5; border-bottom-color: #e8e8e8; color: #888; }
+body.light .q-stl .quad-hdr { border-bottom-color: #a5d6a7; color: #2e7d32; background: #f1f8f1; }
+body.light .q-ltl .quad-hdr { border-bottom-color: #80cbc4; color: #00695c; background: #f0fafa; }
+body.light .q-sts .quad-hdr { border-bottom-color: #ef9a9a; color: #c62828; background: #fdf1f1; }
+body.light .q-lts .quad-hdr { border-bottom-color: #ffcc80; color: #e65100; background: #fdf5e8; }
+body.light .matrix-grid .matrix-quad.faded { opacity: 0.25; }
+
+/* Thesis cards */
+body.light .thesis-card {
+  background: #ffffff; border-color: #e8e8e8; color: #222;
+}
+body.light .thesis-card:hover { border-color: #bbb; }
+body.light .thesis-card.faded { opacity: 0.2; }
+body.light .tc-title { color: #111; }
+body.light .tc-strategy { color: #777; }
+body.light .node-chip { background: #f0f0f0; color: #555; border-color: #e0e0e0; }
+body.light .tc-chips .node-chip.signal { background: #fff8e1; color: #795548; border-color: #ffe082; }
+body.light .tc-chips .node-chip.theme { background: #fce4ec; color: #880e4f; border-color: #f48fb1; }
+body.light .tc-hdr { border-bottom-color: #f0f0f0; }
+body.light .card-meta { color: #aaa; border-top-color: #f0f0f0; }
+body.light .badge-new { background: #e8f5e9; color: #2e7d32; border-color: #a5d6a7; }
+body.light .badge-retiring { background: #fff8e1; color: #e65100; border-color: #ffcc80; }
+body.light .thesis-card.card-retiring { border-color: #ffe082; }
+
+/* Expanded overlay */
+body.light .expanded-overlay { background: #f9f9f9; border-color: #e0e0e0; }
+body.light .exp-hdr { background: #ffffff; border-bottom-color: #e8e8e8; }
+body.light .exp-title { color: #111; }
+body.light .exp-desc { color: #666; }
+body.light .exp-close { color: #999; }
+body.light .exp-close:hover { color: #333; }
+body.light .exp-col-label { color: #888; border-bottom-color: #eee; }
+body.light .exp-strategy { background: #f5f5f5; border-color: #e8e8e8; color: #555; }
+body.light .exp-impact { background: #fafafa; border-color: #e8e8e8; color: #555; }
+body.light .exp-impact strong { color: #333; }
+body.light .exp-link { background: #fafafa; border-color: #eee; }
+body.light .exp-link:hover { background: #f0f0f0; }
+body.light .exp-link-desc { color: #888; }
+body.light .exp-research-hint { color: #bbb; }
+body.light .exp-col-label.exp-research-toggle:hover { color: #333; }
+body.light .exp-trades-section { border-top-color: #e8e8e8; }
+body.light .exp-trades-label { color: #aaa; }
+body.light .exp-cat-col { border-right-color: #e8e8e8; }
+body.light .exp-cat-label { color: #aaa; border-bottom-color: #eee; }
+body.light .exp-trade { border-bottom-color: #f0f0f0; }
+body.light .exp-trade:hover { background: #f5f5f5; }
+body.light .exp-trade.trade-selected { background: #f1f8f1 !important; border-color: #a5d6a7 !important; }
+body.light .exp-trade.trade-selected .exp-trade-num { color: #2e7d32; }
+body.light .exp-trade-num { color: #bbb; }
+body.light .exp-trade-type { color: #aaa; background: #f0f0f0; border-color: #e0e0e0; }
+body.light .exp-trade-name { color: #333; }
+body.light .exp-trade-ticker { color: #1565c0; background: #e8f0fb; border-color: #bbdefb; }
+body.light .exp-trade-entry { color: #888; }
+body.light .exp-trade-nums strong { color: #555; }
+body.light .exp-trade-rationale { color: #777; border-top-color: #f0f0f0; }
+body.light .trade-research-badge { color: #2e7d32; background: #e8f5e9; border-color: #a5d6a7; }
+body.light .trade-live-badge { background: #f5f5f5; border-color: #e0e0e0; }
+body.light .live-price-label { color: #2e7d32; background: #e8f5e9; border-color: #a5d6a7; }
+body.light .live-price-val { color: #555; }
+
+/* Research panel */
+body.light .exp-research-panel { background: #ffffff; border-color: #e0e0e0; }
+body.light .rp-tab-bar { background: #f5f5f5; border-bottom-color: #e0e0e0; }
+body.light .rp-tab { color: #999; }
+body.light .rp-tab:hover { color: #555; }
+body.light .rp-tab.active { color: #111; border-bottom-color: #111; }
+body.light .rp-tab.tab-has-match { color: #2e7d32 !important; }
+body.light .rp-tab.active.tab-has-match { border-bottom-color: #2e7d32 !important; }
+body.light .rp-tab-match-count { background: #e8f5e9; color: #2e7d32; }
+body.light .rp-source-card { background: #fafafa; border-color: #e8e8e8; }
+body.light .rp-source-card:hover { border-color: #ccc; }
+body.light .rp-source-name { color: #333; }
+body.light .rp-source-url { color: #999; }
+body.light .rp-source-url a { color: #1565c0; }
+body.light .rp-article { border-top-color: #f0f0f0; }
+body.light .rp-article.art-match { background: #f1f8f1; border-left-color: #4caf50; }
+body.light .rp-article.art-match .rp-article-title { color: #2e7d32; }
+body.light .rp-article.art-dim { opacity: 0.25; }
+body.light .rp-article-title { color: #555; }
+body.light .rp-article-title:hover { color: #1565c0; }
+body.light .rp-article-summary { color: #aaa; }
+body.light .rp-panel-meta { background: #f5f5f5; border-bottom-color: #e8e8e8; color: #bbb; }
+body.light .rp-panel-meta .news-ts { color: #2e7d32; }
+body.light .rp-panel-meta .archive-ts { color: #1565c0; }
+body.light .rp-source-card.live-source { border-color: #a5d6a7; }
+body.light .rp-source-card.live-source .rp-source-name { color: #2e7d32; }
+body.light .rp-history-date { color: #9090aa; }
+body.light .rp-history-art { color: #888; }
+body.light .rp-history-art a { color: #1565c0; }
+
+/* Card history section */
+body.light .exp-card-history { border-top-color: #e8e8e8; }
+body.light .exp-card-hist-toggle { color: #bbb; }
+body.light .exp-card-hist-toggle:hover { color: #888; }
+body.light .exp-card-hist-arrow { color: #ccc; }
+body.light .hist-entry { border-bottom-color: #f0f0f0; }
+body.light .hist-entry-date.live-date { color: #2e7d32; }
+body.light .hist-entry-date.snap-date { color: #1565c0; }
+body.light .hist-entry-art a { color: #1565c0; }
+
+/* History tab */
+body.light .hist-search { background: #fff; border-color: #e0e0e0; color: #333; }
+body.light .hist-filter-btn { background: #fff; border-color: #e0e0e0; color: #999; }
+body.light .hist-filter-btn:hover { color: #555; border-color: #ccc; }
+body.light .hist-filter-btn.active { background: #f0f0f0; color: #333; border-color: #ccc; }
+body.light .hist-stats { color: #bbb; }
+body.light .hist-card { background: #fff; border-color: #e8e8e8; }
+body.light .hist-card:hover { border-color: #ccc; }
+body.light .hist-card-hdr:hover { background: #fafafa; }
+body.light .hist-card-title { color: #333; }
+body.light .hist-card-meta { color: #bbb; }
+body.light .hist-count-pill { color: #ccc; border-color: #e8e8e8; background: #fafafa; }
+body.light .hist-count-pill.has-data { color: #2e7d32; border-color: #a5d6a7; background: #f1f8f1; }
+body.light .hist-expand-arrow { color: #ccc; }
+body.light .hist-timeline { }
+body.light .hist-entry-date.trade-date { color: #795548; }
+body.light .hist-section-toggle { background: #f5f5f5; border-color: #e8e8e8; color: #aaa; }
+body.light .hist-section-toggle:hover { border-color: #ccc; color: #666; }
+body.light .hist-trade-name { color: #888; }
+body.light .hist-trade-ticker { color: #2e7d32; }
+body.light .hist-source-cat { color: #7986cb; }
+body.light .hist-source-art a { color: #1565c0; }
+body.light .hist-empty { color: #ccc; }
+
+/* Thesis view modal */
+body.light #thesis-view-modal { background: rgba(250,250,250,0.97); }
+body.light .tv-close-btn { background: #f0f0f0; border-color: #ddd; color: #888; }
+body.light .tv-close-btn:hover { background: #e0e0e0; color: #333; }
+body.light .tv-back-label { color: #bbb; }
+body.light .tv-hdr { background: #fff; border-color: #e8e8e8; }
+body.light .tv-hdr-title { color: #111; }
+body.light .tv-hdr-desc { color: #777; }
+body.light .tv-meter-track { background: #e0e0e0; }
+body.light .tv-section { background: #fff; border-color: #e8e8e8; }
+body.light .tv-section-label { color: #aaa; }
+body.light .tv-signal-card { background: #f9f9f9; border-color: #e8e8e8; }
+body.light .tv-sig-name { color: #888; }
+body.light .tv-sig-val { color: #111; }
+body.light .tv-narrative { color: #555; }
+body.light .tv-impact-chip { background: #f0f0f0; border-color: #e0e0e0; color: #555; }
+body.light .tv-evidence-card { background: #fafafa; border-color: #e8e8e8; }
+body.light .tv-evidence-src { color: #888; }
+body.light .tv-evidence-title { color: #444; }
+body.light .tv-trade-col { background: #fafafa; border-color: #e8e8e8; }
+body.light .tv-trade-cat { color: #aaa; border-bottom-color: #eee; }
+body.light .tv-trade-name { color: #333; }
+body.light .tv-trade-detail { color: #888; }
+body.light .tv-trade-rationale { color: #777; }
+body.light .tv-risk-card { background: #fdf5f5; border-color: #f5e8e8; }
+body.light .tv-risk-title { color: #c62828; }
+body.light .tv-risk-desc { color: #8a5a5a; }
+body.light .tv-open-btn { background: #e8f5e9; border-color: #a5d6a7; color: #2e7d32; }
+body.light .tv-open-btn:hover { background: #c8e6c9; border-color: #81c784; }
+
+/* Devil's Advocate modal */
+body.light #da-modal { background: rgba(250,250,250,0.97); }
+body.light .da-close-btn { background: #f0f0f0; border-color: #f5c0c0; color: #888; }
+body.light .da-close-btn:hover { background: #fae8e8; color: #c62828; }
+body.light .da-back-label { color: #e57373; }
+body.light .da-hdr { background: #fff8f8; border-color: #fdd; }
+body.light .da-hdr-title { color: #c62828; }
+body.light .da-hdr-subtitle { color: #e57373; }
+body.light .da-hdr-thesis-title { color: #888; }
+body.light .da-section { background: #fff8f8; border-color: #fde8e8; }
+body.light .da-section-label { color: #e57373; }
+body.light .da-section-label::after { background: #fdd; }
+body.light .da-bear-case { color: #555; }
+body.light .da-list-item { background: #fafafa; border-left-color: #ef9a9a; color: #555; }
+body.light .da-list-num { color: #e57373; }
+body.light .da-pain-trade { color: #b71c1c; background: #fff5f5; border-color: #ffcdd2; }
+body.light .da-overlooked { color: #795548; background: #fffde7; border-color: #ffe082; }
+body.light .da-overlooked-label { color: #a1887f; }
+body.light .da-open-btn { background: #fff5f5; border-color: #ffcdd2; color: #c62828; }
+body.light .da-open-btn:hover { background: #ffebee; border-color: #ef9a9a; }
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE  (≤ 768px)
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Tab bar: shrink and wrap */
+  .tab-bar { padding: 0 12px; flex-wrap: wrap; gap: 0; }
+  .tab-bar-title { font-size: 11px; padding-right: 12px; margin-right: 8px; }
+  .tab-bar-title span { display: none; }
+  .tab-btn { padding: 10px 12px; font-size: 11px; }
+  .tab-badge { display: none; }
+  .theme-toggle-btn { padding: 4px 8px; font-size: 10px; }
+
+  /* Content padding */
+  .tab-content { padding: 12px; }
+
+  /* Data tables: horizontal scroll */
+  .section-block { overflow-x: auto; }
+  table { min-width: 640px; font-size: 11px; }
+  th, td { padding: 5px 7px; }
+
+  /* Matrix: single column on mobile */
+  .matrix-grid { grid-template-columns: 1fr !important; }
+  .matrix-quad { min-height: auto; }
+
+  /* Thesis cards */
+  .thesis-card { padding: 10px 12px; }
+  .tc-title { font-size: 11px; }
+
+  /* Expanded overlay: full viewport */
+  .expanded-overlay {
+    position: fixed !important; inset: 0 !important;
+    width: 100% !important; max-width: 100% !important;
+    border-radius: 0 !important; z-index: 500;
+    overflow-y: auto;
+  }
+  .exp-hdr { flex-direction: column; gap: 8px; padding: 12px; }
+  .exp-hdr-right { flex-wrap: wrap; gap: 6px; }
+  .exp-body { padding: 0 12px 12px; }
+  .exp-top-row { flex-direction: column; gap: 10px; }
+  .exp-col { min-width: 0 !important; }
+
+  /* Trade grid: single column */
+  .exp-trades-grid { grid-template-columns: 1fr !important; }
+  .exp-cat-col { border-right: none !important; border-bottom: 1px solid #1a1a1a; padding-bottom: 10px; margin-bottom: 10px; }
+
+  /* Research panel */
+  .exp-research-panel { max-height: 55vh; }
+  .rp-tab { font-size: 9px; padding: 8px 8px; }
+
+  /* Thesis view modal */
+  .tv-container { padding: 12px 10px 40px; }
+  .tv-hdr { grid-template-columns: 1fr; }
+  .tv-hdr-meta { flex-direction: row; flex-wrap: wrap; align-items: flex-start; margin-top: 12px; }
+  .tv-evidence-grid { grid-template-columns: 1fr !important; }
+  .tv-trade-chain { flex-direction: column !important; gap: 10px; }
+  .tv-trade-col { flex: 1 !important; }
+  .tv-risk-grid { grid-template-columns: 1fr !important; }
+
+  /* Devil's advocate modal */
+  .da-container { padding: 12px 10px 40px; }
+  .da-hdr { grid-template-columns: 1fr; }
+
+  /* History tab */
+  .hist-controls { flex-direction: column; align-items: stretch; gap: 8px; }
+  .hist-search { width: 100%; }
+  .hist-filter-row { flex-wrap: wrap; }
+  .hist-card-title-row { flex-wrap: wrap; }
+}
+
+@media (max-width: 480px) {
+  .tab-btn { padding: 10px 8px; font-size: 10px; }
+  .tab-bar-title { display: none; }
+  .tc-chips { gap: 3px; }
+  .node-chip { font-size: 8px; padding: 2px 5px; }
+  .exp-trade-nums { flex-direction: column; gap: 2px; }
+  .exp-trade-nums span { font-size: 10px; }
+}
+
 </style>
 </head>
 <body>
@@ -709,6 +1111,11 @@ tr[data-sym].faded td { opacity: 0.12; }
 <!-- THESIS VIEW MODAL -->
 <div id="thesis-view-modal">
   <div class="tv-container" id="tv-container"></div>
+</div>
+
+<!-- DEVIL'S ADVOCATE MODAL -->
+<div id="da-modal" onclick="if(event.target===this)closeDevilsAdvocate()">
+  <div class="da-container" id="da-container"></div>
 </div>
 
 
@@ -793,6 +1200,7 @@ tr[data-sym].faded td { opacity: 0.12; }
       <span><span class="ldot" style="background:#e05c5c"></span>Theme tag</span>
     </div>
   </div>
+  <button class="theme-toggle-btn" id="theme-toggle" onclick="toggleTheme()">☀ Light</button>
 </div>
 
 <!-- HISTORY TAB -->
@@ -822,6 +1230,7 @@ let DATA_AS_OF = null; // set dynamically from data.json
 let RESEARCH_DEEP = null; // loaded dynamically from research_deep.json
 let RESEARCH_ARCHIVE = null; // loaded dynamically from research_archive.json
 let TRADES = null;           // loaded dynamically from trades.json (daily refresh)
+let DEVILS_ADVOCATE = null;  // loaded dynamically from devils_advocate.json
 let historyFilter = 'all';
 let historySearch = '';
 
@@ -1360,6 +1769,7 @@ function buildExpandedView(cardEl, mkt) {
       <div class="exp-hdr-right">
         <span class="tc-conviction ${conviction}">${t.conviction}</span>
         <button class="tv-open-btn" onclick="openThesisView('${mkt}', '${quad}', ${idx})">◈ THESIS VIEW</button>
+        <button class="da-open-btn" onclick="openDevilsAdvocate('${mkt}', '${quad}', ${idx})">⚠ DEVIL'S ADVOCATE</button>
         <button class="exp-close" onclick="collapseCard('${mkt}')">✕</button>
       </div>
     </div>
@@ -1796,6 +2206,14 @@ async function loadResearch() {
     console.warn('Could not load research_deep.json:', e);
   }
 }
+async function loadDevilsAdvocate() {
+  try {
+    const resp = await fetch('./devils_advocate.json?_=' + Date.now());
+    if (!resp.ok) return; // not generated yet — silent skip
+    DEVILS_ADVOCATE = await resp.json();
+  } catch(e) { /* non-fatal */ }
+}
+
 async function loadTrades() {
   try {
     const resp = await fetch('./trades.json?_=' + Date.now());
@@ -1837,7 +2255,7 @@ function applyTradeOverlays() {
 }
 
 async function init() {
-  await Promise.all([loadData(), loadResearch(), loadResearchArchive(), loadTrades()]);
+  await Promise.all([loadData(), loadResearch(), loadResearchArchive(), loadTrades(), loadDevilsAdvocate()]);
   buildTables(US_SECTIONS, 'us-tables');
   buildTables(IN_SECTIONS, 'in-tables', IN_EXTRA);
   buildMatrix('US', 'matrix-us');
@@ -2080,6 +2498,113 @@ function buildThesisView(mkt, market, quad, idx, t, data, research) {
   `;
 }
 
+// ─── DEVIL'S ADVOCATE ────────────────────────────────────────────────────────
+function openDevilsAdvocate(mkt, quad, idx) {
+  const market = mkt === 'us' ? 'US' : 'IN';
+  const t = MARKETS[market][quad][idx];
+  if (!t) return;
+
+  const da = DEVILS_ADVOCATE && DEVILS_ADVOCATE.theses && DEVILS_ADVOCATE.theses[t.title];
+  const container = document.getElementById('da-container');
+  container.innerHTML = buildDevilsAdvocateContent(t, da);
+
+  document.getElementById('da-modal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  document.getElementById('da-modal').scrollTop = 0;
+}
+
+function closeDevilsAdvocate() {
+  document.getElementById('da-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function buildDevilsAdvocateContent(t, da) {
+  const QUAD_LABELS_SHORT = { stl: 'Short-Term Bullish', ltl: 'Long-Term Bullish', sts: 'Short-Term Bearish', lts: 'Long-Term Bearish' };
+
+  if (!da) {
+    return `<div class="da-close-bar">
+      <span class="da-back-label">⚠ DEVIL'S ADVOCATE</span>
+      <button class="da-close-btn" onclick="closeDevilsAdvocate()">✕ Close</button>
+    </div>
+    <div class="da-hdr">
+      <div>
+        <div class="da-hdr-subtitle">Contra Thesis</div>
+        <div class="da-hdr-title">⚠ ${t.title}</div>
+        <div class="da-hdr-thesis-title">Analysis not yet available — run generate_devils_advocate.py to generate it.</div>
+      </div>
+    </div>`;
+  }
+
+  const riskScore = (da.risk_score || 'MEDIUM').toUpperCase();
+  const riskClass = riskScore === 'HIGH' ? 'risk-high' : riskScore === 'LOW' ? 'risk-low' : 'risk-med';
+  const riskColor = riskScore === 'HIGH' ? '#ef5350' : riskScore === 'LOW' ? '#4caf50' : '#ffb300';
+
+  const failureHtml = (da.failure_conditions || []).map((f, i) =>
+    `<li class="da-list-item"><span class="da-list-num">${i+1}</span><span>${f}</span></li>`
+  ).join('');
+
+  const counterHtml = (da.counter_signals || []).map((s, i) =>
+    `<li class="da-list-item"><span class="da-list-num">${i+1}</span><span>${s}</span></li>`
+  ).join('');
+
+  const asOf = DEVILS_ADVOCATE && DEVILS_ADVOCATE.as_of
+    ? new Date(DEVILS_ADVOCATE.as_of).toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' })
+    : '';
+
+  return `
+    <div class="da-close-bar">
+      <span class="da-back-label">⚠ DEVIL'S ADVOCATE · CONTRA THESIS</span>
+      <button class="da-close-btn" onclick="closeDevilsAdvocate()">✕ Close</button>
+    </div>
+
+    <div class="da-hdr">
+      <div>
+        <div class="da-hdr-subtitle">Contra Thesis — Why This Could Fail</div>
+        <div class="da-hdr-title">⚠ ${t.title}</div>
+        <div class="da-hdr-thesis-title" style="margin-top:4px;color:#3a3a3a">${t.desc || ''}</div>
+        ${asOf ? `<div style="font-size:9px;color:#2a1010;margin-top:8px">Generated ${asOf}</div>` : ''}
+      </div>
+      <div class="da-risk-badge ${riskClass}">
+        <span class="da-risk-label">Failure Risk</span>
+        <span class="da-risk-value">${riskScore}</span>
+        <span class="da-risk-sub">Bear case plausibility</span>
+      </div>
+    </div>
+
+    <div class="da-section">
+      <div class="da-section-label">Bear Case Summary</div>
+      <div class="da-bear-case">${da.bear_case || '—'}</div>
+    </div>
+
+    <div class="da-section">
+      <div class="da-section-label">Conditions That Would Kill This Trade</div>
+      <ul class="da-list">${failureHtml}</ul>
+    </div>
+
+    <div class="da-section">
+      <div class="da-section-label">Counter-Signals to Watch</div>
+      <ul class="da-list">${counterHtml}</ul>
+    </div>
+
+    <div class="da-section">
+      <div class="da-section-label">The Pain Trade — Worst Case Scenario</div>
+      <div class="da-pain-trade">${da.pain_trade || '—'}</div>
+    </div>
+
+    ${da.overlooked_risk ? `<div class="da-section">
+      <div class="da-section-label">Overlooked Risk — What Consensus Misses</div>
+      <div class="da-overlooked">
+        <div class="da-overlooked-label">Non-obvious vulnerability</div>
+        ${da.overlooked_risk}
+      </div>
+    </div>` : ''}
+
+    <div style="padding:12px 0;font-size:10px;color:#2a1010;text-align:center;border-top:1px solid #1a0808;margin-top:6px">
+      This analysis presents the bear case to stress-test the thesis — not a recommendation to avoid the trade.
+      Both the bull and bear case should inform position sizing and stop-loss levels.
+    </div>`;
+}
+
 // ─── HISTORY TAB ─────────────────────────────────────────────────────────────
 function buildHistoryTab() {
   const grid    = document.getElementById('history-grid');
@@ -2300,11 +2825,37 @@ function setHistFilter(filter, btn) {
   if (RESEARCH_ARCHIVE) renderHistoryGrid(Object.entries(RESEARCH_ARCHIVE.theses));
 }
 
-document.addEventListener('DOMContentLoaded', init);
+// ─── THEME TOGGLE ────────────────────────────────────────────────────────────
+function toggleTheme() {
+  const body = document.body;
+  const btn  = document.getElementById('theme-toggle');
+  const isLight = body.classList.toggle('light');
+  if (btn) btn.textContent = isLight ? '🌙 Dark' : '☀ Light';
+  try { localStorage.setItem('dashboard-theme', isLight ? 'light' : 'dark'); } catch(e) {}
+}
+
+function applyStoredTheme() {
+  try {
+    const stored = localStorage.getItem('dashboard-theme');
+    if (stored === 'light') {
+      document.body.classList.add('light');
+      const btn = document.getElementById('theme-toggle');
+      if (btn) btn.textContent = '🌙 Dark';
+    }
+  } catch(e) {}
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeDevilsAdvocate();
+    closeThesisView();
+  }
+});
+document.addEventListener('DOMContentLoaded', () => { applyStoredTheme(); init(); });
 // Market data: every 60 seconds
 setInterval(refreshData, 60 * 1000);
-// Research & news archive: every hour
-setInterval(async () => { await loadResearch(); await loadResearchArchive(); }, 60 * 60 * 1000);
+// Research, news archive, devil's advocate: every hour
+setInterval(async () => { await loadResearch(); await loadResearchArchive(); await loadDevilsAdvocate(); }, 60 * 60 * 1000);
 // Trades live prices: every 60 seconds
 setInterval(loadTrades, 60 * 1000);
 
