@@ -1104,6 +1104,25 @@ body.light .da-open-btn:hover { background: #ffebee; border-color: #ef9a9a; }
   .exp-trade-nums span { font-size: 10px; }
 }
 
+
+/* ── NEW ARTICLE BADGES ── */
+.hist-new-badge {
+  display: inline-block; font-size: 8px; font-weight: 700; letter-spacing: 0.6px;
+  background: #0a2a0a; color: #4caf50; border: 1px solid #1a4a1a;
+  border-radius: 2px; padding: 1px 5px; margin-left: 6px; vertical-align: middle;
+  animation: pulse-live 2s ease-in-out infinite;
+}
+.hist-new-dot { color: #4caf50; font-size: 9px; }
+.art-is-new a { color: #5ab05a !important; }
+/* Rec date on trade live badge */
+.live-rec-date {
+  font-size: 9px; color: #2a2a2a; letter-spacing: 0.4px;
+  border-left: 1px solid #1a1a1a; padding-left: 7px; margin-left: 2px;
+}
+body.light .hist-new-badge { background: #e8f5e9; color: #2e7d32; border-color: #a5d6a7; animation: none; }
+body.light .hist-new-dot { color: #2e7d32; }
+body.light .art-is-new a { color: #2e7d32 !important; }
+body.light .live-rec-date { color: #999; border-left-color: #e0e0e0; }
 </style>
 </head>
 <body>
@@ -1817,11 +1836,12 @@ function buildCardHistorySection(thesisTitle, mkt) {
   const histId = 'card-hist-' + mkt + '-' + Date.now();
   const entriesHtml = allEntries.map(e => {
     if (e.type === 'live') {
-      const arts = (e.articles || []).slice(0,4).map(a =>
-        `<div class="hist-entry-art"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a></div>`
+      const newC2 = (e.articles || []).filter(a => a.is_new).length;
+      const arts = (e.articles || []).slice(0,5).map(a =>
+        `<div class="hist-entry-art${a.is_new ? ' art-is-new' : ''}"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a>${a.is_new ? '<span class="hist-new-dot"> ●</span>' : ''}</div>`
       ).join('');
       return `<div class="hist-entry">
-        <div class="hist-entry-date live-date">🔴 Live News · ${e.date.slice(0,16).replace('T',' ')} UTC</div>
+        <div class="hist-entry-date live-date">🔴 Live News · ${e.date.slice(0,16).replace('T',' ')} UTC${newC2 > 0 ? ` <span class="hist-new-badge">${newC2} NEW</span>` : ''}</div>
         ${arts}
       </div>`;
     } else {
@@ -2246,10 +2266,14 @@ function applyTradeOverlays() {
         else tradeEl.appendChild(badge);
       }
       const pct = td.pct_from_entry != null
-        ? `<span class="${td.pct_from_entry >= 0 ? 'pct-pos' : 'pct-neg'}">${td.pct_from_entry > 0 ? '+' : ''}${td.pct_from_entry.toFixed(1)}%</span>`
-        : '<span>—</span>';
+        ? `<span class="${td.pct_from_entry >= 0 ? 'pct-pos' : 'pct-neg'}">${td.pct_from_entry > 0 ? '+' : ''}${td.pct_from_entry.toFixed(1)}% vs entry</span>`
+        : '';
+      const recPct = td.return_since_rec != null
+        ? `<span class="${td.return_since_rec >= 0 ? 'pct-pos' : 'pct-neg'}">${td.return_since_rec > 0 ? '+' : ''}${td.return_since_rec.toFixed(1)}% since rec</span>`
+        : '';
+      const recDate = td.recommended_at ? `<span class="live-rec-date">REC ${td.recommended_at}</span>` : '';
       const statusCls = td.status === 'on-track' ? 'live-status-ok' : td.status === 'at-risk' ? 'live-status-warn' : td.status === 'off-track' ? 'live-status-bad' : 'live-status-uk';
-      badge.innerHTML = `<span class="live-price-label">LIVE</span><span class="live-price-val">${td.current_price != null ? td.current_price : '—'}</span>${pct}<span class="${statusCls}">${td.status || '—'}</span>`;
+      badge.innerHTML = `<span class="live-price-label">LIVE</span><span class="live-price-val">${td.current_price != null ? td.current_price : '—'}</span>${pct}${recPct}${recDate}<span class="${statusCls}">${td.status || '—'}</span>`;
     });
   });
 }
@@ -2688,11 +2712,13 @@ function buildHistCard(title, th) {
 
   const entriesHtml = allEntries.slice(0,20).map(e => {
     if (e.type === 'live') {
-      const arts = (e.articles || []).slice(0,3).map(a =>
-        `<div class="hist-entry-art"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a></div>`
+      const newCnt = (e.articles || []).filter(a => a.is_new).length;
+      const newBadge = newCnt > 0 ? `<span class="hist-new-badge">${newCnt} NEW</span>` : '';
+      const arts = (e.articles || []).slice(0,5).map(a =>
+        `<div class="hist-entry-art${a.is_new ? ' art-is-new' : ''}"><a href="${a.url}" target="_blank" rel="noopener">${a.title}</a>${a.is_new ? '<span class="hist-new-dot"> ●</span>' : ''}</div>`
       ).join('');
       return `<div class="hist-entry">
-        <div class="hist-entry-date live-date">🔴 ${e.date.slice(0,16).replace('T',' ')} UTC</div>
+        <div class="hist-entry-date live-date">🔴 ${e.date.slice(0,16).replace('T',' ')} UTC ${newBadge}</div>
         ${arts}
       </div>`;
     } else {
