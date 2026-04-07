@@ -8845,7 +8845,7 @@
       "quad": "ltl",
       "idx": 4,
       "first_seen": "2026-04-07T11:32:11Z",
-      "last_active": "2026-04-07T21:19:05Z",
+      "last_active": "2026-04-07T21:39:52Z",
       "retired": null,
       "history": [
         {
@@ -9898,6 +9898,107 @@
               "return_since_rec": 0.0,
               "status": "on-track",
               "updated_at": "2026-04-07T21:19:05Z"
+            }
+          }
+        },
+        {
+          "as_of": "2026-04-07T21:39:52Z",
+          "trades": {
+            "Gold Futures — Long for Underlying Exposure": {
+              "ticker": "GC=F",
+              "cat": "commodities",
+              "current_price": 4733.2998,
+              "entry_ref": 1.0,
+              "baseline_price": 4733.2998,
+              "recommended_at": "2026-04-07",
+              "pct_from_entry": 473229.98,
+              "return_since_rec": 0.0,
+              "status": "on-track",
+              "updated_at": "2026-04-07T21:39:52Z"
+            },
+            "PSLV Physical Silver Trust — Long": {
+              "ticker": "PSLV",
+              "cat": "commodities",
+              "current_price": 23.54,
+              "entry_ref": null,
+              "baseline_price": 23.54,
+              "recommended_at": "2026-04-07",
+              "pct_from_entry": null,
+              "return_since_rec": 0.0,
+              "status": "on-track",
+              "updated_at": "2026-04-07T21:39:52Z"
+            },
+            "Gold Miner Bonds — Long (Barrick/Newmont)": {
+              "ticker": "GOLD/NEM bonds",
+              "cat": "fixed_income",
+              "current_price": null,
+              "entry_ref": null,
+              "baseline_price": null,
+              "recommended_at": "2026-04-07",
+              "pct_from_entry": null,
+              "return_since_rec": null,
+              "status": "unknown",
+              "updated_at": "2026-04-07T21:39:52Z"
+            },
+            "TLT — Long Calls (Correlated Trade)": {
+              "ticker": "TLT",
+              "cat": "fixed_income",
+              "current_price": 86.64,
+              "entry_ref": 88.0,
+              "baseline_price": 86.64,
+              "recommended_at": "2026-04-07",
+              "pct_from_entry": -1.55,
+              "return_since_rec": 0.0,
+              "status": "on-track",
+              "updated_at": "2026-04-07T21:39:52Z"
+            },
+            "Australian Dollar — Long vs USD": {
+              "ticker": "AUD/USD",
+              "cat": "currencies",
+              "current_price": 0.6975,
+              "entry_ref": null,
+              "baseline_price": 0.6976,
+              "recommended_at": "2026-04-07",
+              "pct_from_entry": null,
+              "return_since_rec": -0.01,
+              "status": "on-track",
+              "updated_at": "2026-04-07T21:39:52Z"
+            },
+            "South African Rand — Selective Long": {
+              "ticker": "USD/ZAR",
+              "cat": "currencies",
+              "current_price": 16.7931,
+              "entry_ref": null,
+              "baseline_price": 16.8474,
+              "recommended_at": "2026-04-07",
+              "pct_from_entry": null,
+              "return_since_rec": -0.32,
+              "status": "on-track",
+              "updated_at": "2026-04-07T21:39:52Z"
+            },
+            "GDX Gold Miners ETF — Calendar Spread": {
+              "ticker": "GDX",
+              "cat": "equities",
+              "current_price": 94.97,
+              "entry_ref": 6.0,
+              "baseline_price": 94.97,
+              "recommended_at": "2026-04-07",
+              "pct_from_entry": 1482.83,
+              "return_since_rec": 0.0,
+              "status": "on-track",
+              "updated_at": "2026-04-07T21:39:52Z"
+            },
+            "Newmont Mining — Long Calls": {
+              "ticker": "NEM",
+              "cat": "equities",
+              "current_price": 114.65,
+              "entry_ref": 50.0,
+              "baseline_price": 114.65,
+              "recommended_at": "2026-04-07",
+              "pct_from_entry": 129.3,
+              "return_since_rec": 0.0,
+              "status": "on-track",
+              "updated_at": "2026-04-07T21:39:52Z"
             }
           }
         }
@@ -13265,7 +13366,7 @@
       "quad": "sts",
       "idx": 3,
       "first_seen": "2026-04-07T11:32:11Z",
-      "last_active": "2026-04-07T21:19:05Z",
+      "last_active": "2026-04-07T21:39:52Z",
       "retired": null,
       "history": [
         {
@@ -14318,6 +14419,107 @@
               "return_since_rec": 0.0,
               "status": "on-track",
               "updated_at": "2026-04-07T21:19:05Z"
+            }
+          }
+        },
+        {
+          "as_of": "2026-04-07T21:39:52Z",
+          "trades": {
+            "Coffee Futures — Bear Spread": {
+              "ticker": "KC=F",
+              "cat": "commodities",
+              "current_price": 269.4,
+              "entry_ref": 210.0,
+              "baseline_price": 269.4,
+              "recommended_at": "2026-04-07",
+              "pct_from_entry": 28.29,
+              "return_since_rec": 0.0,
+              "status": "on-track",
+              "updated_at": "2026-04-07T21:39:52Z"
+            },
+            "Agricultural ETF — Bear Position": {
+              "ticker": "MOO",
+              "cat": "commodities",
+              "current_price": 85.16,
+              "entry_ref": 65.0,
+              "baseline_price": 85.16,
+              "recommended_at": "2026-04-07",
+              "pct_from_entry": 31.02,
+              "return_since_rec": 0.0,
+              "status": "on-track",
+              "updated_at": "2026-04-07T21:39:52Z"
+            },
+            "HYG High Yield ETF — Bear Put Spread": {
+              "ticker": "HYG",
+              "cat": "fixed_income",
+              "current_price": 79.72,
+              "entry_ref": 79.0,
+              "baseline_price": 79.72,
+              "recommended_at": "2026-04-07",
+              "pct_from_entry": 0.91,
+              "return_since_rec": 0.0,
+              "status": "on-track",
+              "updated_at": "2026-04-07T21:39:52Z"
+            },
+            "JNK High Yield ETF — Long Puts": {
+              "ticker": "JNK",
+              "cat": "fixed_income",
+              "current_price": 95.92,
+              "entry_ref": 94.0,
+              "baseline_price": 95.92,
+              "recommended_at": "2026-04-07",
+              "pct_from_entry": 2.04,
+              "return_since_rec": 0.0,
+              "status": "on-track",
+              "updated_at": "2026-04-07T21:39:52Z"
+            },
+            "Mexican Peso — Neutral to Bear": {
+              "ticker": "USD/MXN",
+              "cat": "currencies",
+              "current_price": 17.7256,
+              "entry_ref": null,
+              "baseline_price": 17.7575,
+              "recommended_at": "2026-04-07",
+              "pct_from_entry": null,
+              "return_since_rec": -0.18,
+              "status": "on-track",
+              "updated_at": "2026-04-07T21:39:52Z"
+            },
+            "US Dollar — Tactical Long": {
+              "ticker": "UUP",
+              "cat": "currencies",
+              "current_price": 27.75,
+              "entry_ref": null,
+              "baseline_price": 27.75,
+              "recommended_at": "2026-04-07",
+              "pct_from_entry": null,
+              "return_since_rec": 0.0,
+              "status": "on-track",
+              "updated_at": "2026-04-07T21:39:52Z"
+            },
+            "XRT Retail ETF — Bear Put Spread": {
+              "ticker": "XRT",
+              "cat": "equities",
+              "current_price": 81.22,
+              "entry_ref": 79.0,
+              "baseline_price": 81.22,
+              "recommended_at": "2026-04-07",
+              "pct_from_entry": 2.81,
+              "return_since_rec": 0.0,
+              "status": "on-track",
+              "updated_at": "2026-04-07T21:39:52Z"
+            },
+            "XLY Consumer Discretionary ETF — Bear Puts": {
+              "ticker": "XLY",
+              "cat": "equities",
+              "current_price": 107.77,
+              "entry_ref": 195.0,
+              "baseline_price": 107.77,
+              "recommended_at": "2026-04-07",
+              "pct_from_entry": -44.73,
+              "return_since_rec": 0.0,
+              "status": "on-track",
+              "updated_at": "2026-04-07T21:39:52Z"
             }
           }
         }
