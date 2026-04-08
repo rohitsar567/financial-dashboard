@@ -1175,6 +1175,7 @@ let RESEARCH_DEEP = null; // loaded dynamically from research_deep.json
 let RESEARCH_ARCHIVE = null; // loaded dynamically from research_archive.json
 let TRADES = null;           // loaded dynamically from trades.json (daily refresh)
 let DEVILS_ADVOCATE = null;  // loaded dynamically from devils_advocate.json
+let S_CURVES = null;         // loaded dynamically from s_curves.json
 let historyFilter = 'all';
 let historySearch = '';
 
@@ -1962,6 +1963,35 @@ function buildResearchPanel(market, quad, idx) {
     `</div>`;
 }
 
+// ── REAL-TIME ARTICLE SEARCH ─────────────────────────────────────────────────
+async function refreshArticlesLive(thesisTitle, panelEl) {
+  // Search for fresh articles via /api/search (served by search_articles.py)
+  if (!thesisTitle || !panelEl) return;
+  const searchTerms = thesisTitle.replace(/[^a-zA-Z0-9 ]/g, ' ').trim();
+  const query = searchTerms + ' 2026 analysis research';
+  try {
+    const resp = await fetch('/api/search?q=' + encodeURIComponent(query) + '&count=8');
+    if (!resp.ok) return;
+    const data = await resp.json();
+    if (!data.results || !data.results.length) return;
+    // Add a "Live Search Results" section at the top of the panel
+    const existing = panelEl.querySelector('.live-search-results');
+    if (existing) existing.remove();
+    const div = document.createElement('div');
+    div.className = 'live-search-results';
+    div.innerHTML = '<div style="font-size:9px;font-weight:700;color:#1a5276;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:6px">' +
+      '<span style="display:inline-block;width:6px;height:6px;background:#27ae60;border-radius:50%;animation:pulse 1.5s infinite"></span>' +
+      'Live Search Results (' + data.results.length + ' articles found just now)</div>' +
+      data.results.map(function(r) {
+        return '<a class="exp-link" href="' + r.url + '" target="_blank" rel="noopener" style="border-left:2px solid #27ae60">' +
+          '<span class="exp-link-arrow">→</span>' +
+          '<span><strong>' + r.title + '</strong><br><span class="exp-link-desc">' + (r.desc || '').slice(0, 150) + '</span></span>' +
+        '</a>';
+      }).join('');
+    panelEl.insertBefore(div, panelEl.firstChild);
+  } catch(e) { /* silently fail — cached articles still show */ }
+}
+
 function toggleResearchPanel(mkt, quad, idx) {
   const panel = document.getElementById('research-panel-' + mkt);
   const toggle = document.getElementById('rp-toggle-' + mkt);
@@ -1973,6 +2003,9 @@ function toggleResearchPanel(mkt, quad, idx) {
       panel.dataset.rendered = '1';
     }
     panel.style.display = 'block';
+    // Trigger live article search
+    const titleEl = document.querySelector('#expanded-' + mkt + ' .exp-title');
+    if (titleEl) refreshArticlesLive(titleEl.textContent.trim(), panel);
     if (toggle) toggle.classList.add('open');
   } else {
     panel.style.display = 'none';
@@ -2176,7 +2209,14 @@ async function loadDevilsAdvocate() {
   try {
     const resp = await fetch('./devils_advocate.json?_=' + Date.now());
     if (resp.ok) DEVILS_ADVOCATE = await resp.json();
-  } catch(e) { console.warn('devils_advocate.json not available:', e); }
+  }
+
+async function loadSCurves() {
+  try {
+    const resp = await fetch('s_curves.json?t=' + Date.now());
+    if (resp.ok) S_CURVES = await resp.json();
+  } catch(e) { console.warn('s_curves.json not loaded:', e); }
+} catch(e) { console.warn('devils_advocate.json not available:', e); }
 }
 async function loadTrades() {
   try {
@@ -2223,7 +2263,7 @@ function applyTradeOverlays() {
 }
 
 async function init() {
-  await Promise.all([loadData(), loadResearch(), loadResearchArchive(), loadTrades(), loadDevilsAdvocate()]);
+  await Promise.all([loadData(), loadResearch(), loadResearchArchive(), loadTrades(), loadDevilsAdvocate(), loadSCurves()]);
   buildTables(US_SECTIONS, 'us-tables');
   buildTables(IN_SECTIONS, 'in-tables', IN_EXTRA);
   buildMatrix('US', 'matrix-us');
@@ -2269,6 +2309,132 @@ function openThesisView(mkt, quad, idx) {
   document.getElementById('thesis-view-modal').style.display = 'block';
   document.body.style.overflow = 'hidden';
   document.getElementById('thesis-view-modal').scrollTop = 0;
+}
+
+
+// ── S-CURVE LIFECYCLE VISUALIZATION ─────────────────────────────────────────
+function buildSCurveSection(thesisTitle) {
+  if (!S_CURVES || !S_CURVES.theses || !S_CURVES.theses[thesisTitle]) {
+    return '<div class="tv-section"><div class="tv-section-label">S-Curve Lifecycle &amp; Returns</div><div style="color:#8a919e;font-size:11px">S-curve data not available.</div></div>';
+  }
+  const sc = S_CURVES.theses[thesisTitle];
+  const pct = sc.s_curve_pct;
+  const phase = sc.phase;
+  const pi = sc.phase_idx;
+  const comp = sc.components;
+  const ret = sc.returns;
+
+  // SVG S-curve path
+  const W = 320, H = 80;
+  // Sigmoid curve points
+  const pts = [];
+  for (let i = 0; i <= 100; i += 2) {
+    const x = (i / 100) * W;
+    const t = (i - 50) / 12;
+    const y = H - (H * 0.85) / (1 + Math.exp(-t)) - H * 0.05;
+    pts.push(x.toFixed(1) + ',' + y.toFixed(1));
+  }
+  const pathD = 'M' + pts.join(' L');
+
+  // Dot position on curve
+  const dotX = (pct / 100) * W;
+  const dotT = (pct - 50) / 12;
+  const dotY = H - (H * 0.85) / (1 + Math.exp(-dotT)) - H * 0.05;
+
+  // Phase markers
+  const phaseBreaks = [15, 35, 65, 85];
+  const phaseNames = ['Inception', 'Early\nAdoption', 'Acceleration', 'Peak', 'Maturity'];
+  const phaseMarkers = phaseBreaks.map(p => {
+    const px = (p / 100) * W;
+    return '<line x1="' + px + '" y1="0" x2="' + px + '" y2="' + H + '" stroke="#cfd7e2" stroke-width="0.5" stroke-dasharray="3,3"/>';
+  }).join('');
+
+  // Phase labels below
+  const phaseCenters = [7.5, 25, 50, 75, 92.5];
+  const phaseLabels = phaseCenters.map((c, i) => {
+    const px = (c / 100) * W;
+    const isActive = i === pi;
+    const color = isActive ? '#1a5276' : '#95a5a6';
+    const weight = isActive ? '700' : '400';
+    const size = isActive ? '9' : '8';
+    return '<text x="' + px + '" y="' + (H + 14) + '" text-anchor="middle" font-size="' + size + '" fill="' + color + '" font-weight="' + weight + '">' + phaseNames[i].replace('\\n', ' ') + '</text>';
+  }).join('');
+
+  const svg = '<svg width="' + W + '" height="' + (H + 20) + '" viewBox="0 0 ' + W + ' ' + (H + 20) + '" style="max-width:100%">' +
+    '<rect width="' + W + '" height="' + H + '" fill="#f8fafe" rx="4"/>' +
+    phaseMarkers +
+    '<path d="' + pathD + '" fill="none" stroke="#85c1e9" stroke-width="2.5"/>' +
+    '<circle cx="' + dotX.toFixed(1) + '" cy="' + dotY.toFixed(1) + '" r="6" fill="#1a5276" stroke="#fff" stroke-width="2"/>' +
+    '<text x="' + (dotX + (pct > 80 ? -12 : 12)).toFixed(1) + '" y="' + (dotY - 10).toFixed(1) + '" text-anchor="' + (pct > 80 ? 'end' : 'start') + '" font-size="11" font-weight="700" fill="#1a5276">' + pct + '%</text>' +
+    phaseLabels +
+    '</svg>';
+
+  // Component bars
+  function compBar(label, pctVal, detail) {
+    const barColor = pctVal >= 60 ? '#2e86c1' : pctVal >= 35 ? '#5dade2' : '#aed6f1';
+    return '<div style="margin-bottom:6px">' +
+      '<div style="display:flex;justify-content:space-between;font-size:10px;margin-bottom:2px">' +
+        '<span style="font-weight:600;color:#2c3442">' + label + '</span>' +
+        '<span style="color:#1a5276;font-weight:700">' + pctVal + '%</span>' +
+      '</div>' +
+      '<div style="height:6px;background:#e8eef4;border-radius:3px;overflow:hidden">' +
+        '<div style="height:100%;width:' + pctVal + '%;background:' + barColor + ';border-radius:3px;transition:width 0.5s"></div>' +
+      '</div>' +
+      '<div style="font-size:9px;color:#636d79;margin-top:1px">' + detail + '</div>' +
+    '</div>';
+  }
+
+  const compHtml = compBar('Price Progress (40%)', comp.price_progress.pct, comp.price_progress.detail) +
+    compBar('Time Progress (30%)', comp.time_progress.pct, comp.time_progress.detail) +
+    compBar('Adoption (30%)', comp.adoption.pct, comp.adoption.detail);
+
+  // Returns vs benchmarks
+  const maxAbs = Math.max(
+    Math.abs(ret.thesis_return_pct),
+    ...Object.values(ret.benchmarks).map(b => Math.abs(b.return_pct)),
+    1
+  );
+  function retBar(label, pctVal, isThesis) {
+    const isPos = pctVal >= 0;
+    const barW = Math.abs(pctVal) / maxAbs * 100;
+    const color = isThesis ? '#1a5276' : (isPos ? '#27ae60' : '#e74c3c');
+    const bg = isThesis ? '#d4e6f1' : (isPos ? '#eafaf1' : '#fdedec');
+    const weight = isThesis ? '700' : '400';
+    return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">' +
+      '<div style="width:90px;font-size:10px;color:#2c3442;font-weight:' + weight + ';text-align:right;flex-shrink:0">' + label + '</div>' +
+      '<div style="flex:1;height:14px;background:#f0f3f7;border-radius:2px;position:relative;overflow:hidden">' +
+        '<div style="position:absolute;' + (isPos ? 'left:50%' : 'right:50%') + ';height:100%;width:' + (barW / 2).toFixed(1) + '%;background:' + color + ';border-radius:2px"></div>' +
+        '<div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:#bdc3c7"></div>' +
+      '</div>' +
+      '<div style="width:55px;font-size:10px;font-weight:700;color:' + color + ';text-align:right;flex-shrink:0">' + (pctVal > 0 ? '+' : '') + pctVal.toFixed(1) + '%</div>' +
+    '</div>';
+  }
+
+  let retHtml = retBar('This Thesis', ret.thesis_return_pct, true);
+  Object.entries(ret.benchmarks).forEach(([name, b]) => {
+    retHtml += retBar(name, b.return_pct, false);
+  });
+
+  const alphaColor = ret.alpha_vs_spx >= 0 ? '#27ae60' : '#e74c3c';
+  const alphaSign = ret.alpha_vs_spx >= 0 ? '+' : '';
+  retHtml += '<div style="margin-top:6px;font-size:10px;text-align:right;color:' + alphaColor + ';font-weight:700">Alpha vs S&P 500: ' + alphaSign + ret.alpha_vs_spx.toFixed(1) + '%</div>';
+  retHtml += '<div style="font-size:8px;color:#95a5a6;text-align:right;margin-top:2px">Period: ' + ret.period + ' | Instrument: ' + ret.primary_instrument + '</div>';
+
+  return '<div class="tv-section">' +
+    '<div class="tv-section-label">S-Curve Lifecycle &amp; Returns vs Benchmarks</div>' +
+    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">' +
+      '<div>' +
+        '<div style="font-size:9px;font-weight:700;color:#636d79;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:8px">Lifecycle Position</div>' +
+        svg +
+        '<div style="margin-top:4px;font-size:11px;color:#1a5276;font-weight:600">Phase: ' + phase + ' (' + pct + '% through)</div>' +
+        '<div style="margin-top:12px">' + compHtml + '</div>' +
+      '</div>' +
+      '<div>' +
+        '<div style="font-size:9px;font-weight:700;color:#636d79;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:8px">Returns vs Benchmarks</div>' +
+        retHtml +
+      '</div>' +
+    '</div>' +
+  '</div>';
 }
 
 function buildThesisView(mkt, market, quad, idx, t, data, research) {
@@ -2446,6 +2612,8 @@ function buildThesisView(mkt, market, quad, idx, t, data, research) {
         ${impactsHtml || '<em style="color:#2a2a2a">Expand to see signal analysis.</em>'}
       </div>
     </div>
+
+    ${buildSCurveSection(t.title)}
 
     <div class="tv-section">
       <div class="tv-section-label">Supporting Evidence — Across 7 Research Categories</div>

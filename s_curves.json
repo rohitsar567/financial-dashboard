@@ -1,0 +1,865 @@
+{
+  "as_of": "2026-04-08T14:51:59.135932Z",
+  "theses": {
+    "Oil Supply Shock Spike": {
+      "s_curve_pct": 50,
+      "phase": "Acceleration",
+      "phase_idx": 2,
+      "components": {
+        "price_progress": {
+          "pct": 60,
+          "detail": "WTI $57 \u2192 $96 (target $135)"
+        },
+        "time_progress": {
+          "pct": 32,
+          "detail": "39 of ~120 days since war began"
+        },
+        "adoption": {
+          "pct": 55,
+          "detail": "Hormuz partially disrupted; Iranian exports down ~60%"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": 67.2,
+        "primary_instrument": "WTI Crude (CL=F)",
+        "period": "3 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": -1.5
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -7.5
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 11.0
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 1.9
+          }
+        },
+        "alpha_vs_spx": 68.7
+      }
+    },
+    "Gold Safe Haven Bid": {
+      "s_curve_pct": 55,
+      "phase": "Acceleration",
+      "phase_idx": 2,
+      "components": {
+        "price_progress": {
+          "pct": 55,
+          "detail": "Gold $4,314 \u2192 $4,788 (target $5,500)"
+        },
+        "time_progress": {
+          "pct": 45,
+          "detail": "Geo risk bid ongoing since Oct 2025"
+        },
+        "adoption": {
+          "pct": 65,
+          "detail": "Central banks bought 1,000+ tonnes in 2025; ETF inflows accelerating"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": 11.0,
+        "primary_instrument": "Gold (GC=F)",
+        "period": "3 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": -1.5
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -7.5
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 11.0
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 1.9
+          }
+        },
+        "alpha_vs_spx": 12.5
+      }
+    },
+    "US Vol Premium Harvest": {
+      "s_curve_pct": 60,
+      "phase": "Acceleration",
+      "phase_idx": 2,
+      "components": {
+        "price_progress": {
+          "pct": 70,
+          "detail": "VIX 14.5 \u2192 25.5 peak \u2192 21.5 (target: sub-18 mean reversion)"
+        },
+        "time_progress": {
+          "pct": 50,
+          "detail": "Vol regime elevated for ~2 months"
+        },
+        "adoption": {
+          "pct": 55,
+          "detail": "Options premium at 90th percentile; short vol strategies activating"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": 48.3,
+        "primary_instrument": "VIX Index",
+        "period": "3 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": -1.5
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -7.5
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 11.0
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 1.9
+          }
+        },
+        "alpha_vs_spx": 49.8
+      }
+    },
+    "Gold & Silver Debasement Cycle": {
+      "s_curve_pct": 49,
+      "phase": "Acceleration",
+      "phase_idx": 2,
+      "components": {
+        "price_progress": {
+          "pct": 55,
+          "detail": "Gold $1,800 (2022) \u2192 $4,788 (target $6,000+)"
+        },
+        "time_progress": {
+          "pct": 40,
+          "detail": "Year 4 of projected 8-10 year cycle"
+        },
+        "adoption": {
+          "pct": 50,
+          "detail": "Gold now 2nd largest reserve asset; silver industrial demand growing 15% YoY"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": 18.4,
+        "primary_instrument": "Gold (GC=F)",
+        "period": "6 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": 0.1
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -4.2
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 18.4
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 3.4
+          }
+        },
+        "alpha_vs_spx": 18.3
+      }
+    },
+    "AI Infrastructure Supercycle": {
+      "s_curve_pct": 35,
+      "phase": "Acceleration",
+      "phase_idx": 2,
+      "components": {
+        "price_progress": {
+          "pct": 35,
+          "detail": "Hyperscaler capex $200B (2024) \u2192 $400B (2026) \u2192 $1T+ (2030)"
+        },
+        "time_progress": {
+          "pct": 30,
+          "detail": "Year 3 of projected 7-10 year buildout"
+        },
+        "adoption": {
+          "pct": 40,
+          "detail": "~25% of announced data center capacity operational; 156GW AI demand by 2030"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": -0.9,
+        "primary_instrument": "QQQ (Nasdaq 100)",
+        "period": "6 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": 0.1
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -4.2
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 18.4
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 3.4
+          }
+        },
+        "alpha_vs_spx": -1.0
+      }
+    },
+    "Copper & Silver Commodity Cycle": {
+      "s_curve_pct": 38,
+      "phase": "Acceleration",
+      "phase_idx": 2,
+      "components": {
+        "price_progress": {
+          "pct": 45,
+          "detail": "Copper $3.50 (2022) \u2192 $5.75 (target $8+)"
+        },
+        "time_progress": {
+          "pct": 30,
+          "detail": "Year 3 of projected decade-long supercycle"
+        },
+        "adoption": {
+          "pct": 35,
+          "detail": "EV penetration ~15%; AI data center copper demand just starting; 304K tonne deficit 2025"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": 13.9,
+        "primary_instrument": "Copper (HG=F)",
+        "period": "6 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": 0.1
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -4.2
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 18.4
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 3.4
+          }
+        },
+        "alpha_vs_spx": 13.8
+      }
+    },
+    "US Equity Near-Term Weakness": {
+      "s_curve_pct": 40,
+      "phase": "Acceleration",
+      "phase_idx": 2,
+      "components": {
+        "price_progress": {
+          "pct": 40,
+          "detail": "SPX 6,858 \u2192 6,759 (target 6,000-6,200)"
+        },
+        "time_progress": {
+          "pct": 35,
+          "detail": "Correction since mid-Feb, ~6 weeks"
+        },
+        "adoption": {
+          "pct": 45,
+          "detail": "Death cross (50/200 MA) formed late March; vol regime elevated"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": -1.5,
+        "primary_instrument": "S&P 500",
+        "period": "3 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": -1.5
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -7.5
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 11.0
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 1.9
+          }
+        },
+        "alpha_vs_spx": 0.0
+      }
+    },
+    "Natural Gas Breakdown": {
+      "s_curve_pct": 62,
+      "phase": "Acceleration",
+      "phase_idx": 2,
+      "components": {
+        "price_progress": {
+          "pct": 70,
+          "detail": "NG $3.62 \u2192 $2.76 (target $2.00-$2.20)"
+        },
+        "time_progress": {
+          "pct": 60,
+          "detail": "Bearish trend since Oct 2025"
+        },
+        "adoption": {
+          "pct": 55,
+          "detail": "US production record 109 Bcf/d; storage +5% above 5yr avg"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": 23.8,
+        "primary_instrument": "Natural Gas Short (NG=F)",
+        "period": "3 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": -1.5
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -7.5
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 11.0
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 1.9
+          }
+        },
+        "alpha_vs_spx": 25.3
+      }
+    },
+    "Long Bond Structural Short": {
+      "s_curve_pct": 30,
+      "phase": "Early Adoption",
+      "phase_idx": 1,
+      "components": {
+        "price_progress": {
+          "pct": 30,
+          "detail": "TLT $86-89 range; 10Y yield 4.1-4.3% (target: 5%+)"
+        },
+        "time_progress": {
+          "pct": 25,
+          "detail": "Year 2 of structural fiscal deterioration thesis"
+        },
+        "adoption": {
+          "pct": 35,
+          "detail": "US deficit >$2T/yr; 30% of global debt is government; supply overwhelming demand"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": 3.4,
+        "primary_instrument": "10Y Yield / TLT Short",
+        "period": "6 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": 0.1
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -4.2
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 18.4
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 3.4
+          }
+        },
+        "alpha_vs_spx": 3.3
+      }
+    },
+    "Sovereign Debt Crisis Tail Risk": {
+      "s_curve_pct": 20,
+      "phase": "Early Adoption",
+      "phase_idx": 1,
+      "components": {
+        "price_progress": {
+          "pct": 15,
+          "detail": "Global debt $100T+; no credit event yet"
+        },
+        "time_progress": {
+          "pct": 20,
+          "detail": "Warning stage \u2014 IMF flagging risks"
+        },
+        "adoption": {
+          "pct": 25,
+          "detail": "Debt-to-GDP approaching WWII levels in advanced economies; market complacent"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": 3.4,
+        "primary_instrument": "Tail Risk Hedges (Straddles)",
+        "period": "6 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": 0.1
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -4.2
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 18.4
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 3.4
+          }
+        },
+        "alpha_vs_spx": 3.3
+      }
+    },
+    "Gold MCX Spike \u2014 INR Amplification": {
+      "s_curve_pct": 59,
+      "phase": "Acceleration",
+      "phase_idx": 2,
+      "components": {
+        "price_progress": {
+          "pct": 65,
+          "detail": "MCX Gold Rs 90K \u2192 Rs 1.5L/10g (+67% in INR terms)"
+        },
+        "time_progress": {
+          "pct": 50,
+          "detail": "Dual catalyst (gold rally + INR depreciation) since Oct 2025"
+        },
+        "adoption": {
+          "pct": 60,
+          "detail": "India gold demand surging; MCX volumes at record; INR at 92+"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": 11.0,
+        "primary_instrument": "MCX Gold / Gold ETFs (INR)",
+        "period": "3 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": -1.5
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -7.5
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 11.0
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 1.9
+          }
+        },
+        "alpha_vs_spx": 12.5
+      }
+    },
+    "India Oversold Relief Bounce": {
+      "s_curve_pct": 31,
+      "phase": "Early Adoption",
+      "phase_idx": 1,
+      "components": {
+        "price_progress": {
+          "pct": 25,
+          "detail": "Nifty 22,471 low \u2192 23,997 (target 25,000-25,500)"
+        },
+        "time_progress": {
+          "pct": 40,
+          "detail": "Bounce underway since late March"
+        },
+        "adoption": {
+          "pct": 30,
+          "detail": "RSI recovered from 30 to 38; FII selling slowing but not reversed"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": -3.1,
+        "primary_instrument": "Nifty 50",
+        "period": "1 month ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": -0.5
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -3.1
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": -6.0
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 3.1
+          }
+        },
+        "alpha_vs_spx": -2.6
+      }
+    },
+    "India Infrastructure Supercycle": {
+      "s_curve_pct": 34,
+      "phase": "Early Adoption",
+      "phase_idx": 1,
+      "components": {
+        "price_progress": {
+          "pct": 30,
+          "detail": "Govt capex Rs 12.2T FY27; NIP Rs 150T over 2026-32"
+        },
+        "time_progress": {
+          "pct": 35,
+          "detail": "Year 2 of 6-year infrastructure pipeline"
+        },
+        "adoption": {
+          "pct": 40,
+          "detail": "H1 FY26 capex Rs 6.6T (40% YoY growth); railways Rs 2.65T allocated"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": -4.2,
+        "primary_instrument": "India Infra / Capital Goods sector",
+        "period": "6 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": 0.1
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -4.2
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 18.4
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 3.4
+          }
+        },
+        "alpha_vs_spx": -4.3
+      }
+    },
+    "India Renewable Energy Build": {
+      "s_curve_pct": 34,
+      "phase": "Early Adoption",
+      "phase_idx": 1,
+      "components": {
+        "price_progress": {
+          "pct": 25,
+          "detail": "220 GW installed of 500 GW target by 2030"
+        },
+        "time_progress": {
+          "pct": 35,
+          "detail": "2024-2030 target period, year 2 of 6"
+        },
+        "adoption": {
+          "pct": 44,
+          "detail": "35 GW added in 2024; needs to accelerate to 50 GW/yr; solar at 106 GW"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": -6.2,
+        "primary_instrument": "India Renewable Energy sector",
+        "period": "6 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": 0.1
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -4.2
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 18.4
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 3.4
+          }
+        },
+        "alpha_vs_spx": -6.3
+      }
+    },
+    "India Financial Credit Growth": {
+      "s_curve_pct": 35,
+      "phase": "Acceleration",
+      "phase_idx": 2,
+      "components": {
+        "price_progress": {
+          "pct": 35,
+          "detail": "Retail credit up 17% to Rs 144T; NBFC AUM Rs 48-50T"
+        },
+        "time_progress": {
+          "pct": 30,
+          "detail": "Structural multi-decade credit penetration story"
+        },
+        "adoption": {
+          "pct": 40,
+          "detail": "Financial Inclusion Index 64.2 (2024); Jan Dhan accounts 500M+; credit/GDP still low"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": -0.6,
+        "primary_instrument": "Bank Nifty / Financial sector",
+        "period": "6 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": 0.1
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -4.2
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 18.4
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 3.4
+          }
+        },
+        "alpha_vs_spx": -0.7
+      }
+    },
+    "India Broad Market Selloff Continues": {
+      "s_curve_pct": 58,
+      "phase": "Acceleration",
+      "phase_idx": 2,
+      "components": {
+        "price_progress": {
+          "pct": 60,
+          "detail": "Nifty 26,300 peak \u2192 23,997 (target 22,000)"
+        },
+        "time_progress": {
+          "pct": 50,
+          "detail": "Selloff since late Feb, ~6 weeks"
+        },
+        "adoption": {
+          "pct": 65,
+          "detail": "FII outflows Rs 1.14T in March 2026 (record); India VIX up 117%"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": 7.5,
+        "primary_instrument": "Nifty 50 Short / Bear Puts",
+        "period": "3 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": -1.5
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -7.5
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 11.0
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 1.9
+          }
+        },
+        "alpha_vs_spx": 9.0
+      }
+    },
+    "INR Depreciation Accelerating": {
+      "s_curve_pct": 54,
+      "phase": "Acceleration",
+      "phase_idx": 2,
+      "components": {
+        "price_progress": {
+          "pct": 55,
+          "detail": "USD/INR 86 \u2192 92.2 (target 95-100)"
+        },
+        "time_progress": {
+          "pct": 45,
+          "detail": "Accelerating since Iran war (Feb 28), atop structural weakness"
+        },
+        "adoption": {
+          "pct": 60,
+          "detail": "RBI sold $50.8B in reserves; oil import bill surging; CAD widening to 3%+ of GDP"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": 2.3,
+        "primary_instrument": "USD/INR Long",
+        "period": "3 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": -1.5
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -7.5
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 11.0
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 1.9
+          }
+        },
+        "alpha_vs_spx": 3.8
+      }
+    },
+    "India IT Near-Term Weakness": {
+      "s_curve_pct": 58,
+      "phase": "Acceleration",
+      "phase_idx": 2,
+      "components": {
+        "price_progress": {
+          "pct": 65,
+          "detail": "Nifty IT down 27% in 1Y; below all MAs"
+        },
+        "time_progress": {
+          "pct": 55,
+          "detail": "Bearish trend since Q4 2025"
+        },
+        "adoption": {
+          "pct": 50,
+          "detail": "TCS laying off 12,200; Infosys hiring frozen; AI replacing billable hours"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": -9.5,
+        "primary_instrument": "Nifty IT Short / INDA Puts",
+        "period": "3 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": -1.5
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -7.5
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 11.0
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 1.9
+          }
+        },
+        "alpha_vs_spx": -8.0
+      }
+    },
+    "India IT Structural Disruption": {
+      "s_curve_pct": 26,
+      "phase": "Early Adoption",
+      "phase_idx": 1,
+      "components": {
+        "price_progress": {
+          "pct": 30,
+          "detail": "IT revenue still growing 6% but billable hours compressing 40-50%"
+        },
+        "time_progress": {
+          "pct": 20,
+          "detail": "Year 2 of projected decade-long disruption cycle"
+        },
+        "adoption": {
+          "pct": 25,
+          "detail": "250K employees AI-trained; AI revenue $10-12B; but T&M model eroding"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": -6.2,
+        "primary_instrument": "India IT sector Long-Dated Puts",
+        "period": "6 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": 0.1
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -4.2
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 18.4
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 3.4
+          }
+        },
+        "alpha_vs_spx": -6.3
+      }
+    },
+    "INR Structural Weakness": {
+      "s_curve_pct": 30,
+      "phase": "Early Adoption",
+      "phase_idx": 1,
+      "components": {
+        "price_progress": {
+          "pct": 35,
+          "detail": "USD/INR 75 (2022) \u2192 92 (target 100+)"
+        },
+        "time_progress": {
+          "pct": 25,
+          "detail": "Structural depreciation ongoing; war accelerating"
+        },
+        "adoption": {
+          "pct": 30,
+          "detail": "85% oil import dependency unchanged; CAD structural at 2-3% GDP"
+        }
+      },
+      "returns": {
+        "thesis_return_pct": 3.9,
+        "primary_instrument": "USD/INR Long-Dated / INDA Puts",
+        "period": "6 months ago",
+        "benchmarks": {
+          "S&P 500": {
+            "ticker": "^GSPC",
+            "return_pct": 0.1
+          },
+          "Nifty 50": {
+            "ticker": "^NSEI",
+            "return_pct": -4.2
+          },
+          "Gold": {
+            "ticker": "GC=F",
+            "return_pct": 18.4
+          },
+          "US 10Y Yield": {
+            "ticker": "^TNX",
+            "return_pct": 3.4
+          }
+        },
+        "alpha_vs_spx": 3.8
+      }
+    }
+  }
+}
