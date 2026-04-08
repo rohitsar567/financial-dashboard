@@ -2209,14 +2209,14 @@ async function loadDevilsAdvocate() {
   try {
     const resp = await fetch('./devils_advocate.json?_=' + Date.now());
     if (resp.ok) DEVILS_ADVOCATE = await resp.json();
-  }
+  } catch(e) { console.warn('devils_advocate.json not available:', e); }
+}
 
 async function loadSCurves() {
   try {
     const resp = await fetch('s_curves.json?t=' + Date.now());
     if (resp.ok) S_CURVES = await resp.json();
   } catch(e) { console.warn('s_curves.json not loaded:', e); }
-} catch(e) { console.warn('devils_advocate.json not available:', e); }
 }
 async function loadTrades() {
   try {
