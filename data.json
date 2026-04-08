@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-04-08T22:06:39Z",
+  "as_of": "2026-04-08T22:09:49Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -181,11 +181,11 @@
       "symbol": "DX-Y.NYB",
       "current": 99.0,
       "changes": {
-        "1D": -0.65,
+        "1D": -0.64,
         "1W": -1.03,
-        "1M": -0.19,
+        "1M": -0.18,
         "6M": 0.15,
-        "1Y": -3.85
+        "1Y": -3.84
       },
       "tech": {
         "sma20": 99.72,
@@ -200,12 +200,12 @@
         "macd_hist": -0.12,
         "bb_upper": 100.54,
         "bb_lower": 98.9,
-        "bb_pct_b": 5.8,
+        "bb_pct_b": 6.1,
         "atr": 0.71,
         "atr_pct": 0.72,
         "hi52": 102.96,
         "lo52": 96.22,
-        "pct_from_hi": -3.9,
+        "pct_from_hi": -3.8,
         "pct_from_lo": 2.9,
         "trend": "Uptrend",
         "ma_score": 2
@@ -570,34 +570,34 @@
       "symbol": "HG=F",
       "current": 5.75,
       "changes": {
-        "1D": 3.76,
-        "1W": 3.42,
-        "1M": -0.82,
-        "6M": 14.01,
-        "1Y": 39.38
+        "1D": 3.63,
+        "1W": 3.29,
+        "1M": -0.94,
+        "6M": 13.87,
+        "1Y": 39.21
       },
       "tech": {
         "sma20": 5.58,
         "sma50": 5.75,
         "sma200": 5.25,
-        "vs_sma20": 3.1,
-        "vs_sma50": 0.1,
-        "vs_sma200": 9.6,
-        "rsi": 55.9,
+        "vs_sma20": 3.0,
+        "vs_sma50": -0.1,
+        "vs_sma200": 9.4,
+        "rsi": 55.6,
         "macd": -0.04,
         "macd_signal": -0.07,
         "macd_hist": 0.03,
         "bb_upper": 5.87,
         "bb_lower": 5.3,
-        "bb_pct_b": 79.5,
+        "bb_pct_b": 78.4,
         "atr": 0.13,
         "atr_pct": 2.26,
         "hi52": 6.18,
         "lo52": 4.13,
-        "pct_from_hi": -6.9,
-        "pct_from_lo": 39.3,
-        "trend": "Strong Uptrend",
-        "ma_score": 3
+        "pct_from_hi": -7.0,
+        "pct_from_lo": 39.1,
+        "trend": "Uptrend",
+        "ma_score": 2
       }
     },
     {
