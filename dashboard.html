@@ -58,8 +58,8 @@ td.sep, th.sep { border-left:1px solid #c7d0dd; }
 .rsi-os { color:#4caf50; font-weight:600; }
 .rsi-n  { color:#58626e; }
 .badge { font-size:9px; font-weight:700; padding:2px 6px; border-radius:3px; letter-spacing:0.5px; }
-.badge-sup { background:#0d3320; color:#4caf50; }
-.badge-up  { background:#112a14; color:#81c784; }
+.badge-sup { background:#e8f5e9; color:#1b5e20; }
+.badge-up  { background:#f0faf1; color:#2e7d32; }
 .badge-dn  { background:#f5c8c8; color:#ef9a9a; }
 .badge-sdn { background:#f8b0b0; color:#ef5350; }
 .macd-bull { color:#4caf50; }
@@ -111,7 +111,7 @@ td.sep, th.sep { border-left:1px solid #c7d0dd; }
 .tc-desc { font-size:11px; color:#586070; line-height:1.5; margin-bottom:7px; }
 .tc-signals { display:flex; flex-wrap:wrap; gap:4px; }
 .tc-tag { font-size:9px; padding:2px 6px; border-radius:2px; font-family:monospace; white-space:nowrap; }
-.tag-stream   { background:#0d1a2e; color:#1860c8; }
+.tag-stream   { background:#deeeff; color:#1565c0; }
 .tag-signal   { background:#fff8e1; color:#b07800; }
 .tag-theme    { background:#ffeaea; color:#c02020; }
 .tc-strategy  { font-size:10px; color:#636d79; margin-top:6px; font-style:italic; }
@@ -202,7 +202,7 @@ tr[data-sym].faded td { opacity: 0.12; }
 .tbl-section.faded { opacity: 0.12; }
 
 /* ── EXPANDED OVERLAY — UPDATED LAYOUT ── */
-.expanded-overlay {
+.expanded-overlay { background: #ffffff !important; color: #2c3442 !important;
   display: none; flex-direction: column;
   background: #f2f5f9; border: 1px solid #c7d0dd;
   border-radius: 6px; overflow-y: auto; max-height: 90vh;
@@ -574,7 +574,7 @@ tr[data-sym].faded td { opacity: 0.12; }
   display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px;
 }
 .tv-risk-card {
-  background: #0f0808; border: 1px solid #f5b0b0; border-radius: 4px;
+  background: #fdf5f5; border: 1px solid #f0c0c0; border-radius: 4px;
   padding: 10px 12px;
 }
 .tv-risk-label { font-size: 9px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #c02020; margin-bottom: 4px; }
@@ -587,7 +587,7 @@ tr[data-sym].faded td { opacity: 0.12; }
   padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 11px; font-weight: 600;
   transition: background 0.15s, border-color 0.15s;
 }
-.tv-open-btn:hover { background: #0d250d; border-color: #5aaa5a; }
+.tv-open-btn:hover { background: #d5f0d5; border-color: #5aaa5a; }
 
 /* ── HISTORY TAB ── */
 .hist-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 18px; }
@@ -1054,6 +1054,58 @@ tr.row-locked td:first-child { color:#1565c0; }
 .rec-since-icon { font-size:11px; }
 .rec-since-return-note { font-size:8px; color:#95a5a6; font-style:italic; margin-left:8px; }
 
+
+/* Devil's Advocate Modal */
+.da-modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4); z-index: 2000;
+  display: flex; align-items: center; justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+@keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
+.da-modal {
+  background: #ffffff; border-radius: 8px; padding: 24px;
+  max-width: 700px; width: 90%; max-height: 80vh; overflow-y: auto;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2); border: 1px solid #e0e0e0;
+}
+.da-modal-hdr {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid #f5e0e0;
+}
+.da-modal-title { font-size: 14px; font-weight: 700; color: #8b0000; }
+.da-modal-close {
+  background: #f5f5f5; border: 1px solid #ddd; border-radius: 4px;
+  padding: 4px 12px; cursor: pointer; font-size: 12px; color: #555;
+}
+.da-modal-close:hover { background: #eee; }
+.da-modal .da-bear-case {
+  background: #fdf5f5; border: 1px solid #f0d0d0; border-radius: 4px;
+  padding: 12px; margin-bottom: 14px; color: #5a2020; font-size: 11px; line-height: 1.6;
+}
+.da-modal .da-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;
+}
+.da-modal .da-block-label {
+  font-size: 9px; font-weight: 700; color: #8b4513; letter-spacing: 0.5px;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.da-modal .da-item {
+  background: #fefaf8; border: 1px solid #f0e0d0; border-radius: 3px;
+  padding: 6px 8px; font-size: 10px; color: #5a3a20; line-height: 1.5; margin-bottom: 4px;
+}
+.da-modal .da-pain-box {
+  background: #fdf0f0; border: 1px solid #f0c0c0; border-radius: 4px;
+  padding: 10px; margin-top: 10px;
+}
+.da-modal .da-pain-label { font-size: 9px; font-weight: 700; color: #8b0000; margin-bottom: 4px; }
+.da-modal .da-pain-text { font-size: 11px; color: #5a2020; line-height: 1.6; }
+.da-modal .da-risk-score {
+  font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 3px;
+}
+.da-modal .da-risk-high { background: #fde8e8; color: #c62828; }
+.da-modal .da-risk-medium { background: #fff8e1; color: #e65100; }
+.da-modal .da-risk-low { background: #e8f5e9; color: #2e7d32; }
+
 </style>
 </head>
 <body>
@@ -1203,16 +1255,16 @@ const THESIS_META = {
 };
 
 const US_SECTIONS = [
-  { key:"US Indices",    label:"🇺🇸 US Indices",    color:"#64b5f6", bg:"#0a1520" },
-  { key:"Commodities",   label:"Commodities",        color:"#ffcc80", bg:"#1a1200" },
-  { key:"Bonds & Rates", label:"Bonds & Rates",      color:"#ce93d8", bg:"#1a0a20" },
-  { key:"Key ETFs",      label:"Key ETFs (excl. INDA)", color:"#80cbc4", bg:"#091a1a" },
+  { key:"US Indices",    label:"🇺🇸 US Indices",    color:"#64b5f6", bg:"#e8eef8" },
+  { key:"Commodities",   label:"Commodities",        color:"#ffcc80", bg:"#fef8e8" },
+  { key:"Bonds & Rates", label:"Bonds & Rates",      color:"#ce93d8", bg:"#f5e8f8" },
+  { key:"Key ETFs",      label:"Key ETFs (excl. INDA)", color:"#80cbc4", bg:"#e8f5f5" },
 ];
 const IN_SECTIONS = [
-  { key:"India Indices", label:"🇮🇳 India Indices",  color:"#81c784", bg:"#0a200f" },
-  { key:"Commodities",   label:"Commodities (India exposure)", color:"#ffcc80", bg:"#1a1200" },
+  { key:"India Indices", label:"🇮🇳 India Indices",  color:"#81c784", bg:"#e8f8ea" },
+  { key:"Commodities",   label:"Commodities (India exposure)", color:"#ffcc80", bg:"#fef8e8" },
 ];
-const IN_EXTRA = [{ key:"Key ETFs", label:"INDA — India ETF (US-listed)", color:"#80cbc4", bg:"#091a1a", filter:["INDA (India ETF)"] }];
+const IN_EXTRA = [{ key:"Key ETFs", label:"INDA — India ETF (US-listed)", color:"#80cbc4", bg:"#e8f5f5", filter:["INDA (India ETF)"] }];
 
 // ─── TABLE RENDERING ──────────────────────────────────────────────
 function chg(v) {
@@ -1727,29 +1779,45 @@ function buildDASection(thesisTitle, mkt) {
   if (!DEVILS_ADVOCATE || !DEVILS_ADVOCATE.theses) return '';
   const da = DEVILS_ADVOCATE.theses[thesisTitle];
   if (!da) return '';
-  const uid = 'da-' + mkt + '-' + encodeURIComponent(thesisTitle).slice(0,20).replace(/%/g,'_');
   const riskCls = da.risk_score === 'HIGH' ? 'da-risk-high' : da.risk_score === 'LOW' ? 'da-risk-low' : 'da-risk-medium';
-  const riskIcon = da.risk_score === 'HIGH' ? '⚠' : da.risk_score === 'LOW' ? '✓' : '◉';
-  const failItems = (da.failure_conditions || []).map(f => `<div class="da-item">${f}</div>`).join('');
-  const sigItems  = (da.counter_signals    || []).map(s => `<div class="da-item">${s}</div>`).join('');
-  return `<div class="exp-da-section">
-    <div class="exp-da-toggle" id="da-toggle-${uid}" onclick="toggleDA('${uid}',this)">
-      <span>⚔ DEVIL'S ADVOCATE — What Could Kill This Trade</span>
-      <div style="display:flex;align-items:center;gap:8px">
-        <span class="da-risk-score ${riskCls}">${riskIcon} ${da.risk_score} RISK</span>
-        <span class="da-arrow">&#9658;</span>
-      </div>
-    </div>
-    <div class="exp-da-body" id="${uid}">
-      <div class="da-bear-case"><strong>Bear Case</strong>${da.bear_case}</div>
-      <div class="da-grid">
-        <div><div class="da-block-label">Failure Conditions</div>${failItems}</div>
-        <div><div class="da-block-label">Counter-Signals to Watch</div>${sigItems}</div>
-      </div>
-      ${da.pain_trade ? `<div class="da-pain-box"><div class="da-pain-label">☠ Pain Trade</div><div class="da-pain-text">${da.pain_trade}</div></div>` : ''}
-      ${da.overlooked_risk ? `<div class="da-item" style="border-color:#c06060"><strong style="color:#c02020;font-size:9px;display:block;margin-bottom:2px">OVERLOOKED RISK</strong>${da.overlooked_risk}</div>` : ''}
-    </div>
-  </div>`;
+  const riskIcon = da.risk_score === 'HIGH' ? '\u26a0' : da.risk_score === 'LOW' ? '\u2713' : '\u25c9';
+  return '<div style="margin-top:14px;text-align:center">' +
+    '<button onclick="openDAModal(\'' + thesisTitle.replace(/'/g, "\\'") + '\')" style="background:#fdf5f5;border:1px solid #f0c0c0;border-radius:4px;padding:8px 20px;cursor:pointer;font-size:11px;font-weight:600;color:#8b0000;display:inline-flex;align-items:center;gap:8px">' +
+      '<span>\u2694 DEVIL\'S ADVOCATE</span>' +
+      '<span class="da-risk-score ' + riskCls + '">' + riskIcon + ' ' + da.risk_score + ' RISK</span>' +
+    '</button></div>';
+}
+
+function openDAModal(thesisTitle) {
+  if (!DEVILS_ADVOCATE || !DEVILS_ADVOCATE.theses) return;
+  const da = DEVILS_ADVOCATE.theses[thesisTitle];
+  if (!da) return;
+  const riskCls = da.risk_score === 'HIGH' ? 'da-risk-high' : da.risk_score === 'LOW' ? 'da-risk-low' : 'da-risk-medium';
+  const riskIcon = da.risk_score === 'HIGH' ? '\u26a0' : da.risk_score === 'LOW' ? '\u2713' : '\u25c9';
+  const failItems = (da.failure_conditions || []).map(f => '<div class="da-item">' + f + '</div>').join('');
+  const sigItems = (da.counter_signals || []).map(s => '<div class="da-item">' + s + '</div>').join('');
+
+  const overlay = document.createElement('div');
+  overlay.className = 'da-modal-overlay';
+  overlay.onclick = function(e) { if (e.target === overlay) overlay.remove(); };
+  overlay.innerHTML =
+    '<div class="da-modal">' +
+      '<div class="da-modal-hdr">' +
+        '<div class="da-modal-title">\u2694 Devil\'s Advocate — ' + thesisTitle + '</div>' +
+        '<div style="display:flex;align-items:center;gap:10px">' +
+          '<span class="da-risk-score ' + riskCls + '">' + riskIcon + ' ' + da.risk_score + ' RISK</span>' +
+          '<button class="da-modal-close" onclick="this.closest(\'.da-modal-overlay\').remove()">\u2715 Close</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="da-bear-case"><strong>Bear Case:</strong> ' + da.bear_case + '</div>' +
+      '<div class="da-grid">' +
+        '<div><div class="da-block-label">Failure Conditions</div>' + failItems + '</div>' +
+        '<div><div class="da-block-label">Counter-Signals to Watch</div>' + sigItems + '</div>' +
+      '</div>' +
+      (da.overlooked_risk ? '<div class="da-item" style="border-color:#c06060;margin-bottom:10px"><strong style="color:#c02020;font-size:9px;display:block;margin-bottom:2px">OVERLOOKED RISK</strong>' + da.overlooked_risk + '</div>' : '') +
+      (da.pain_trade ? '<div class="da-pain-box"><div class="da-pain-label">\u2620 Pain Trade</div><div class="da-pain-text">' + da.pain_trade + '</div></div>' : '') +
+    '</div>';
+  document.body.appendChild(overlay);
 }
 
 function buildCardHistorySection(thesisTitle, mkt) {
@@ -1859,10 +1927,16 @@ const CAT_SHORT = {
 };
 
 function buildResearchPanel(market, quad, idx) {
-  if (!RESEARCH_DEEP || !RESEARCH_DEEP[market] || !RESEARCH_DEEP[market][quad] || !RESEARCH_DEEP[market][quad][idx]) {
-    return '<div style="padding:16px;color:#444;font-size:11px">Research data not yet available — run generate_research.py to populate.</div>';
+  // Lookup thesis title from MARKETS to find research by title
+  const mktKey = market === 'US' ? 'US' : 'IN';
+  const thesisList = MARKETS[mktKey] && MARKETS[mktKey][quad];
+  const thesisObj = thesisList && thesisList[idx];
+  const thesisTitle = thesisObj ? thesisObj.title : null;
+  const thesisResearch = RESEARCH_DEEP && RESEARCH_DEEP.theses && thesisTitle ? RESEARCH_DEEP.theses[thesisTitle] : null;
+  if (!thesisResearch || !thesisResearch.categories) {
+    return '<div style="padding:16px;color:#444;font-size:11px">No research data for this thesis.</div>';
   }
-  const cardResearch = RESEARCH_DEEP[market][quad][idx].categories || {};
+  const cardResearch = thesisResearch.categories;
 
   const uid = market + '_' + quad + '_' + idx;
 
@@ -1878,7 +1952,7 @@ function buildResearchPanel(market, quad, idx) {
       const articlesHtml = (src.articles || []).map(a => {
         const artLive = a.is_live ? '<span class="rp-live-badge">LIVE</span>' : '';
         return `<div class="rp-article">
-          <a class="rp-article-title" href="${artLink(a.title, src.url)}" target="_blank" rel="noopener">${a.title}${artLive}</a>
+          <a class="rp-article-title" href="${a.url || artLink(a.title, src.url)}" target="_blank" rel="noopener">${a.title}${artLive}</a>
           <div class="rp-article-summary">${a.summary}</div>
         </div>`;
       }).join('');
