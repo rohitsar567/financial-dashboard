@@ -1,55 +1,55 @@
 {
-  "as_of": "2026-04-08T14:19:35.308852Z",
+  "as_of": "2026-04-08T15:00:03.926281Z",
   "theses": {
     "Oil Supply Shock Spike": {
       "trades": {
         "WTI Crude Futures \u2014 Long Call": {
           "ticker": "CL=F",
-          "current_price": 93.28,
-          "entry_price": 93.28,
+          "current_price": 95.44,
+          "entry_price": 95.44,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 9,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "TLT Long Bond ETF \u2014 Bear Put Spread": {
           "ticker": "TLT",
-          "current_price": 87.11,
-          "entry_price": 87.11,
+          "current_price": 87.15,
+          "entry_price": 87.15,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 7,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "Canadian Dollar \u2014 Long vs USD": {
-          "ticker": "CAD/USD",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "CAD=X",
+          "current_price": 1.38,
+          "entry_price": 1.38,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 7,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "XLE Energy ETF \u2014 Bull Call Spread": {
           "ticker": "XLE",
-          "current_price": 57.35,
-          "entry_price": 57.35,
+          "current_price": 57.66,
+          "entry_price": 57.66,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 8,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
@@ -57,51 +57,51 @@
       "trades": {
         "Gold Futures \u2014 Long Call": {
           "ticker": "GC=F",
-          "current_price": 4810.4,
-          "entry_price": 4810.4,
+          "current_price": 4782.0,
+          "entry_price": 4782.0,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 9,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "TLT Long Bond ETF \u2014 Long Calls": {
           "ticker": "TLT",
-          "current_price": 87.11,
-          "entry_price": 87.11,
+          "current_price": 87.15,
+          "entry_price": 87.15,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 7,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "Swiss Franc \u2014 Long vs USD": {
-          "ticker": "CHF/USD",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "CHF=X",
+          "current_price": 0.79,
+          "entry_price": 0.79,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 6,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "GDX Gold Miners ETF \u2014 Bull Call Spread": {
           "ticker": "GDX",
-          "current_price": 99.55,
-          "entry_price": 99.55,
+          "current_price": 97.76,
+          "entry_price": 97.76,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 8,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
@@ -109,51 +109,51 @@
       "trades": {
         "GLD Gold ETF \u2014 Iron Condor": {
           "ticker": "GLD",
-          "current_price": 438.46,
-          "entry_price": 438.46,
+          "current_price": 434.97,
+          "entry_price": 434.97,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 6,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "TLT Long Bond ETF \u2014 Iron Condor": {
           "ticker": "TLT",
-          "current_price": 87.11,
-          "entry_price": 87.11,
+          "current_price": 87.15,
+          "entry_price": 87.15,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 6,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "EUR/USD \u2014 Iron Condor": {
-          "ticker": "EUR/USD",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "EURUSD=X",
+          "current_price": 1.17,
+          "entry_price": 1.17,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Underlying Price",
           "score": 6,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "SPY S&P 500 ETF \u2014 Iron Condor": {
           "ticker": "SPY",
-          "current_price": 674.52,
-          "entry_price": 674.52,
+          "current_price": 672.86,
+          "entry_price": 672.86,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 7,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
@@ -161,51 +161,51 @@
       "trades": {
         "Gold Futures \u2014 Calendar Spread": {
           "ticker": "GC=F",
-          "current_price": 4810.4,
-          "entry_price": 4810.4,
+          "current_price": 4782.0,
+          "entry_price": 4782.0,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 9,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "TIPS ETF \u2014 Long vs TLT Short": {
-          "ticker": "TIP vs TLT",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "TIP",
+          "current_price": 110.96,
+          "entry_price": 110.96,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 7,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "Swiss Franc \u2014 Long vs Multiple": {
-          "ticker": "CHF/USD",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "CHF=X",
+          "current_price": 0.79,
+          "entry_price": 0.79,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 7,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "GDX Gold Miners ETF \u2014 Calendar Spread": {
           "ticker": "GDX",
-          "current_price": 99.55,
-          "entry_price": 99.55,
+          "current_price": 97.76,
+          "entry_price": 97.76,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 8,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
@@ -213,51 +213,51 @@
       "trades": {
         "Copper Futures \u2014 Bull Call Spread": {
           "ticker": "HG=F",
-          "current_price": 5.76,
-          "entry_price": 5.76,
+          "current_price": 5.75,
+          "entry_price": 5.75,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 8,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "Investment Grade Tech Bonds \u2014 Long": {
-          "ticker": "VTC / IGLB",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "LQD",
+          "current_price": 109.64,
+          "entry_price": 109.64,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 6,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "US Dollar \u2014 Structural Long": {
-          "ticker": "DXY/UUP",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "UUP",
+          "current_price": 27.48,
+          "entry_price": 27.48,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 6,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "QQQ Nasdaq 100 \u2014 Bull Call Spread": {
           "ticker": "QQQ",
-          "current_price": 605.3,
-          "entry_price": 605.3,
+          "current_price": 603.7,
+          "entry_price": 603.7,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 9,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
@@ -265,51 +265,51 @@
       "trades": {
         "Copper Futures \u2014 Long Calls": {
           "ticker": "HG=F",
-          "current_price": 5.76,
-          "entry_price": 5.76,
+          "current_price": 5.75,
+          "entry_price": 5.75,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 9,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "EM Infrastructure Bonds \u2014 Long": {
           "ticker": "EMB",
-          "current_price": 95.35,
-          "entry_price": 95.35,
+          "current_price": 95.19,
+          "entry_price": 95.19,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Current Price",
           "score": 6,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "Chilean Peso \u2014 Long vs USD (via EM proxy)": {
-          "ticker": "CLP",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "EEM",
+          "current_price": 60.1,
+          "entry_price": 60.1,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 7,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "COPX Copper Miners ETF \u2014 Long Calls": {
           "ticker": "COPX",
-          "current_price": 82.69,
-          "entry_price": 82.69,
+          "current_price": 81.96,
+          "entry_price": 81.96,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 8,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
@@ -317,51 +317,51 @@
       "trades": {
         "GLD Gold ETF \u2014 Long Calls": {
           "ticker": "GLD",
-          "current_price": 438.46,
-          "entry_price": 438.46,
+          "current_price": 434.97,
+          "entry_price": 434.97,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 7,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "TLT Long Bond ETF \u2014 Long Calls": {
           "ticker": "TLT",
-          "current_price": 87.11,
-          "entry_price": 87.11,
+          "current_price": 87.15,
+          "entry_price": 87.15,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 7,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "Japanese Yen \u2014 Long vs USD": {
-          "ticker": "USD/JPY",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "JPY=X",
+          "current_price": 158.28,
+          "entry_price": 158.28,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 6,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "SPY S&P 500 ETF \u2014 Bear Put Spread": {
           "ticker": "SPY",
-          "current_price": 674.52,
-          "entry_price": 674.52,
+          "current_price": 672.86,
+          "entry_price": 672.86,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 9,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
@@ -369,51 +369,51 @@
       "trades": {
         "NG=F Natural Gas Futures \u2014 Bear Put Spread": {
           "ticker": "NG=F",
-          "current_price": 2.74,
-          "entry_price": 2.74,
+          "current_price": 2.76,
+          "entry_price": 2.76,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 9,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "HY Energy Bonds \u2014 Bear Spread": {
           "ticker": "HYG",
-          "current_price": 80.27,
-          "entry_price": 80.27,
+          "current_price": 80.18,
+          "entry_price": 80.18,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 6,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "Canadian Dollar \u2014 Bear Puts": {
-          "ticker": "USD/CAD",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "CAD=X",
+          "current_price": 1.38,
+          "entry_price": 1.38,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Underlying Price",
           "score": 6,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "EQT Corporation \u2014 Bear Put Spread": {
           "ticker": "EQT",
-          "current_price": 59.48,
-          "entry_price": 59.48,
+          "current_price": 59.74,
+          "entry_price": 59.74,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 7,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
@@ -421,51 +421,51 @@
       "trades": {
         "TIPS Inflation-Protected Securities \u2014 Long": {
           "ticker": "TIP",
-          "current_price": 110.9,
-          "entry_price": 110.9,
+          "current_price": 110.96,
+          "entry_price": 110.96,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Current Price",
           "score": 6,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "TLT Long Bond ETF \u2014 Long-Dated Bear Puts": {
           "ticker": "TLT",
-          "current_price": 87.11,
-          "entry_price": 87.11,
+          "current_price": 87.15,
+          "entry_price": 87.15,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 9,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "US Dollar \u2014 Long vs JPY and EUR": {
-          "ticker": "USD/JPY",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "JPY=X",
+          "current_price": 158.28,
+          "entry_price": 158.28,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 7,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "XLU Utilities ETF \u2014 Long-Dated Bear Puts": {
           "ticker": "XLU",
-          "current_price": 46.36,
-          "entry_price": 46.36,
+          "current_price": 46.51,
+          "entry_price": 46.51,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 7,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
@@ -473,571 +473,571 @@
       "trades": {
         "Gold Futures \u2014 Long Calls": {
           "ticker": "GC=F",
-          "current_price": 4810.4,
-          "entry_price": 4810.4,
+          "current_price": 4782.0,
+          "entry_price": 4782.0,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 6,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "TLT Long Bond ETF \u2014 Long-Dated Puts": {
           "ticker": "TLT",
-          "current_price": 87.11,
-          "entry_price": 87.11,
+          "current_price": 87.15,
+          "entry_price": 87.15,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 8,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "Swiss Franc \u2014 Long vs USD": {
-          "ticker": "USD/CHF",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "CHF=X",
+          "current_price": 0.79,
+          "entry_price": 0.79,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 7,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "XLF Financial Sector ETF \u2014 Long-Dated Puts": {
           "ticker": "XLF",
-          "current_price": 51.22,
-          "entry_price": 51.22,
+          "current_price": 51.12,
+          "entry_price": 51.12,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 7,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
     "Gold MCX Spike \u2014 INR Amplification": {
       "trades": {
         "MCX Gold \u2014 Tactical Hedge": {
-          "ticker": "MCX Gold",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "GC=F",
+          "current_price": 4782.0,
+          "entry_price": 4782.0,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
-          "price_label": "Current Price",
+          "status": "on-track",
+          "price_label": "Proxy Price",
           "score": 7,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "India 10Y Government Bond \u2014 Long": {
-          "ticker": "IN10Y Gsec",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "^TNX",
+          "current_price": 4.27,
+          "entry_price": 4.27,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 6,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "USD/INR \u2014 Bear Spread (INR Recovery)": {
-          "ticker": "USD/INR",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "USDINR=X",
+          "current_price": 92.23,
+          "entry_price": 92.23,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Underlying Price",
           "score": 7,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "INDA India ETF \u2014 Bull Call Spread": {
           "ticker": "INDA",
-          "current_price": 49.63,
-          "entry_price": 49.63,
+          "current_price": 49.31,
+          "entry_price": 49.31,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 8,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
     "India Oversold Relief Bounce": {
       "trades": {
         "MCX Gold Futures \u2014 Long Calls": {
-          "ticker": "MCX Gold",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "GC=F",
+          "current_price": 4782.0,
+          "entry_price": 4782.0,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
-          "price_label": "Underlying Price",
+          "status": "on-track",
+          "price_label": "Proxy Price",
           "score": 9,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "Sovereign Gold Bond \u2014 Long": {
-          "ticker": "SGB India",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "GLD",
+          "current_price": 434.97,
+          "entry_price": 434.97,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 6,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "USD/INR \u2014 Long Calls (Depreciation Play)": {
-          "ticker": "USD/INR",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "USDINR=X",
+          "current_price": 92.23,
+          "entry_price": 92.23,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Underlying Price",
           "score": 8,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "GDX Gold Miners ETF (US-listed) \u2014 Long Calls": {
           "ticker": "GDX",
-          "current_price": 99.55,
-          "entry_price": 99.55,
+          "current_price": 97.76,
+          "entry_price": 97.76,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 7,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
     "India Infrastructure Supercycle": {
       "trades": {
         "MCX Copper \u2014 Long Calls": {
-          "ticker": "MCX Copper",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "HG=F",
+          "current_price": 5.75,
+          "entry_price": 5.75,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
-          "price_label": "Underlying Price",
+          "status": "on-track",
+          "price_label": "Proxy Price",
           "score": 8,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "India Infrastructure Bonds \u2014 Long": {
-          "ticker": "IRFC / NHAI Bonds",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "EMB",
+          "current_price": 95.19,
+          "entry_price": 95.19,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 7,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "INR \u2014 Long Structural": {
-          "ticker": "USD/INR",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "USDINR=X",
+          "current_price": 92.23,
+          "entry_price": 92.23,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 6,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "INDA India ETF \u2014 Bull Call Spread": {
           "ticker": "INDA",
-          "current_price": 49.63,
-          "entry_price": 49.63,
+          "current_price": 49.31,
+          "entry_price": 49.31,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 9,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
     "India Renewable Energy Build": {
       "trades": {
         "MCX Silver \u2014 Long Calls": {
-          "ticker": "MCX Silver",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "SI=F",
+          "current_price": 75.46,
+          "entry_price": 75.46,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
-          "price_label": "Underlying Price",
+          "status": "on-track",
+          "price_label": "Proxy Price",
           "score": 8,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "IREDA Green Bonds \u2014 Long": {
-          "ticker": "IREDA Bonds",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "ICLN",
+          "current_price": 18.45,
+          "entry_price": 18.45,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 6,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "INR \u2014 Long (Green Capital Inflows)": {
-          "ticker": "USD/INR",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "USDINR=X",
+          "current_price": 92.23,
+          "entry_price": 92.23,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 6,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "ICLN Clean Energy ETF \u2014 Long Calls": {
           "ticker": "ICLN",
-          "current_price": 18.53,
-          "entry_price": 18.53,
+          "current_price": 18.45,
+          "entry_price": 18.45,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 8,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
     "India Financial Credit Growth": {
       "trades": {
         "MCX Gold \u2014 Strategic Allocation": {
-          "ticker": "MCX Gold",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "GC=F",
+          "current_price": 4782.0,
+          "entry_price": 4782.0,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
-          "price_label": "Current Price",
+          "status": "on-track",
+          "price_label": "Proxy Price",
           "score": 6,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "Indian Corporate Bonds \u2014 Long": {
-          "ticker": "Axis/HDFC Corporate Bonds",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "LQD",
+          "current_price": 109.64,
+          "entry_price": 109.64,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 7,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "INR \u2014 Structural Long": {
-          "ticker": "USD/INR",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "USDINR=X",
+          "current_price": 92.23,
+          "entry_price": 92.23,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 6,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "HDFC Bank \u2014 Bull Call Spread": {
-          "ticker": "HDFCBANK (NSE)",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "HDFCBANK.NS",
+          "current_price": 816.1,
+          "entry_price": 816.1,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
-          "price_label": "Underlying Price",
+          "status": "on-track",
+          "price_label": "Proxy Price",
           "score": 8,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
     "India Broad Market Selloff Continues": {
       "trades": {
         "MCX Gold \u2014 Long Calls (Safe Haven)": {
-          "ticker": "MCX Gold",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "GC=F",
+          "current_price": 4782.0,
+          "entry_price": 4782.0,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
-          "price_label": "Underlying Price",
+          "status": "on-track",
+          "price_label": "Proxy Price",
           "score": 7,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "India 10Y Gsec \u2014 Short (Rising Yields)": {
-          "ticker": "IN10Y Gsec",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "^TNX",
+          "current_price": 4.27,
+          "entry_price": 4.27,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 7,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "USD/INR \u2014 Long Calls": {
-          "ticker": "USD/INR",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "USDINR=X",
+          "current_price": 92.23,
+          "entry_price": 92.23,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Underlying Price",
           "score": 7,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "INDA India ETF \u2014 Bear Put Spread": {
           "ticker": "INDA",
-          "current_price": 49.63,
-          "entry_price": 49.63,
+          "current_price": 49.31,
+          "entry_price": 49.31,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 9,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
     "INR Depreciation Accelerating": {
       "trades": {
         "MCX Crude Oil \u2014 Long": {
-          "ticker": "MCX Crude",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "CL=F",
+          "current_price": 95.44,
+          "entry_price": 95.44,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
-          "price_label": "Current Price",
+          "status": "on-track",
+          "price_label": "Proxy Price",
           "score": 8,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "INDA \u2014 Bear Position (USD Erosion of INR Returns)": {
           "ticker": "INDA",
-          "current_price": 49.63,
-          "entry_price": 49.63,
+          "current_price": 49.31,
+          "entry_price": 49.31,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Current Price",
           "score": 6,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "USD/INR \u2014 Long Call Spread": {
-          "ticker": "USD/INR",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "USDINR=X",
+          "current_price": 92.23,
+          "entry_price": 92.23,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Underlying Price",
           "score": 9,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "INDA India ETF \u2014 Bear Put Spread": {
           "ticker": "INDA",
-          "current_price": 49.63,
-          "entry_price": 49.63,
+          "current_price": 49.31,
+          "entry_price": 49.31,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 7,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
     "India IT Near-Term Weakness": {
       "trades": {
         "MCX Gold \u2014 Long (Safety Allocation)": {
-          "ticker": "MCX Gold",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "GC=F",
+          "current_price": 4782.0,
+          "entry_price": 4782.0,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
-          "price_label": "Current Price",
+          "status": "on-track",
+          "price_label": "Proxy Price",
           "score": 6,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "US IG Tech Bonds \u2014 Long (Client vs Vendor)": {
           "ticker": "VTC",
-          "current_price": 77.26,
-          "entry_price": 77.26,
+          "current_price": 77.15,
+          "entry_price": 77.15,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Current Price",
           "score": 6,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "USD/INR \u2014 Long (IT Sector FII Outflow)": {
-          "ticker": "USD/INR",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "USDINR=X",
+          "current_price": 92.23,
+          "entry_price": 92.23,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 7,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "Infosys \u2014 Bear Put Spread (NSE)": {
-          "ticker": "INFY (NSE)",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "INFY.NS",
+          "current_price": 1346.2,
+          "entry_price": 1346.2,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
-          "price_label": "Underlying Price",
+          "status": "on-track",
+          "price_label": "Proxy Price",
           "score": 8,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
     "India IT Structural Disruption": {
       "trades": {
         "MCX Gold \u2014 Long-Term Strategic Allocation": {
-          "ticker": "MCX Gold",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "GC=F",
+          "current_price": 4782.0,
+          "entry_price": 4782.0,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
-          "price_label": "Current Price",
+          "status": "on-track",
+          "price_label": "Proxy Price",
           "score": 6,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "US IG Tech Bonds \u2014 Long (AI Beneficiary Credit)": {
-          "ticker": "VTC / IGLB",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "LQD",
+          "current_price": 109.64,
+          "entry_price": 109.64,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 6,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "USD/INR \u2014 Long-Dated Calls (IT Revenue Slowdown)": {
-          "ticker": "USD/INR",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "USDINR=X",
+          "current_price": 92.23,
+          "entry_price": 92.23,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Underlying Price",
           "score": 7,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "INDA \u2014 Long-Dated Bear Put Spread": {
           "ticker": "INDA",
-          "current_price": 49.63,
-          "entry_price": 49.63,
+          "current_price": 49.31,
+          "entry_price": 49.31,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 9,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     },
     "INR Structural Weakness": {
       "trades": {
         "MCX Crude Oil \u2014 Long (CAD Driver)": {
-          "ticker": "MCX Crude",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "CL=F",
+          "current_price": 95.44,
+          "entry_price": 95.44,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
-          "price_label": "Current Price",
+          "status": "on-track",
+          "price_label": "Proxy Price",
           "score": 7,
           "asset_type": "commodities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "India 10Y Gsec \u2014 Short (Rate Risk)": {
-          "ticker": "IN10Y Gsec",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "^TNX",
+          "current_price": 4.27,
+          "entry_price": 4.27,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Current Price",
           "score": 6,
           "asset_type": "fixed_income",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "USD/INR \u2014 Long-Dated Calendar Spread": {
-          "ticker": "USD/INR",
-          "current_price": null,
-          "entry_price": null,
-          "pct_from_entry": null,
+          "ticker": "USDINR=X",
+          "current_price": 92.23,
+          "entry_price": 92.23,
+          "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
-          "status": "unknown",
+          "status": "on-track",
           "price_label": "Underlying Price",
           "score": 9,
           "asset_type": "currencies",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         },
         "INDA \u2014 Long-Dated Bear Put Spread": {
           "ticker": "INDA",
-          "current_price": 49.63,
-          "entry_price": 49.63,
+          "current_price": 49.31,
+          "entry_price": 49.31,
           "pct_from_entry": 0.0,
           "recommended_at": "2026-04-08",
           "status": "on-track",
           "price_label": "Underlying Price",
           "score": 7,
           "asset_type": "equities",
-          "updated_at": "2026-04-08T14:19:35.308852Z"
+          "updated_at": "2026-04-08T15:00:03.926281Z"
         }
       }
     }
