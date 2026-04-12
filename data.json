@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-04-12T22:16:28Z",
+  "as_of": "2026-04-12T22:17:58Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -194,13 +194,13 @@
         "vs_sma20": -0.5,
         "vs_sma50": 0.5,
         "vs_sma200": 0.6,
-        "rsi": 48.2,
+        "rsi": 48.3,
         "macd": 0.07,
         "macd_signal": 0.25,
         "macd_hist": -0.18,
         "bb_upper": 100.54,
         "bb_lower": 98.64,
-        "bb_pct_b": 24.8,
+        "bb_pct_b": 25.0,
         "atr": 0.67,
         "atr_pct": 0.68,
         "hi52": 101.79,
