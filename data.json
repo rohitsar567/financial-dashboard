@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-04-12T22:13:28Z",
+  "as_of": "2026-04-12T22:14:59Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -179,33 +179,33 @@
     {
       "name": "DXY (Dollar)",
       "symbol": "DX-Y.NYB",
-      "current": 99.07,
+      "current": 99.11,
       "changes": {
-        "1D": 0.43,
-        "1W": -0.57,
-        "1M": -0.67,
-        "6M": -0.2,
-        "1Y": -0.57
+        "1D": 0.47,
+        "1W": -0.53,
+        "1M": -0.63,
+        "6M": -0.16,
+        "1Y": -0.53
       },
       "tech": {
         "sma20": 99.59,
-        "sma50": 98.64,
+        "sma50": 98.65,
         "sma200": 98.48,
         "vs_sma20": -0.5,
-        "vs_sma50": 0.4,
+        "vs_sma50": 0.5,
         "vs_sma200": 0.6,
-        "rsi": 47.8,
+        "rsi": 48.2,
         "macd": 0.07,
         "macd_signal": 0.25,
         "macd_hist": -0.18,
         "bb_upper": 100.54,
-        "bb_lower": 98.63,
-        "bb_pct_b": 22.9,
-        "atr": 0.66,
-        "atr_pct": 0.67,
+        "bb_lower": 98.64,
+        "bb_pct_b": 24.7,
+        "atr": 0.67,
+        "atr_pct": 0.68,
         "hi52": 101.79,
         "lo52": 96.22,
-        "pct_from_hi": -2.7,
+        "pct_from_hi": -2.6,
         "pct_from_lo": 3.0,
         "trend": "Uptrend",
         "ma_score": 2
