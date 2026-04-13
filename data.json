@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-04-13T20:58:36Z",
+  "as_of": "2026-04-13T21:00:06Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -498,26 +498,26 @@
     {
       "name": "Gold",
       "symbol": "GC=F",
-      "current": 4762.9,
+      "current": 4763.2,
       "changes": {
         "1D": null,
-        "1W": 0.28,
+        "1W": 0.29,
         "1M": -5.73,
         "6M": 15.93,
-        "1Y": 48.62
+        "1Y": 48.63
       },
       "tech": {
-        "sma20": 4663.27,
+        "sma20": 4663.29,
         "sma50": 4891.59,
         "sma200": 4157.46,
         "vs_sma20": 2.1,
         "vs_sma50": -2.6,
         "vs_sma200": 14.6,
         "rsi": 50.2,
-        "macd": -44.8,
-        "macd_signal": -76.65,
-        "macd_hist": 31.85,
-        "bb_upper": 5017.28,
+        "macd": -44.78,
+        "macd_signal": -76.64,
+        "macd_hist": 31.87,
+        "bb_upper": 5017.31,
         "bb_lower": 4309.26,
         "bb_pct_b": 64.1,
         "atr": 138.26,
@@ -606,31 +606,31 @@
       "current": 2.62,
       "changes": {
         "1D": null,
-        "1W": -3.67,
-        "1M": -16.19,
-        "6M": -15.84,
-        "1Y": -21.08
+        "1W": -3.71,
+        "1M": -16.22,
+        "6M": -15.88,
+        "1Y": -21.11
       },
       "tech": {
         "sma20": 2.9,
         "sma50": 3.05,
         "sma200": 3.5,
-        "vs_sma20": -9.5,
+        "vs_sma20": -9.6,
         "vs_sma50": -14.0,
-        "vs_sma200": -25.0,
+        "vs_sma200": -25.1,
         "rsi": 35.7,
         "macd": -0.14,
         "macd_signal": -0.12,
         "macd_hist": -0.02,
         "bb_upper": 3.21,
         "bb_lower": 2.59,
-        "bb_pct_b": 5.0,
+        "bb_pct_b": 4.9,
         "atr": 0.17,
         "atr_pct": 6.48,
         "hi52": 7.46,
         "lo52": 2.62,
         "pct_from_hi": -64.8,
-        "pct_from_lo": 0.2,
+        "pct_from_lo": 0.1,
         "trend": "Strong Downtrend",
         "ma_score": 0
       }
