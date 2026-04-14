@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-04-14T21:34:23Z",
+  "as_of": "2026-04-14T21:35:53Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -179,7 +179,7 @@
     {
       "name": "DXY (Dollar)",
       "symbol": "DX-Y.NYB",
-      "current": 98.13,
+      "current": 98.12,
       "changes": {
         "1D": -0.25,
         "1W": -0.7,
