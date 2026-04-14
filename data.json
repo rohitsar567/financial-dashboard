@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-04-14T02:57:17Z",
+  "as_of": "2026-04-14T03:03:52Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -179,11 +179,11 @@
     {
       "name": "DXY (Dollar)",
       "symbol": "DX-Y.NYB",
-      "current": 98.38,
+      "current": 98.39,
       "changes": {
         "1D": null,
         "1W": -0.75,
-        "1M": -1.97,
+        "1M": -1.96,
         "6M": -0.89,
         "1Y": -1.26
       },
@@ -192,21 +192,21 @@
         "sma50": 98.63,
         "sma200": 98.48,
         "vs_sma20": -1.2,
-        "vs_sma50": -0.3,
+        "vs_sma50": -0.2,
         "vs_sma200": -0.1,
         "rsi": 40.8,
         "macd": 0.01,
         "macd_signal": 0.24,
         "macd_hist": -0.23,
         "bb_upper": 100.62,
-        "bb_lower": 98.48,
-        "bb_pct_b": -4.8,
+        "bb_lower": 98.49,
+        "bb_pct_b": -4.6,
         "atr": 0.66,
         "atr_pct": 0.67,
         "hi52": 101.79,
         "lo52": 96.22,
         "pct_from_hi": -3.3,
-        "pct_from_lo": 2.2,
+        "pct_from_lo": 2.3,
         "trend": "Strong Downtrend",
         "ma_score": 0
       }
@@ -391,12 +391,12 @@
     {
       "name": "USD/INR",
       "symbol": "USDINR=X",
-      "current": 93.24,
+      "current": 93.23,
       "changes": {
         "1D": -1.35,
-        "1W": 0.41,
-        "1M": 0.73,
-        "6M": 5.16,
+        "1W": 0.4,
+        "1M": 0.72,
+        "6M": 5.15,
         "1Y": 8.17
       },
       "tech": {
@@ -412,7 +412,7 @@
         "macd_hist": -0.1,
         "bb_upper": 95.01,
         "bb_lower": 91.85,
-        "bb_pct_b": 44.0,
+        "bb_pct_b": 43.9,
         "atr": 1.05,
         "atr_pct": 1.13,
         "hi52": 94.78,
@@ -428,19 +428,19 @@
     {
       "name": "WTI Crude Oil",
       "symbol": "CL=F",
-      "current": 97.1,
+      "current": 97.13,
       "changes": {
         "1D": null,
-        "1W": null,
-        "1M": -1.63,
-        "6M": 63.22,
-        "1Y": 57.81
+        "1W": 2.88,
+        "1M": -1.6,
+        "6M": 63.27,
+        "1Y": 57.86
       },
       "tech": {
         "sma20": 98.63,
         "sma50": 82.32,
         "sma200": 66.98,
-        "vs_sma20": -1.6,
+        "vs_sma20": -1.5,
         "vs_sma50": 18.0,
         "vs_sma200": 45.0,
         "rsi": 52.8,
@@ -449,7 +449,7 @@
         "macd_hist": -1.58,
         "bb_upper": 112.01,
         "bb_lower": 85.25,
-        "bb_pct_b": 44.3,
+        "bb_pct_b": 44.4,
         "atr": 8.36,
         "atr_pct": 8.61,
         "hi52": 112.95,
@@ -498,34 +498,34 @@
     {
       "name": "Gold",
       "symbol": "GC=F",
-      "current": 4799.2,
+      "current": 4798.8,
       "changes": {
         "1D": null,
-        "1W": 1.05,
-        "1M": -5.01,
-        "6M": 16.81,
-        "1Y": 49.75
+        "1W": 1.04,
+        "1M": -5.02,
+        "6M": 16.8,
+        "1Y": 49.74
       },
       "tech": {
-        "sma20": 4665.09,
-        "sma50": 4892.31,
+        "sma20": 4665.06,
+        "sma50": 4892.3,
         "sma200": 4157.64,
         "vs_sma20": 2.9,
         "vs_sma50": -1.9,
         "vs_sma200": 15.4,
         "rsi": 51.9,
-        "macd": -41.91,
-        "macd_signal": -76.07,
-        "macd_hist": 34.16,
-        "bb_upper": 5021.48,
-        "bb_lower": 4308.69,
+        "macd": -41.94,
+        "macd_signal": -76.08,
+        "macd_hist": 34.14,
+        "bb_upper": 5021.43,
+        "bb_lower": 4308.7,
         "bb_pct_b": 68.8,
         "atr": 130.58,
         "atr_pct": 2.72,
         "hi52": 5318.4,
         "lo52": 3181.4,
         "pct_from_hi": -9.8,
-        "pct_from_lo": 50.9,
+        "pct_from_lo": 50.8,
         "trend": "Uptrend",
         "ma_score": 2
       }
@@ -533,13 +533,13 @@
     {
       "name": "Silver",
       "symbol": "SI=F",
-      "current": 76.86,
+      "current": 76.85,
       "changes": {
         "1D": null,
-        "1W": 2.17,
+        "1W": 2.16,
         "1M": -5.02,
-        "6M": 53.31,
-        "1Y": 139.48
+        "6M": 53.3,
+        "1Y": 139.47
       },
       "tech": {
         "sma20": 73.4,
@@ -573,7 +573,7 @@
         "1D": null,
         "1W": 4.43,
         "1M": 5.25,
-        "6M": 17.91,
+        "6M": 17.92,
         "1Y": 30.45
       },
       "tech": {
