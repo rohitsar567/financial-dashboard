@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-04-21T23:39:29Z",
+  "as_of": "2026-04-21T23:41:00Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -428,34 +428,34 @@
     {
       "name": "WTI Crude Oil",
       "symbol": "CL=F",
-      "current": 90.46,
+      "current": 90.42,
       "changes": {
-        "1D": 0.95,
-        "1W": -4.47,
-        "1M": 2.64,
-        "6M": 56.45,
-        "1Y": 43.41
+        "1D": 0.9,
+        "1W": -4.51,
+        "1M": 2.6,
+        "6M": 56.38,
+        "1Y": 43.34
       },
       "tech": {
         "sma20": 97.36,
         "sma50": 85.53,
         "sma200": 67.71,
         "vs_sma20": -7.1,
-        "vs_sma50": 5.8,
-        "vs_sma200": 33.6,
-        "rsi": 47.9,
-        "macd": 0.55,
+        "vs_sma50": 5.7,
+        "vs_sma200": 33.5,
+        "rsi": 47.8,
+        "macd": 0.54,
         "macd_signal": 2.97,
         "macd_hist": -2.42,
         "bb_upper": 112.83,
-        "bb_lower": 81.89,
-        "bb_pct_b": 27.7,
+        "bb_lower": 81.88,
+        "bb_pct_b": 27.6,
         "atr": 8.12,
         "atr_pct": 8.98,
         "hi52": 112.95,
         "lo52": 55.27,
         "pct_from_hi": -19.9,
-        "pct_from_lo": 63.7,
+        "pct_from_lo": 63.6,
         "trend": "Uptrend",
         "ma_score": 2
       }
@@ -463,13 +463,13 @@
     {
       "name": "Brent Crude",
       "symbol": "BZ=F",
-      "current": 93.89,
+      "current": 93.9,
       "changes": {
-        "1D": -1.67,
-        "1W": -5.53,
-        "1M": -6.05,
-        "6M": 53.11,
-        "1Y": 41.7
+        "1D": -1.65,
+        "1W": -5.52,
+        "1M": -6.04,
+        "6M": 53.13,
+        "1Y": 41.71
       },
       "tech": {
         "sma20": 102.09,
@@ -479,7 +479,7 @@
         "vs_sma50": 3.1,
         "vs_sma200": 30.6,
         "rsi": 46.9,
-        "macd": -0.2,
+        "macd": -0.19,
         "macd_signal": 1.87,
         "macd_hist": -2.07,
         "bb_upper": 117.55,
@@ -498,34 +498,34 @@
     {
       "name": "Gold",
       "symbol": "GC=F",
-      "current": 4748.0,
+      "current": 4748.6,
       "changes": {
-        "1D": -1.22,
-        "1W": -0.78,
-        "1M": 7.81,
-        "6M": 16.15,
-        "1Y": 39.39
+        "1D": -1.21,
+        "1W": -0.77,
+        "1M": 7.82,
+        "6M": 16.17,
+        "1Y": 39.41
       },
       "tech": {
-        "sma20": 4680.37,
-        "sma50": 4888.17,
+        "sma20": 4680.4,
+        "sma50": 4888.18,
         "sma200": 4201.89,
-        "vs_sma20": 1.4,
+        "vs_sma20": 1.5,
         "vs_sma50": -2.9,
         "vs_sma200": 13.0,
         "rsi": 48.6,
-        "macd": -6.12,
-        "macd_signal": -29.6,
-        "macd_hist": 23.48,
-        "bb_upper": 4958.88,
+        "macd": -6.07,
+        "macd_signal": -29.59,
+        "macd_hist": 23.52,
+        "bb_upper": 4958.94,
         "bb_lower": 4401.86,
-        "bb_pct_b": 62.1,
+        "bb_pct_b": 62.2,
         "atr": 111.25,
         "atr_pct": 2.34,
         "hi52": 5318.4,
         "lo52": 3181.4,
         "pct_from_hi": -10.7,
-        "pct_from_lo": 49.2,
+        "pct_from_lo": 49.3,
         "trend": "Uptrend",
         "ma_score": 2
       }
@@ -533,19 +533,19 @@
     {
       "name": "Silver",
       "symbol": "SI=F",
-      "current": 77.2,
+      "current": 77.17,
       "changes": {
-        "1D": -3.44,
-        "1W": -1.79,
-        "1M": 11.8,
-        "6M": 62.7,
-        "1Y": 137.57
+        "1D": -3.48,
+        "1W": -1.83,
+        "1M": 11.76,
+        "6M": 62.63,
+        "1Y": 137.48
       },
       "tech": {
         "sma20": 74.83,
         "sma50": 78.82,
         "sma200": 60.3,
-        "vs_sma20": 3.2,
+        "vs_sma20": 3.1,
         "vs_sma50": -2.1,
         "vs_sma200": 28.0,
         "rsi": 50.0,
@@ -554,13 +554,13 @@
         "macd_hist": 0.9,
         "bb_upper": 82.54,
         "bb_lower": 67.13,
-        "bb_pct_b": 65.4,
+        "bb_pct_b": 65.2,
         "atr": 3.59,
         "atr_pct": 4.65,
         "hi52": 115.08,
         "lo52": 31.99,
         "pct_from_hi": -32.9,
-        "pct_from_lo": 141.3,
+        "pct_from_lo": 141.2,
         "trend": "Uptrend",
         "ma_score": 2
       }
