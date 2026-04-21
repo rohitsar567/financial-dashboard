@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-04-21T21:39:53Z",
+  "as_of": "2026-04-21T21:41:23Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -179,7 +179,7 @@
     {
       "name": "DXY (Dollar)",
       "symbol": "DX-Y.NYB",
-      "current": 98.44,
+      "current": 98.43,
       "changes": {
         "1D": 0.39,
         "1W": 0.22,
@@ -197,7 +197,7 @@
         "rsi": 44.5,
         "macd": -0.27,
         "macd_signal": -0.1,
-        "macd_hist": -0.16,
+        "macd_hist": -0.17,
         "bb_upper": 100.77,
         "bb_lower": 97.52,
         "bb_pct_b": 28.3,
