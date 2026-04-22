@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-04-22T22:53:08Z",
+  "as_of": "2026-04-22T22:54:35Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -428,16 +428,16 @@
     {
       "name": "WTI Crude Oil",
       "symbol": "CL=F",
-      "current": 92.38,
+      "current": 92.42,
       "changes": {
-        "1D": 0.27,
-        "1W": 10.17,
-        "1M": 4.82,
-        "6M": 57.91,
-        "1Y": 43.65
+        "1D": 0.31,
+        "1W": 10.22,
+        "1M": 4.87,
+        "6M": 57.98,
+        "1Y": 43.71
       },
       "tech": {
-        "sma20": 97.44,
+        "sma20": 97.45,
         "sma50": 86.13,
         "sma200": 67.84,
         "vs_sma20": -5.2,
@@ -446,16 +446,16 @@
         "rsi": 49.5,
         "macd": 0.51,
         "macd_signal": 2.5,
-        "macd_hist": -1.99,
+        "macd_hist": -1.98,
         "bb_upper": 112.78,
         "bb_lower": 82.11,
-        "bb_pct_b": 33.5,
+        "bb_pct_b": 33.6,
         "atr": 7.96,
-        "atr_pct": 8.62,
+        "atr_pct": 8.61,
         "hi52": 112.95,
         "lo52": 55.27,
         "pct_from_hi": -18.2,
-        "pct_from_lo": 67.1,
+        "pct_from_lo": 67.2,
         "trend": "Uptrend",
         "ma_score": 2
       }
@@ -502,7 +502,7 @@
       "changes": {
         "1D": 1.05,
         "1W": -2.26,
-        "1M": 7.81,
+        "1M": 7.8,
         "6M": 17.39,
         "1Y": 39.61
       },
@@ -605,32 +605,32 @@
       "symbol": "NG=F",
       "current": 2.71,
       "changes": {
-        "1D": 0.63,
-        "1W": 1.5,
-        "1M": -6.12,
-        "6M": -21.33,
-        "1Y": -9.74
+        "1D": 0.56,
+        "1W": 1.42,
+        "1M": -6.19,
+        "6M": -21.39,
+        "1Y": -9.81
       },
       "tech": {
         "sma20": 2.77,
         "sma50": 2.94,
         "sma200": 3.47,
-        "vs_sma20": -2.0,
-        "vs_sma50": -7.7,
+        "vs_sma20": -2.1,
+        "vs_sma50": -7.8,
         "vs_sma200": -21.8,
-        "rsi": 42.5,
+        "rsi": 42.3,
         "macd": -0.11,
         "macd_signal": -0.12,
-        "macd_hist": 0.02,
+        "macd_hist": 0.01,
         "bb_upper": 3.04,
         "bb_lower": 2.5,
-        "bb_pct_b": 39.6,
+        "bb_pct_b": 39.3,
         "atr": 0.13,
         "atr_pct": 4.79,
         "hi52": 7.46,
         "lo52": 2.6,
         "pct_from_hi": -63.6,
-        "pct_from_lo": 4.4,
+        "pct_from_lo": 4.3,
         "trend": "Strong Downtrend",
         "ma_score": 0
       }
