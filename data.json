@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-04-23T00:59:13Z",
+  "as_of": "2026-04-23T01:00:44Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -498,34 +498,34 @@
     {
       "name": "Gold",
       "symbol": "GC=F",
-      "current": 4763.7,
+      "current": 4766.2,
       "changes": {
-        "1D": 1.39,
-        "1W": -1.94,
-        "1M": 8.16,
-        "6M": 17.78,
-        "1Y": 40.08
+        "1D": 1.44,
+        "1W": -1.88,
+        "1M": 8.22,
+        "6M": 17.85,
+        "1Y": 40.15
       },
       "tech": {
-        "sma20": 4696.11,
-        "sma50": 4881.43,
-        "sma200": 4208.8,
-        "vs_sma20": 1.4,
+        "sma20": 4696.24,
+        "sma50": 4881.48,
+        "sma200": 4208.81,
+        "vs_sma20": 1.5,
         "vs_sma50": -2.4,
         "vs_sma200": 13.2,
-        "rsi": 49.7,
-        "macd": -8.87,
-        "macd_signal": -26.09,
-        "macd_hist": 17.21,
-        "bb_upper": 4943.73,
-        "bb_lower": 4448.49,
-        "bb_pct_b": 63.6,
+        "rsi": 49.8,
+        "macd": -8.67,
+        "macd_signal": -26.05,
+        "macd_hist": 17.37,
+        "bb_upper": 4944.0,
+        "bb_lower": 4448.47,
+        "bb_pct_b": 64.1,
         "atr": 112.12,
         "atr_pct": 2.35,
         "hi52": 5318.4,
         "lo52": 3181.4,
         "pct_from_hi": -10.4,
-        "pct_from_lo": 49.7,
+        "pct_from_lo": 49.8,
         "trend": "Uptrend",
         "ma_score": 2
       }
@@ -533,13 +533,13 @@
     {
       "name": "Silver",
       "symbol": "SI=F",
-      "current": 78.15,
+      "current": 78.19,
       "changes": {
-        "1D": 2.28,
-        "1W": -4.39,
-        "1M": 13.18,
-        "6M": 64.66,
-        "1Y": 137.68
+        "1D": 2.33,
+        "1W": -4.33,
+        "1M": 13.25,
+        "6M": 64.76,
+        "1Y": 137.82
       },
       "tech": {
         "sma20": 75.24,
@@ -548,19 +548,19 @@
         "vs_sma20": 3.9,
         "vs_sma50": -0.7,
         "vs_sma200": 29.2,
-        "rsi": 51.7,
+        "rsi": 51.8,
         "macd": 0.34,
         "macd_signal": -0.37,
-        "macd_hist": 0.71,
+        "macd_hist": 0.72,
         "bb_upper": 82.6,
         "bb_lower": 67.88,
-        "bb_pct_b": 69.8,
+        "bb_pct_b": 70.1,
         "atr": 3.48,
         "atr_pct": 4.45,
         "hi52": 115.08,
         "lo52": 31.99,
         "pct_from_hi": -32.1,
-        "pct_from_lo": 144.3,
+        "pct_from_lo": 144.4,
         "trend": "Uptrend",
         "ma_score": 2
       }
