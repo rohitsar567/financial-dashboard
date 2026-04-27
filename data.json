@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-04-27T22:37:10Z",
+  "as_of": "2026-04-27T22:38:47Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -428,13 +428,13 @@
     {
       "name": "WTI Crude Oil",
       "symbol": "CL=F",
-      "current": 96.5,
+      "current": 96.52,
       "changes": {
         "1D": null,
-        "1W": 3.81,
-        "1M": -3.15,
-        "6M": 57.4,
-        "1Y": 55.52
+        "1W": 3.83,
+        "1M": -3.13,
+        "6M": 57.43,
+        "1Y": 55.55
       },
       "tech": {
         "sma20": 97.59,
@@ -447,14 +447,14 @@
         "macd": 0.8,
         "macd_signal": 1.64,
         "macd_hist": -0.83,
-        "bb_upper": 112.54,
+        "bb_upper": 112.55,
         "bb_lower": 82.63,
         "bb_pct_b": 46.4,
         "atr": 7.57,
         "atr_pct": 7.84,
         "hi52": 112.95,
         "lo52": 55.27,
-        "pct_from_hi": -14.6,
+        "pct_from_hi": -14.5,
         "pct_from_lo": 74.6,
         "trend": "Uptrend",
         "ma_score": 2
@@ -498,34 +498,34 @@
     {
       "name": "Gold",
       "symbol": "GC=F",
-      "current": 4703.1,
+      "current": 4704.1,
       "changes": {
         "1D": null,
-        "1W": -0.62,
-        "1M": 4.7,
-        "6M": 17.52,
-        "1Y": 41.13
+        "1W": -0.6,
+        "1M": 4.72,
+        "6M": 17.55,
+        "1Y": 41.16
       },
       "tech": {
-        "sma20": 4730.21,
-        "sma50": 4863.43,
-        "sma200": 4229.61,
+        "sma20": 4730.26,
+        "sma50": 4863.45,
+        "sma200": 4229.62,
         "vs_sma20": -0.6,
         "vs_sma50": -3.3,
         "vs_sma200": 11.2,
         "rsi": 46.6,
-        "macd": -17.33,
-        "macd_signal": -21.37,
-        "macd_hist": 4.04,
-        "bb_upper": 4881.9,
-        "bb_lower": 4578.52,
-        "bb_pct_b": 41.1,
+        "macd": -17.25,
+        "macd_signal": -21.35,
+        "macd_hist": 4.11,
+        "bb_upper": 4881.91,
+        "bb_lower": 4578.61,
+        "bb_pct_b": 41.4,
         "atr": 96.71,
         "atr_pct": 2.06,
         "hi52": 5318.4,
         "lo52": 3181.4,
         "pct_from_hi": -11.6,
-        "pct_from_lo": 47.8,
+        "pct_from_lo": 47.9,
         "trend": "Downtrend",
         "ma_score": 1
       }
