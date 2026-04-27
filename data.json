@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-04-27T23:24:58Z",
+  "as_of": "2026-04-27T23:27:01Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -428,34 +428,34 @@
     {
       "name": "WTI Crude Oil",
       "symbol": "CL=F",
-      "current": 96.62,
+      "current": 96.65,
       "changes": {
         "1D": null,
-        "1W": 3.94,
-        "1M": -3.03,
-        "6M": 57.59,
-        "1Y": 55.71
+        "1W": 3.97,
+        "1M": -3.0,
+        "6M": 57.64,
+        "1Y": 55.76
       },
       "tech": {
-        "sma20": 97.59,
+        "sma20": 97.6,
         "sma50": 88.05,
         "sma200": 68.26,
         "vs_sma20": -1.0,
-        "vs_sma50": 9.7,
-        "vs_sma200": 41.5,
+        "vs_sma50": 9.8,
+        "vs_sma200": 41.6,
         "rsi": 53.2,
         "macd": 0.81,
         "macd_signal": 1.64,
-        "macd_hist": -0.83,
+        "macd_hist": -0.82,
         "bb_upper": 112.55,
         "bb_lower": 82.64,
-        "bb_pct_b": 46.7,
+        "bb_pct_b": 46.8,
         "atr": 7.57,
         "atr_pct": 7.83,
         "hi52": 112.95,
         "lo52": 55.27,
-        "pct_from_hi": -14.5,
-        "pct_from_lo": 74.8,
+        "pct_from_hi": -14.4,
+        "pct_from_lo": 74.9,
         "trend": "Uptrend",
         "ma_score": 2
       }
@@ -498,28 +498,28 @@
     {
       "name": "Gold",
       "symbol": "GC=F",
-      "current": 4705.0,
+      "current": 4705.9,
       "changes": {
         "1D": null,
-        "1W": -0.58,
-        "1M": 4.74,
-        "6M": 17.57,
-        "1Y": 41.19
+        "1W": -0.56,
+        "1M": 4.76,
+        "6M": 17.59,
+        "1Y": 41.21
       },
       "tech": {
-        "sma20": 4730.31,
-        "sma50": 4863.47,
-        "sma200": 4229.62,
+        "sma20": 4730.35,
+        "sma50": 4863.49,
+        "sma200": 4229.63,
         "vs_sma20": -0.5,
-        "vs_sma50": -3.3,
-        "vs_sma200": 11.2,
+        "vs_sma50": -3.2,
+        "vs_sma200": 11.3,
         "rsi": 46.7,
-        "macd": -17.17,
-        "macd_signal": -21.34,
-        "macd_hist": 4.16,
-        "bb_upper": 4881.92,
-        "bb_lower": 4578.69,
-        "bb_pct_b": 41.7,
+        "macd": -17.1,
+        "macd_signal": -21.32,
+        "macd_hist": 4.22,
+        "bb_upper": 4881.94,
+        "bb_lower": 4578.76,
+        "bb_pct_b": 41.9,
         "atr": 96.71,
         "atr_pct": 2.06,
         "hi52": 5318.4,
@@ -603,13 +603,13 @@
     {
       "name": "Natural Gas",
       "symbol": "NG=F",
-      "current": 2.72,
+      "current": 2.73,
       "changes": {
         "1D": null,
-        "1W": 0.11,
-        "1M": -11.95,
-        "6M": -20.83,
-        "1Y": -14.04
+        "1W": 0.15,
+        "1M": -11.92,
+        "6M": -20.8,
+        "1Y": -14.01
       },
       "tech": {
         "sma20": 2.71,
@@ -624,13 +624,13 @@
         "macd_hist": 0.01,
         "bb_upper": 2.91,
         "bb_lower": 2.51,
-        "bb_pct_b": 53.2,
+        "bb_pct_b": 53.5,
         "atr": 0.14,
         "atr_pct": 5.14,
         "hi52": 7.46,
         "lo52": 2.52,
         "pct_from_hi": -63.5,
-        "pct_from_lo": 8.1,
+        "pct_from_lo": 8.2,
         "trend": "Downtrend",
         "ma_score": 1
       }
