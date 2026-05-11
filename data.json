@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-11T23:05:43Z",
+  "as_of": "2026-05-11T23:07:15Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -428,13 +428,13 @@
     {
       "name": "WTI Crude Oil",
       "symbol": "CL=F",
-      "current": 98.18,
+      "current": 98.2,
       "changes": {
         "1D": null,
-        "1W": 3.26,
-        "1M": -0.91,
-        "6M": 60.85,
-        "1Y": 58.48
+        "1W": 3.28,
+        "1M": -0.89,
+        "6M": 60.88,
+        "1Y": 58.51
       },
       "tech": {
         "sma20": 96.42,
@@ -449,13 +449,13 @@
         "macd_hist": -0.63,
         "bb_upper": 107.95,
         "bb_lower": 84.89,
-        "bb_pct_b": 57.6,
+        "bb_pct_b": 57.7,
         "atr": 7.44,
         "atr_pct": 7.58,
         "hi52": 112.95,
         "lo52": 55.27,
         "pct_from_hi": -13.1,
-        "pct_from_lo": 77.6,
+        "pct_from_lo": 77.7,
         "trend": "Uptrend",
         "ma_score": 3
       }
@@ -498,34 +498,34 @@
     {
       "name": "Gold",
       "symbol": "GC=F",
-      "current": 4760.9,
+      "current": 4761.5,
       "changes": {
         "1D": null,
-        "1W": 1.69,
-        "1M": 0.39,
-        "6M": 15.93,
-        "1Y": 47.85
+        "1W": 1.7,
+        "1M": 0.4,
+        "6M": 15.94,
+        "1Y": 47.87
       },
       "tech": {
-        "sma20": 4696.39,
-        "sma50": 4771.26,
+        "sma20": 4696.42,
+        "sma50": 4771.27,
         "sma200": 4292.63,
         "vs_sma20": 1.4,
         "vs_sma50": -0.2,
         "vs_sma200": 10.9,
         "rsi": 54.3,
-        "macd": -19.78,
+        "macd": -19.74,
         "macd_signal": -35.04,
-        "macd_hist": 15.26,
-        "bb_upper": 4884.44,
-        "bb_lower": 4508.35,
-        "bb_pct_b": 67.2,
+        "macd_hist": 15.3,
+        "bb_upper": 4884.51,
+        "bb_lower": 4508.34,
+        "bb_pct_b": 67.3,
         "atr": 86.21,
         "atr_pct": 1.81,
         "hi52": 5318.4,
         "lo52": 3181.4,
         "pct_from_hi": -10.5,
-        "pct_from_lo": 49.6,
+        "pct_from_lo": 49.7,
         "trend": "Uptrend",
         "ma_score": 2
       }
@@ -533,34 +533,34 @@
     {
       "name": "Silver",
       "symbol": "SI=F",
-      "current": 87.64,
+      "current": 87.69,
       "changes": {
         "1D": null,
-        "1W": 14.09,
-        "1M": 16.04,
-        "6M": 73.13,
-        "1Y": 170.58
+        "1W": 14.16,
+        "1M": 16.11,
+        "6M": 73.24,
+        "1Y": 170.75
       },
       "tech": {
         "sma20": 77.27,
         "sma50": 77.1,
         "sma200": 62.98,
-        "vs_sma20": 13.4,
+        "vs_sma20": 13.5,
         "vs_sma50": 13.7,
-        "vs_sma200": 39.1,
-        "rsi": 67.0,
+        "vs_sma200": 39.2,
+        "rsi": 67.1,
         "macd": 1.03,
-        "macd_signal": -0.13,
-        "macd_hist": 1.15,
-        "bb_upper": 84.64,
-        "bb_lower": 69.89,
-        "bb_pct_b": 120.3,
+        "macd_signal": -0.12,
+        "macd_hist": 1.16,
+        "bb_upper": 84.65,
+        "bb_lower": 69.88,
+        "bb_pct_b": 120.5,
         "atr": 3.42,
         "atr_pct": 3.9,
         "hi52": 115.08,
         "lo52": 32.16,
         "pct_from_hi": -23.8,
-        "pct_from_lo": 172.5,
+        "pct_from_lo": 172.7,
         "trend": "Strong Uptrend",
         "ma_score": 3
       }
@@ -568,13 +568,13 @@
     {
       "name": "Copper",
       "symbol": "HG=F",
-      "current": 6.5,
+      "current": 6.49,
       "changes": {
         "1D": null,
-        "1W": 5.85,
-        "1M": 8.69,
-        "6M": 28.66,
-        "1Y": 41.87
+        "1W": 5.84,
+        "1M": 8.68,
+        "6M": 28.65,
+        "1Y": 41.86
       },
       "tech": {
         "sma20": 6.05,
@@ -589,12 +589,12 @@
         "macd_hist": 0.04,
         "bb_upper": 6.34,
         "bb_lower": 5.76,
-        "bb_pct_b": 127.1,
+        "bb_pct_b": 127.0,
         "atr": 0.12,
         "atr_pct": 1.85,
-        "hi52": 6.5,
+        "hi52": 6.49,
         "lo52": 4.33,
-        "pct_from_hi": -0.1,
+        "pct_from_hi": 0.1,
         "pct_from_lo": 50.0,
         "trend": "Strong Uptrend",
         "ma_score": 3
