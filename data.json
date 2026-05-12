@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-12T22:05:55Z",
+  "as_of": "2026-05-12T22:07:29Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -182,10 +182,10 @@
       "current": 98.29,
       "changes": {
         "1D": 0.36,
-        "1W": 0.04,
+        "1W": 0.05,
         "1M": -0.08,
-        "6M": -1.2,
-        "1Y": -3.44
+        "6M": -1.19,
+        "1Y": -3.43
       },
       "tech": {
         "sma20": 98.32,
@@ -194,19 +194,19 @@
         "vs_sma20": -0.0,
         "vs_sma50": -0.7,
         "vs_sma200": -0.3,
-        "rsi": 47.3,
+        "rsi": 47.4,
         "macd": -0.21,
         "macd_signal": -0.2,
         "macd_hist": -0.01,
         "bb_upper": 98.88,
         "bb_lower": 97.75,
-        "bb_pct_b": 47.5,
+        "bb_pct_b": 48.0,
         "atr": 0.56,
         "atr_pct": 0.57,
         "hi52": 101.79,
         "lo52": 96.22,
         "pct_from_hi": -3.4,
-        "pct_from_lo": 2.1,
+        "pct_from_lo": 2.2,
         "trend": "Downtrend",
         "ma_score": 0
       }
