@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-12T00:22:33Z",
+  "as_of": "2026-05-12T00:24:09Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -200,7 +200,7 @@
         "macd_hist": -0.03,
         "bb_upper": 98.88,
         "bb_lower": 97.74,
-        "bb_pct_b": 21.5,
+        "bb_pct_b": 21.4,
         "atr": 0.56,
         "atr_pct": 0.57,
         "hi52": 101.79,
@@ -428,13 +428,13 @@
     {
       "name": "WTI Crude Oil",
       "symbol": "CL=F",
-      "current": 98.21,
+      "current": 98.22,
       "changes": {
         "1D": null,
-        "1W": 3.29,
-        "1M": -0.88,
-        "6M": 60.89,
-        "1Y": 58.53
+        "1W": 3.3,
+        "1M": -0.87,
+        "6M": 60.91,
+        "1Y": 58.55
       },
       "tech": {
         "sma20": 96.42,
@@ -449,12 +449,12 @@
         "macd_hist": -0.63,
         "bb_upper": 107.95,
         "bb_lower": 84.89,
-        "bb_pct_b": 57.7,
+        "bb_pct_b": 57.8,
         "atr": 7.44,
-        "atr_pct": 7.58,
+        "atr_pct": 7.57,
         "hi52": 112.95,
         "lo52": 55.27,
-        "pct_from_hi": -13.1,
+        "pct_from_hi": -13.0,
         "pct_from_lo": 77.7,
         "trend": "Uptrend",
         "ma_score": 3
@@ -498,33 +498,33 @@
     {
       "name": "Gold",
       "symbol": "GC=F",
-      "current": 4777.3,
+      "current": 4778.6,
       "changes": {
         "1D": null,
-        "1W": 2.04,
-        "1M": 0.73,
-        "6M": 16.33,
-        "1Y": 48.36
+        "1W": 2.07,
+        "1M": 0.76,
+        "6M": 16.36,
+        "1Y": 48.4
       },
       "tech": {
-        "sma20": 4697.21,
-        "sma50": 4771.59,
-        "sma200": 4292.71,
+        "sma20": 4697.28,
+        "sma50": 4771.62,
+        "sma200": 4292.72,
         "vs_sma20": 1.7,
         "vs_sma50": 0.1,
         "vs_sma200": 11.3,
-        "rsi": 55.2,
-        "macd": -18.48,
-        "macd_signal": -34.78,
-        "macd_hist": 16.31,
-        "bb_upper": 4886.51,
-        "bb_lower": 4507.92,
-        "bb_pct_b": 71.2,
+        "rsi": 55.3,
+        "macd": -18.37,
+        "macd_signal": -34.76,
+        "macd_hist": 16.39,
+        "bb_upper": 4886.69,
+        "bb_lower": 4507.87,
+        "bb_pct_b": 71.5,
         "atr": 87.17,
         "atr_pct": 1.82,
         "hi52": 5318.4,
         "lo52": 3181.4,
-        "pct_from_hi": -10.2,
+        "pct_from_hi": -10.1,
         "pct_from_lo": 50.2,
         "trend": "Strong Uptrend",
         "ma_score": 3
@@ -536,10 +536,10 @@
       "current": 87.61,
       "changes": {
         "1D": null,
-        "1W": 14.07,
-        "1M": 16.01,
-        "6M": 73.09,
-        "1Y": 170.52
+        "1W": 14.05,
+        "1M": 16.0,
+        "6M": 73.07,
+        "1Y": 170.49
       },
       "tech": {
         "sma20": 77.26,
@@ -549,12 +549,12 @@
         "vs_sma50": 13.6,
         "vs_sma200": 39.1,
         "rsi": 67.0,
-        "macd": 1.03,
+        "macd": 1.02,
         "macd_signal": -0.13,
         "macd_hist": 1.15,
         "bb_upper": 84.63,
         "bb_lower": 69.9,
-        "bb_pct_b": 120.3,
+        "bb_pct_b": 120.2,
         "atr": 3.44,
         "atr_pct": 3.93,
         "hi52": 115.08,
@@ -571,10 +571,10 @@
       "current": 6.49,
       "changes": {
         "1D": null,
-        "1W": 5.71,
-        "1M": 8.55,
-        "6M": 28.49,
-        "1Y": 41.68
+        "1W": 5.73,
+        "1M": 8.54,
+        "6M": 28.48,
+        "1Y": 41.71
       },
       "tech": {
         "sma20": 6.05,
@@ -589,7 +589,7 @@
         "macd_hist": 0.04,
         "bb_upper": 6.34,
         "bb_lower": 5.76,
-        "bb_pct_b": 126.4,
+        "bb_pct_b": 126.5,
         "atr": 0.12,
         "atr_pct": 1.85,
         "hi52": 6.49,
@@ -606,10 +606,10 @@
       "current": 2.93,
       "changes": {
         "1D": null,
-        "1W": 7.22,
-        "1M": 11.42,
-        "6M": -35.88,
-        "1Y": -19.72
+        "1W": 7.18,
+        "1M": 11.38,
+        "6M": -35.9,
+        "1Y": -19.75
       },
       "tech": {
         "sma20": 2.7,
@@ -624,13 +624,13 @@
         "macd_hist": 0.04,
         "bb_upper": 2.9,
         "bb_lower": 2.49,
-        "bb_pct_b": 106.0,
+        "bb_pct_b": 105.8,
         "atr": 0.13,
         "atr_pct": 4.44,
         "hi52": 7.46,
         "lo52": 2.52,
         "pct_from_hi": -60.8,
-        "pct_from_lo": 16.2,
+        "pct_from_lo": 16.1,
         "trend": "Uptrend",
         "ma_score": 2
       }
