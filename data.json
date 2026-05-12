@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-12T22:01:20Z",
+  "as_of": "2026-05-12T22:02:50Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -206,7 +206,7 @@
         "hi52": 101.79,
         "lo52": 96.22,
         "pct_from_hi": -3.4,
-        "pct_from_lo": 2.2,
+        "pct_from_lo": 2.1,
         "trend": "Downtrend",
         "ma_score": 0
       }
