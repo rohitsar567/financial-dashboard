@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-13T21:43:37Z",
+  "as_of": "2026-05-13T21:45:15Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -179,7 +179,7 @@
     {
       "name": "DXY (Dollar)",
       "symbol": "DX-Y.NYB",
-      "current": 98.46,
+      "current": 98.47,
       "changes": {
         "1D": 0.18,
         "1W": 0.64,
@@ -200,7 +200,7 @@
         "macd_hist": 0.01,
         "bb_upper": 98.9,
         "bb_lower": 97.78,
-        "bb_pct_b": 61.4,
+        "bb_pct_b": 61.7,
         "atr": 0.55,
         "atr_pct": 0.56,
         "hi52": 101.09,
