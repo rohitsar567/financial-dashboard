@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-16T04:59:13Z",
+  "as_of": "2026-05-16T05:00:48Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -640,7 +640,7 @@
     {
       "name": "US 10Y Yield",
       "symbol": "^TNX",
-      "current": 4.6,
+      "current": 4.59,
       "changes": {
         "1D": 3.0,
         "1W": 4.2,
