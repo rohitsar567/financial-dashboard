@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-16T21:09:57Z",
+  "as_of": "2026-05-16T21:27:04Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -216,36 +216,36 @@
     {
       "name": "Nifty 50",
       "symbol": "^NSEI",
-      "current": null,
+      "current": 23643.5,
       "changes": {
-        "1D": null,
-        "1W": null,
-        "1M": null,
-        "6M": null,
-        "1Y": null
+        "1D": -0.19,
+        "1W": -0.72,
+        "1M": -2.43,
+        "6M": -9.11,
+        "1Y": -5.66
       },
       "tech": {
-        "sma20": null,
-        "sma50": null,
-        "sma200": null,
-        "vs_sma20": null,
-        "vs_sma50": null,
-        "vs_sma200": null,
-        "rsi": null,
-        "macd": null,
-        "macd_signal": null,
-        "macd_hist": null,
-        "bb_upper": null,
-        "bb_lower": null,
-        "bb_pct_b": null,
-        "atr": null,
-        "atr_pct": null,
-        "hi52": null,
-        "lo52": null,
-        "pct_from_hi": null,
-        "pct_from_lo": null,
-        "trend": null,
-        "ma_score": null
+        "sma20": 24046.73,
+        "sma50": 23799.35,
+        "sma200": 25034.98,
+        "vs_sma20": -1.7,
+        "vs_sma50": -0.7,
+        "vs_sma200": -5.6,
+        "rsi": 45.1,
+        "macd": -73.8,
+        "macd_signal": -3.58,
+        "macd_hist": -70.22,
+        "bb_upper": 24682.39,
+        "bb_lower": 23411.07,
+        "bb_pct_b": 18.3,
+        "atr": 336.65,
+        "atr_pct": 1.42,
+        "hi52": 26328.55,
+        "lo52": 22331.4,
+        "pct_from_hi": -10.2,
+        "pct_from_lo": 5.9,
+        "trend": "Downtrend",
+        "ma_score": 0
       }
     },
     {
