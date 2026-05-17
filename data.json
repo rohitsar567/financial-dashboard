@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-17T13:46:03Z",
+  "as_of": "2026-05-17T13:47:41Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -396,8 +396,8 @@
         "1D": 0.27,
         "1W": 1.62,
         "1M": 2.99,
-        "6M": 8.2,
-        "1Y": 12.24
+        "6M": null,
+        "1Y": null
       },
       "tech": {
         "sma20": 94.73,
@@ -428,36 +428,36 @@
     {
       "name": "WTI Crude Oil",
       "symbol": "CL=F",
-      "current": 101.02,
+      "current": null,
       "changes": {
         "1D": null,
-        "1W": -1.14,
-        "1M": 20.48,
-        "6M": 68.62,
-        "1Y": 61.14
+        "1W": null,
+        "1M": null,
+        "6M": null,
+        "1Y": null
       },
       "tech": {
-        "sma20": 98.63,
-        "sma50": 97.18,
-        "sma200": 70.62,
-        "vs_sma20": 2.4,
-        "vs_sma50": 4.0,
-        "vs_sma200": 43.0,
-        "rsi": 53.9,
-        "macd": 1.58,
-        "macd_signal": 1.69,
-        "macd_hist": -0.11,
-        "bb_upper": 108.13,
-        "bb_lower": 89.13,
-        "bb_pct_b": 62.6,
-        "atr": 6.6,
-        "atr_pct": 6.53,
-        "hi52": 112.95,
-        "lo52": 55.27,
-        "pct_from_hi": -10.6,
-        "pct_from_lo": 82.8,
-        "trend": "Uptrend",
-        "ma_score": 3
+        "sma20": null,
+        "sma50": null,
+        "sma200": null,
+        "vs_sma20": null,
+        "vs_sma50": null,
+        "vs_sma200": null,
+        "rsi": null,
+        "macd": null,
+        "macd_signal": null,
+        "macd_hist": null,
+        "bb_upper": null,
+        "bb_lower": null,
+        "bb_pct_b": null,
+        "atr": null,
+        "atr_pct": null,
+        "hi52": null,
+        "lo52": null,
+        "pct_from_hi": null,
+        "pct_from_lo": null,
+        "trend": null,
+        "ma_score": null
       }
     },
     {
