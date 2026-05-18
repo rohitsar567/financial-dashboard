@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-18T03:28:57Z",
+  "as_of": "2026-05-18T03:30:28Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -391,13 +391,13 @@
     {
       "name": "USD/INR",
       "symbol": "USDINR=X",
-      "current": 95.96,
+      "current": 95.95,
       "changes": {
-        "1D": 0.26,
+        "1D": 0.25,
         "1W": 0.59,
-        "1M": 3.62,
-        "6M": 8.26,
-        "1Y": 12.23
+        "1M": 3.61,
+        "6M": 8.25,
+        "1Y": 12.22
       },
       "tech": {
         "sma20": 94.73,
@@ -412,10 +412,10 @@
         "macd_hist": 0.08,
         "bb_upper": 96.21,
         "bb_lower": 93.24,
-        "bb_pct_b": 91.4,
+        "bb_pct_b": 91.2,
         "atr": 0.9,
         "atr_pct": 0.94,
-        "hi52": 95.96,
+        "hi52": 95.95,
         "lo52": 85.16,
         "pct_from_hi": -0.0,
         "pct_from_lo": 12.7,
@@ -428,34 +428,34 @@
     {
       "name": "WTI Crude Oil",
       "symbol": "CL=F",
-      "current": 103.31,
+      "current": 103.25,
       "changes": {
-        "1D": -2.0,
-        "1W": 1.11,
-        "1M": 23.21,
-        "6M": 72.44,
-        "1Y": 64.8
+        "1D": -2.06,
+        "1W": 1.05,
+        "1M": 23.14,
+        "6M": 72.34,
+        "1Y": 64.7
       },
       "tech": {
         "sma20": 99.53,
         "sma50": 97.52,
         "sma200": 70.81,
-        "vs_sma20": 3.8,
+        "vs_sma20": 3.7,
         "vs_sma50": 5.9,
-        "vs_sma200": 45.9,
-        "rsi": 55.7,
-        "macd": 2.02,
+        "vs_sma200": 45.8,
+        "rsi": 55.6,
+        "macd": 2.01,
         "macd_signal": 1.81,
-        "macd_hist": 0.21,
-        "bb_upper": 108.65,
+        "macd_hist": 0.2,
+        "bb_upper": 108.64,
         "bb_lower": 90.42,
-        "bb_pct_b": 70.7,
+        "bb_pct_b": 70.4,
         "atr": 6.44,
-        "atr_pct": 6.23,
+        "atr_pct": 6.24,
         "hi52": 112.95,
         "lo52": 55.27,
-        "pct_from_hi": -8.5,
-        "pct_from_lo": 86.9,
+        "pct_from_hi": -8.6,
+        "pct_from_lo": 86.8,
         "trend": "Strong Uptrend",
         "ma_score": 3
       }
@@ -498,28 +498,28 @@
     {
       "name": "Gold",
       "symbol": "GC=F",
-      "current": 4534.5,
+      "current": 4534.2,
       "changes": {
         "1D": -0.47,
-        "1W": -3.06,
-        "1M": -6.65,
-        "6M": 11.46,
+        "1W": -3.07,
+        "1M": -6.66,
+        "6M": 11.45,
         "1Y": 40.43
       },
       "tech": {
-        "sma20": 4647.74,
+        "sma20": 4647.73,
         "sma50": 4718.62,
         "sma200": 4325.36,
         "vs_sma20": -2.4,
         "vs_sma50": -3.9,
         "vs_sma200": 4.8,
         "rsi": 39.8,
-        "macd": -31.71,
+        "macd": -31.74,
         "macd_signal": -27.25,
-        "macd_hist": -4.46,
-        "bb_upper": 4788.54,
-        "bb_lower": 4506.94,
-        "bb_pct_b": 9.8,
+        "macd_hist": -4.48,
+        "bb_upper": 4788.58,
+        "bb_lower": 4506.87,
+        "bb_pct_b": 9.7,
         "atr": 83.5,
         "atr_pct": 1.84,
         "hi52": 5318.4,
@@ -533,13 +533,13 @@
     {
       "name": "Silver",
       "symbol": "SI=F",
-      "current": 75.14,
+      "current": 75.13,
       "changes": {
         "1D": -2.63,
-        "1W": -11.74,
+        "1W": -11.75,
         "1M": -8.08,
-        "6M": 48.41,
-        "1Y": 132.52
+        "6M": 48.4,
+        "1Y": 132.51
       },
       "tech": {
         "sma20": 77.76,
@@ -570,32 +570,32 @@
       "symbol": "HG=F",
       "current": 6.24,
       "changes": {
-        "1D": -0.21,
-        "1W": -3.8,
-        "1M": 2.21,
-        "6M": 24.77,
-        "1Y": 34.64
+        "1D": -0.26,
+        "1W": -3.85,
+        "1M": 2.16,
+        "6M": 24.71,
+        "1Y": 34.57
       },
       "tech": {
         "sma20": 6.14,
         "sma50": 5.88,
         "sma200": 5.36,
         "vs_sma20": 1.6,
-        "vs_sma50": 6.1,
-        "vs_sma200": 16.4,
-        "rsi": 55.0,
+        "vs_sma50": 6.0,
+        "vs_sma200": 16.3,
+        "rsi": 54.9,
         "macd": 0.15,
         "macd_signal": 0.13,
         "macd_hist": 0.02,
         "bb_upper": 6.6,
         "bb_lower": 5.67,
-        "bb_pct_b": 61.0,
+        "bb_pct_b": 60.7,
         "atr": 0.14,
-        "atr_pct": 2.24,
+        "atr_pct": 2.25,
         "hi52": 6.64,
         "lo52": 4.33,
-        "pct_from_hi": -6.0,
-        "pct_from_lo": 44.1,
+        "pct_from_hi": -6.1,
+        "pct_from_lo": 44.0,
         "trend": "Uptrend",
         "ma_score": 3
       }
@@ -605,11 +605,11 @@
       "symbol": "NG=F",
       "current": 3.02,
       "changes": {
-        "1D": 2.09,
-        "1W": 6.3,
-        "1M": 13.01,
-        "6M": -30.7,
-        "1Y": -2.92
+        "1D": 2.13,
+        "1W": 6.33,
+        "1M": 13.05,
+        "6M": -30.68,
+        "1Y": -2.89
       },
       "tech": {
         "sma20": 2.76,
@@ -624,13 +624,13 @@
         "macd_hist": 0.04,
         "bb_upper": 3.03,
         "bb_lower": 2.49,
-        "bb_pct_b": 98.2,
+        "bb_pct_b": 98.3,
         "atr": 0.13,
         "atr_pct": 4.3,
         "hi52": 7.46,
         "lo52": 2.52,
         "pct_from_hi": -59.5,
-        "pct_from_lo": 19.9,
+        "pct_from_lo": 20.0,
         "trend": "Uptrend",
         "ma_score": 2
       }
