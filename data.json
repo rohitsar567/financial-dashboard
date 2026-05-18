@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-18T22:31:10Z",
+  "as_of": "2026-05-18T22:32:46Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -428,13 +428,13 @@
     {
       "name": "WTI Crude Oil",
       "symbol": "CL=F",
-      "current": 102.43,
+      "current": 102.44,
       "changes": {
         "1D": null,
-        "1W": 1.4,
-        "1M": 14.31,
-        "6M": 68.6,
-        "1Y": 63.39
+        "1W": 1.41,
+        "1M": 14.32,
+        "6M": 68.65,
+        "1Y": 63.41
       },
       "tech": {
         "sma20": 99.49,
@@ -449,7 +449,7 @@
         "macd_hist": 0.15,
         "bb_upper": 108.54,
         "bb_lower": 90.44,
-        "bb_pct_b": 66.2,
+        "bb_pct_b": 66.3,
         "atr": 6.4,
         "atr_pct": 6.25,
         "hi52": 112.95,
@@ -498,33 +498,33 @@
     {
       "name": "Gold",
       "symbol": "GC=F",
-      "current": 4576.6,
+      "current": 4576.2,
       "changes": {
         "1D": null,
-        "1W": -2.58,
+        "1W": -2.59,
         "1M": -4.79,
-        "6M": 12.69,
-        "1Y": 41.74
+        "6M": 12.68,
+        "1Y": 41.73
       },
       "tech": {
-        "sma20": 4649.84,
-        "sma50": 4719.47,
+        "sma20": 4649.82,
+        "sma50": 4719.46,
         "sma200": 4325.57,
         "vs_sma20": -1.6,
         "vs_sma50": -3.0,
         "vs_sma200": 5.8,
         "rsi": 42.7,
-        "macd": -28.35,
+        "macd": -28.39,
         "macd_signal": -26.58,
-        "macd_hist": -1.78,
-        "bb_upper": 4784.96,
-        "bb_lower": 4514.73,
-        "bb_pct_b": 22.9,
+        "macd_hist": -1.8,
+        "bb_upper": 4784.98,
+        "bb_lower": 4514.67,
+        "bb_pct_b": 22.8,
         "atr": 79.74,
         "atr_pct": 1.74,
         "hi52": 5318.4,
         "lo52": 3228.9,
-        "pct_from_hi": -13.9,
+        "pct_from_hi": -14.0,
         "pct_from_lo": 41.7,
         "trend": "Downtrend",
         "ma_score": 1
@@ -533,13 +533,13 @@
     {
       "name": "Silver",
       "symbol": "SI=F",
-      "current": 78.44,
+      "current": 78.45,
       "changes": {
         "1D": null,
-        "1W": -11.75,
-        "1M": -1.89,
-        "6M": 55.48,
-        "1Y": 142.75
+        "1W": -11.74,
+        "1M": -1.88,
+        "6M": 55.5,
+        "1Y": 142.78
       },
       "tech": {
         "sma20": 77.93,
@@ -554,7 +554,7 @@
         "macd_hist": 0.34,
         "bb_upper": 87.32,
         "bb_lower": 68.53,
-        "bb_pct_b": 52.7,
+        "bb_pct_b": 52.8,
         "atr": 3.6,
         "atr_pct": 4.59,
         "hi52": 115.08,
