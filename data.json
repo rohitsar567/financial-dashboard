@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-19T02:38:02Z",
+  "as_of": "2026-05-19T02:39:37Z",
   "US Indices": [
     {
       "name": "S&P 500",
@@ -179,13 +179,13 @@
     {
       "name": "DXY (Dollar)",
       "symbol": "DX-Y.NYB",
-      "current": 99.07,
+      "current": 99.08,
       "changes": {
         "1D": null,
-        "1W": 0.6,
-        "1M": 1.04,
-        "6M": -0.48,
-        "1Y": -1.36
+        "1W": 0.61,
+        "1M": 1.05,
+        "6M": -0.47,
+        "1Y": -1.35
       },
       "tech": {
         "sma20": 98.48,
@@ -194,13 +194,13 @@
         "vs_sma20": 0.6,
         "vs_sma50": 0.1,
         "vs_sma200": 0.5,
-        "rsi": 56.4,
+        "rsi": 56.6,
         "macd": 0.01,
         "macd_signal": -0.12,
         "macd_hist": 0.13,
-        "bb_upper": 99.21,
-        "bb_lower": 97.75,
-        "bb_pct_b": 89.9,
+        "bb_upper": 99.22,
+        "bb_lower": 97.74,
+        "bb_pct_b": 90.6,
         "atr": 0.52,
         "atr_pct": 0.52,
         "hi52": 100.51,
@@ -498,34 +498,34 @@
     {
       "name": "Gold",
       "symbol": "GC=F",
-      "current": 4564.5,
+      "current": 4563.3,
       "changes": {
         "1D": null,
-        "1W": -2.84,
-        "1M": -5.04,
-        "6M": 12.39,
-        "1Y": 41.36
+        "1W": -2.86,
+        "1M": -5.06,
+        "6M": 12.36,
+        "1Y": 41.33
       },
       "tech": {
-        "sma20": 4649.24,
-        "sma50": 4719.22,
-        "sma200": 4325.51,
+        "sma20": 4649.18,
+        "sma50": 4719.2,
+        "sma200": 4325.5,
         "vs_sma20": -1.8,
         "vs_sma50": -3.3,
         "vs_sma200": 5.5,
-        "rsi": 41.8,
-        "macd": -29.32,
-        "macd_signal": -26.77,
-        "macd_hist": -2.55,
-        "bb_upper": 4785.76,
-        "bb_lower": 4512.72,
-        "bb_pct_b": 19.0,
+        "rsi": 41.7,
+        "macd": -29.42,
+        "macd_signal": -26.79,
+        "macd_hist": -2.63,
+        "bb_upper": 4785.85,
+        "bb_lower": 4512.51,
+        "bb_pct_b": 18.6,
         "atr": 80.86,
         "atr_pct": 1.77,
         "hi52": 5318.4,
         "lo52": 3228.9,
         "pct_from_hi": -14.2,
-        "pct_from_lo": 41.4,
+        "pct_from_lo": 41.3,
         "trend": "Downtrend",
         "ma_score": 1
       }
@@ -533,13 +533,13 @@
     {
       "name": "Silver",
       "symbol": "SI=F",
-      "current": 77.08,
+      "current": 77.07,
       "changes": {
         "1D": null,
-        "1W": -13.28,
-        "1M": -3.59,
-        "6M": 52.78,
-        "1Y": 138.54
+        "1W": -13.3,
+        "1M": -3.6,
+        "6M": 52.77,
+        "1Y": 138.51
       },
       "tech": {
         "sma20": 77.86,
@@ -554,13 +554,13 @@
         "macd_hist": 0.25,
         "bb_upper": 87.26,
         "bb_lower": 68.46,
-        "bb_pct_b": 45.9,
+        "bb_pct_b": 45.8,
         "atr": 3.68,
         "atr_pct": 4.77,
         "hi52": 115.08,
         "lo52": 32.31,
         "pct_from_hi": -33.0,
-        "pct_from_lo": 138.6,
+        "pct_from_lo": 138.5,
         "trend": "Uptrend",
         "ma_score": 2
       }
@@ -571,31 +571,31 @@
       "current": 6.27,
       "changes": {
         "1D": null,
-        "1W": -5.44,
-        "1M": 3.95,
-        "6M": 26.44,
-        "1Y": 35.42
+        "1W": -5.53,
+        "1M": 3.85,
+        "6M": 26.32,
+        "1Y": 35.29
       },
       "tech": {
         "sma20": 6.14,
         "sma50": 5.88,
         "sma200": 5.36,
-        "vs_sma20": 2.2,
-        "vs_sma50": 6.7,
-        "vs_sma200": 17.1,
-        "rsi": 56.3,
+        "vs_sma20": 2.1,
+        "vs_sma50": 6.6,
+        "vs_sma200": 16.9,
+        "rsi": 56.1,
         "macd": 0.15,
         "macd_signal": 0.13,
         "macd_hist": 0.02,
         "bb_upper": 6.6,
         "bb_lower": 5.67,
-        "bb_pct_b": 64.6,
+        "bb_pct_b": 64.0,
         "atr": 0.14,
         "atr_pct": 2.23,
         "hi52": 6.64,
         "lo52": 4.33,
-        "pct_from_hi": -5.5,
-        "pct_from_lo": 44.9,
+        "pct_from_hi": -5.6,
+        "pct_from_lo": 44.8,
         "trend": "Strong Uptrend",
         "ma_score": 3
       }
